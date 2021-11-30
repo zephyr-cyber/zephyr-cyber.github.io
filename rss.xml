@@ -2,15 +2,15 @@
 <rss version="2.0">
     <channel>
         <title>Canary</title>
-        <link>http://example.com</link>
+        <link>https://zephyr-cyber.github.io</link>
         <description></description>
         <language>en</language>
         <pubDate>Tue, 30 Nov 2021 09:29:27 +0800</pubDate>
         <lastBuildDate>Tue, 30 Nov 2021 09:29:27 +0800</lastBuildDate>
         <item>
-            <guid isPermalink="true">http://example.com/2021/11/30/hello-world/</guid>
+            <guid isPermalink="true">https://zephyr-cyber.github.io/2021/11/30/hello-world/</guid>
             <title>Hello World</title>
-            <link>http://example.com/2021/11/30/hello-world/</link>
+            <link>https://zephyr-cyber.github.io/2021/11/30/hello-world/</link>
             <pubDate>Tue, 30 Nov 2021 09:29:27 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
