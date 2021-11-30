@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://zephyr-cyber.github.io.git</id>
-    <title>Canary</title>
-    <subtitle>subtitle</subtitle>
+    <title>Canary&#39;s Blog</title>
+    <subtitle>我用回忆温暖了想你的每一刻</subtitle>
     <icon>http://zephyr-cyber.github.io.git/images/favicon.ico</icon>
     <link href="http://zephyr-cyber.github.io.git" />
     <author>

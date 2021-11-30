@@ -1,9 +1,9 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Canary",
-    "subtitle": "subtitle",
+    "title": "Canary's Blog",
+    "subtitle": "我用回忆温暖了想你的每一刻",
     "icon": "http://zephyr-cyber.github.io.git/images/favicon.ico",
-    "description": "==我用回忆温暖了想你的每一刻==",
+    "description": "可可爱爱没有脑袋",
     "home_page_url": "http://zephyr-cyber.github.io.git",
     "items": [
         {

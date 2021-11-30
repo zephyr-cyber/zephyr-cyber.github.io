@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>Canary</title>
-        <subtitle>subtitle</subtitle>
+        <title>Canary&#39;s Blog</title>
+        <subtitle>我用回忆温暖了想你的每一刻</subtitle>
         <icon>http://zephyr-cyber.github.io.git/images/favicon.ico</icon>
         <link>http://zephyr-cyber.github.io.git</link>
         <author>
           <name>cheuncey Zhang</name>
         </author>
-        <description>==我用回忆温暖了想你的每一刻==</description>
+        <description>可可爱爱没有脑袋</description>
         <language>en</language>
         <pubDate>Thu, 13 Aug 2020 21:45:48 +0800</pubDate>
         <lastBuildDate>Thu, 13 Aug 2020 21:45:48 +0800</lastBuildDate>
