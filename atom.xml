@@ -61,7 +61,7 @@ xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;&
     </entry>
     <entry>
         <id>http://zephyr-cyber.github.io.git/reverse/</id>
-        <title>一些简单的reverse题目</title>
+        <title>reverse</title>
         <link rel="alternate" href="http://zephyr-cyber.github.io.git/reverse/"/>
         <content type="html">&lt;p&gt;2021/10/21 更新了 REVERSE1-schoolboy.apk&lt;/p&gt;
 &lt;h1 id=&#34;antidebug&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#antidebug&#34;&gt;#&lt;/a&gt; Antidebug&lt;/h1&gt;
@@ -178,7 +178,7 @@ DASCTF&lt;/p&gt;
     </entry>
     <entry>
         <id>http://zephyr-cyber.github.io.git/crypto/</id>
-        <title>一些简单的crypto积累</title>
+        <title>crypto</title>
         <link rel="alternate" href="http://zephyr-cyber.github.io.git/crypto/"/>
         <content type="html">&lt;p&gt;2021/10/21 更新了高位截肢&lt;/p&gt;
 &lt;h1 id=&#34;高新区比赛&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#高新区比赛&#34;&gt;#&lt;/a&gt; 高新区比赛&lt;/h1&gt;
