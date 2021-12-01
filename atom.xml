@@ -61,7 +61,7 @@ xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;&
     </entry>
     <entry>
         <id>http://zephyr-cyber.github.io.git/reverse/</id>
-        <title>reverse</title>
+        <title>学习Reverse</title>
         <link rel="alternate" href="http://zephyr-cyber.github.io.git/reverse/"/>
         <content type="html">&lt;p&gt;2021/10/21 更新了 REVERSE1-schoolboy.apk&lt;/p&gt;
 &lt;h1 id=&#34;antidebug&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#antidebug&#34;&gt;#&lt;/a&gt; Antidebug&lt;/h1&gt;
@@ -343,6 +343,10 @@ deepsound2john.py 脚本&lt;br /&gt;
  Iheatradio 中间 md5 加密一下&lt;br /&gt;
  flag&lt;/p&gt;
 </content>
+        <category term="计算机科学" scheme="http://zephyr-cyber.github.io.git/categories/computer-science/" />
+        <category term="CTF" scheme="http://zephyr-cyber.github.io.git/categories/CTF/" />
+        <category term="CTF" scheme="http://zephyr-cyber.github.io.git/tags/CTF/" />
+        <category term="Misc" scheme="http://zephyr-cyber.github.io.git/tags/Misc/" />
         <updated>2021-12-01T01:05:47.202Z</updated>
     </entry>
     <entry>

@@ -64,7 +64,7 @@ xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;&
         </item>
         <item>
             <guid isPermalink="true">http://zephyr-cyber.github.io.git/reverse/</guid>
-            <title>reverse</title>
+            <title>学习Reverse</title>
             <link>http://zephyr-cyber.github.io.git/reverse/</link>
             <category term="-计算机科学 - CTF - Reverse" scheme="http://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6-CTF-Reverse/" />
             <category term="CTF" scheme="http://zephyr-cyber.github.io.git/tags/CTF/" />
@@ -293,6 +293,10 @@ print &#39;c = &#39; + str(c)
             <guid isPermalink="true">http://zephyr-cyber.github.io.git/%E6%AF%94%E8%B5%9Bmisc/</guid>
             <title>比赛MISC</title>
             <link>http://zephyr-cyber.github.io.git/%E6%AF%94%E8%B5%9Bmisc/</link>
+            <category term="计算机科学" scheme="http://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="CTF" scheme="http://zephyr-cyber.github.io.git/categories/CTF/" />
+            <category term="CTF" scheme="http://zephyr-cyber.github.io.git/tags/CTF/" />
+            <category term="Misc" scheme="http://zephyr-cyber.github.io.git/tags/Misc/" />
             <pubDate>Wed, 01 Dec 2021 09:05:47 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;2021/10/21 更新了 MISC3 - 眼神要好使，得到的 flag 中的内容请 md5 后上交 - blasting 的附件&lt;/p&gt;
 &lt;h1 id=&#34;祥云杯2021-misc-鸣雏恋&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#祥云杯2021-misc-鸣雏恋&#34;&gt;#&lt;/a&gt; 祥云杯 2021-MISC - 鸣雏恋&lt;/h1&gt;
