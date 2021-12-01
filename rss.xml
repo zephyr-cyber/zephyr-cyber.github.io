@@ -66,6 +66,9 @@ xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;&
             <guid isPermalink="true">http://zephyr-cyber.github.io.git/reverse/</guid>
             <title>reverse</title>
             <link>http://zephyr-cyber.github.io.git/reverse/</link>
+            <category term="-计算机科学 - CTF - Reverse" scheme="http://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6-CTF-Reverse/" />
+            <category term="CTF" scheme="http://zephyr-cyber.github.io.git/tags/CTF/" />
+            <category term="Reverse" scheme="http://zephyr-cyber.github.io.git/tags/Reverse/" />
             <pubDate>Wed, 01 Dec 2021 09:05:47 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;2021/10/21 更新了 REVERSE1-schoolboy.apk&lt;/p&gt;
 &lt;h1 id=&#34;antidebug&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#antidebug&#34;&gt;#&lt;/a&gt; Antidebug&lt;/h1&gt;

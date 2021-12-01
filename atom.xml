@@ -111,6 +111,9 @@ resources.arsc-res-values-strings.xml&lt;br /&gt;
  flag:&lt;br /&gt;
 DASCTF&lt;/p&gt;
 </content>
+        <category term="-计算机科学 - CTF - Reverse" scheme="http://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6-CTF-Reverse/" />
+        <category term="CTF" scheme="http://zephyr-cyber.github.io.git/tags/CTF/" />
+        <category term="Reverse" scheme="http://zephyr-cyber.github.io.git/tags/Reverse/" />
         <updated>2021-12-01T01:05:47.265Z</updated>
     </entry>
     <entry>
