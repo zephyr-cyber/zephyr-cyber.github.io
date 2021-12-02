@@ -2538,6 +2538,48 @@ main >.inner {
 .social .item.about i {
   color: #3b5998;
 }
+.social .item.email::before {
+  background-color: #55acd5;
+}
+.social .item.email i {
+  color: #55acd5;
+}
+.social .item.facebook::before {
+  background-color: aceboo;
+}
+.social .item.facebook i {
+  color: aceboo;
+}
+.social .item.stackoverflow::before {
+  background-color: tack-overflow "#1e88e5;
+}
+.social .item.stackoverflow i {
+  color: tack-overflow "#1e88e5;
+}
+.social .item.youtube::before {
+  background-color: outube  "#e60026;
+}
+.social .item.youtube i {
+  color: outube  "#e60026;
+}
+.social .item.instagram::before {
+  background-color: nstagram "#1e88e5;
+}
+.social .item.instagram i {
+  color: nstagram "#1e88e5;
+}
+.social .item.skype::before {
+  background-color: kype "#1e88e5;
+}
+.social .item.skype i {
+  color: kype "#1e88e5;
+}
+.social .item.douban::before {
+  background-color: ouban "#191717;
+}
+.social .item.douban i {
+  color: ouban "#191717;
+}
 .social .item:focus i,
 .social .item:hover i {
   color: var(--grey-0);
