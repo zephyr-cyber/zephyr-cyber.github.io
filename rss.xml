@@ -66,7 +66,9 @@ xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;&
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/reverse/</guid>
             <title>学习Reverse</title>
             <link>https://zephyr-cyber.github.io.git/reverse/</link>
-            <category term="-计算机科学 - CTF - Reverse" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6-CTF-Reverse/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="CTF" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/CTF/" />
+            <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/CTF/Reverse/" />
             <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
             <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/tags/Reverse/" />
             <pubDate>Wed, 01 Dec 2021 09:05:47 +0800</pubDate>
