@@ -1,0 +1,661 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Canary's Blog" href="https://zephyr-cyber.github.io.git/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Canary's Blog" href="https://zephyr-cyber.github.io.git/atom.xml" />
+<link rel="alternate" type="application/json" title="Canary's Blog" href="https://zephyr-cyber.github.io.git/feed.json" />
+<link rel="alternate" type="application/json" title="Canary's Blog" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" />
+<script src="/js/live2d-widget/autoload.js?v=0.2.5"></script>
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="CTF" />
+
+
+<link rel="canonical" href="https://zephyr-cyber.github.io.git/hexo/">
+
+
+
+  <title>
+hexo 搭建 - Reverse - CTF - 计算机科学 |
+Canary = Canary's Blog</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">hexo 搭建
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-12-03 19:53:01">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-12-03T19:53:01+08:00">2021-12-03</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>3.3k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>3 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Canary</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/20833_kin-iro_mosaic.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic6.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/53809-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50382-IDOLY_PRIDE-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32933-ANNE_HAPPY-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54235-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="In 计算机科学"><span itemprop="name">计算机科学</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/CTF/" itemprop="item" rel="index" title="In CTF"><span itemprop="name">CTF</span></a>
+<meta itemprop="position" content="2" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/CTF/Reverse/" itemprop="item" rel="index" title="In Reverse"><span itemprop="name">Reverse</span></a>
+<meta itemprop="position" content="3" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="https://zephyr-cyber.github.io.git/hexo/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/16f8bec9f7fbb60bf0c3a1d2fa12affd.jpeg">
+    <meta itemprop="name" content="cheuncey Zhang">
+    <meta itemprop="description" content="我用回忆温暖了想你的每一刻, 刻意练习">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Canary's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h3 id="最近在学blog知识遇到无数问题小白的我又不会开发htmlcss在这里遇到的一些问题以及开发者没有提及到的"><a class="anchor" href="#最近在学blog知识遇到无数问题小白的我又不会开发htmlcss在这里遇到的一些问题以及开发者没有提及到的">#</a> 最近在学 blog 知识，遇到无数问题，小白的我又不会开发 HTML+CSS, 在这里遇到的一些问题，以及开发者没有提及到的。</h3>
+<h1 id="关于本地头像hexo-clean容易被清除的问题"><a class="anchor" href="#关于本地头像hexo-clean容易被清除的问题">#</a> 关于本地头像 hexo clean 容易被清除的问题</h1>
+<p>github 上的拷贝的默认是本地的存储路径，每次更新 hexo clean，public 里面的文件都会被清除，导致每次更新 blog 很繁琐，毕竟有很多图片。</p>
+<h3 id="我们可以用cdn加速图片的方式部署"><a class="anchor" href="#我们可以用cdn加速图片的方式部署">#</a> 我们可以用 cdn 加速图片的方式部署</h3>
+<p>你的主题目录下的_config.yml</p>
+<figure class="highlight yml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">#Assets</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token key atrule">statics</span><span class="token punctuation">:</span> /</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token key atrule">css</span><span class="token punctuation">:</span> css</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token key atrule">js</span><span class="token punctuation">:</span> js</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token key atrule">images</span><span class="token punctuation">:</span> images</pre></td></tr></table></figure><p>默认 images 会把下面的 avatar 后面的路径套上 /images/。所以除了输入本地文件，其他的没用 。</p>
+<p>修改文件 <code>themes/shoka/layout/_partials/post/post.njk</code>  下面的大概第五行的位置</p>
+<p><code>&lt;meta itemprop=&quot;image&quot; content=&quot;&#123;&#123; url_for(theme.statics + theme.images + '/' + theme.sidebar.avatar) &#125;&#125;&quot;&gt;</code></p>
+<p>改为</p>
+<p><code>&lt;meta itemprop=&quot;image&quot; content=&quot;&#123;&#123; url_for(theme.sidebar.avatar) &#125;&#125;&quot;&gt;</code></p>
+<p>修改文件 <code>themes/shoka/layout/_partials/sidebar/overview.njk</code>  大概第三行的位置</p>
+<p><code>data-src=&quot;&#123;&#123; url_for(theme.statics + theme.images + '/' + theme.sidebar.avatar) &#125;&#125;&quot;&gt;</code></p>
+<p>改为</p>
+<p><code>data-src=&quot;&#123;&#123; url_for(theme.sidebar.avatar) &#125;&#125;&quot;&gt;</code></p>
+<p>去掉路径就可以了，然后</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/avatar.jpg" alt="" /></p>
+<p>加上自己的 cdn 就行，图片就会出来。</p>
+<p>感谢<span class="exturl" data-url="aHR0cHM6Ly93d3cubGF2ZW5kZXJkaC5jbi8="> Lavender</span> 大佬提供帮助！</p>
+<h1 id="关于看板娘live2d-widget的shoka主题的问题"><a class="anchor" href="#关于看板娘live2d-widget的shoka主题的问题">#</a> 关于看板娘 live2d-widget 的 shoka 主题的问题</h1>
+<p>hexo-helper-live2d 模板的方法不在赘述，csdn 上有很多<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpc2h1d2VuNzk4Ni9hcnRpY2xlL2RldGFpbHMvMTA4ODYyNDIz"> hexo-helper-live2d</span></p>
+<p>看板娘 live2d-widget 的源码<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3N0ZXZlbmpvZXpoYW5nL2xpdmUyZC13aWRnZXQ=">点击这里</span></p>
+<p>emmmm 介绍的很简单。</p>
+<h2 id="利用cdn网络资源"><a class="anchor" href="#利用cdn网络资源">#</a> 利用 cdn 网络资源</h2>
+<p>把 live2d-widget 放在主题 source 下面</p>
+<p>autoload.js 不必要改绝对路径</p>
+<p><code> const live2d_path = &quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/&quot;; //const live2d_path = &quot;/live2d-widget/&quot;;</code>  这行注释掉</p>
+<p>然后进入主题下的 /layout/_partials/head/head.njk 里面的最后几行代码修改为</p>
+<figure class="highlight yml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;link rel="alternate" type="application/rss+xml" title="&lt;<span class="token tag">!--swig</span>￼4<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="&lt;<span class="token tag">!--swig</span>￼5<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;link rel="alternate" type="application/atom+xml" title="&lt;<span class="token tag">!--swig</span>￼6<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="&lt;<span class="token tag">!--swig</span>￼7<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="3"></td><td><pre>&lt;link rel="alternate" type="application/json" title="&lt;<span class="token tag">!--swig</span>￼8<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="&lt;<span class="token tag">!--swig</span>￼9<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="4"></td><td><pre>&lt;link rel="alternate" type="application/json" title="&lt;<span class="token tag">!--swig</span>￼10<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/font<span class="token punctuation">-</span>awesome/css/font<span class="token punctuation">-</span>awesome.min.css" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="5"></td><td><pre>&lt;script async src="https<span class="token punctuation">:</span>//cdn.jsdelivr.net/gh/stevenjoezhang/live2d<span class="token punctuation">-</span>widget@latest/autoload.js"<span class="token punctuation">></span>&lt;/script<span class="token punctuation">></span></pre></td></tr></table></figure><p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</p>
+<h2 id="利用本地资源"><a class="anchor" href="#利用本地资源">#</a> 利用本地资源</h2>
+<p>整个文件夹 live2d-widget 放到 /source/js 文件夹里面</p>
+<p>autoload.js 的路径默认就行，也可以改本地，不影响。</p>
+<p>然后进入主题下的 /layout/_partials/head/head.njk 里面的最后几行代码修改为</p>
+<pre><code class="language-YML">&lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;&#123;&#123; full_url_for('/rss.xml') &#125;&#125;&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/atom+xml&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;&#123;&#123; full_url_for('/atom.xml') &#125;&#125;&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/json&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;&#123;&#123; full_url_for('/feed.json') &#125;&#125;&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/json&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot; /&gt;
+&#123;&#123; _js('/live2d-widget/autoload.js') &#125;&#125;
+
+</code></pre>
+<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</p>
+<p>本地搭建是区别网上另一种方法，かねき けん师傅 tql</p>
+<p>我 debug 的时候报的 js 渲染错误，后来发现是 minify (十个亚压缩插件，减少文件大小) 的问题，注释掉，<s>搅屎棍</s>。</p>
+<h3 id="看板娘的模块问题"><a class="anchor" href="#看板娘的模块问题">#</a> 看板娘的模块问题</h3>
+<p>个人认为 shoka 处理的不是很好，依赖项没怎么更新，也没有回复，插件的压缩依赖项没有及时支持 es6 规范，用 shoka 主题个人认为不推荐搞模块，大佬除外。</p>
+<h1 id="关于背景图片的问题"><a class="anchor" href="#关于背景图片的问题">#</a> 关于背景图片的问题</h1>
+<p>背景图片有两处地方一个是主题下的_images.yml 文件，还有一个是根目录下的 /source/__data 下的 images.yml</p>
+<p>修改 source/__data 下的 images.yml 即可覆盖背景图，要 6 个以上，6 个以内好像有 bug。</p>
+<p>推荐使用 cdn，jsdelivr 来加速图片，创建图床，免费使用</p>
+<h1 id="一些基础的细节改shoka主题可以去大佬博客reversesacle添加功能魔改博客很详细-迭代中"><a class="anchor" href="#一些基础的细节改shoka主题可以去大佬博客reversesacle添加功能魔改博客很详细-迭代中">#</a> 一些基础的细节，改 shoka 主题可以去大佬博客<span class="exturl" data-url="aHR0cHM6Ly93d3cucmV2ZXJzZXNhY2xlLmNvbS9IZXhvLVNob2thJUU0JUI4JUJCJUU5JUEyJTk4JUU1JThBJTlGJUU4JTgzJUJEJUU0JUJCJThCJUU3JUJCJThEJUU4JUExJUE1JUU1JTg1JTg1JUU3JTgyJUI5Lw=="> ReverseSacle</span>，添加功能，魔改博客，很详细。迭代中........</h1>
+<p>hexo 搭建，自己在<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3RoZW1lcy8="> hexo 主题网站找</span>一个自己喜欢的主题，都是各位大佬开发的，</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/QQ%E6%88%AA%E5%9B%BE20211202110816.jpg" alt="" /></p>
+<p>博主用的 shoka 主题，说来惭愧换了无数个主题了。。。不能在这上面浪费时间了。。</p>
+
+      <div class="tags">
+          <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2021-12-03 19:57:45" itemprop="dateModified" datetime="2021-12-03T19:57:45+08:00">2021-12-03</time>
+  </span>
+  <span id="hexo/" class="item leancloud_visitors" data-flag-title="hexo 搭建" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="cheuncey Zhang WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="cheuncey Zhang Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="cheuncey Zhang PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>cheuncey Zhang <i class="ic i-at"><em>@</em></i>Canary's Blog
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="https://zephyr-cyber.github.io.git/hexo/" title="hexo 搭建">https://zephyr-cyber.github.io.git/hexo/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/web/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;pic5.jpg" title="比赛Web题">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>比赛Web题</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E5%9C%A8%E5%AD%A6blog%E7%9F%A5%E8%AF%86%E9%81%87%E5%88%B0%E6%97%A0%E6%95%B0%E9%97%AE%E9%A2%98%E5%B0%8F%E7%99%BD%E7%9A%84%E6%88%91%E5%8F%88%E4%B8%8D%E4%BC%9A%E5%BC%80%E5%8F%91htmlcss%E5%9C%A8%E8%BF%99%E9%87%8C%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E8%80%85%E6%B2%A1%E6%9C%89%E6%8F%90%E5%8F%8A%E5%88%B0%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text"> 最近在学 blog 知识，遇到无数问题，小白的我又不会开发 HTML+CSS, 在这里遇到的一些问题，以及开发者没有提及到的。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%9C%B0%E5%A4%B4%E5%83%8Fhexo-clean%E5%AE%B9%E6%98%93%E8%A2%AB%E6%B8%85%E9%99%A4%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text"> 关于本地头像 hexo clean 容易被清除的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E7%94%A8cdn%E5%8A%A0%E9%80%9F%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2"><span class="toc-number">1.</span> <span class="toc-text"> 我们可以用 cdn 加速图片的方式部署</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%9C%8B%E6%9D%BF%E5%A8%98live2d-widget%E7%9A%84shoka%E4%B8%BB%E9%A2%98%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text"> 关于看板娘 live2d-widget 的 shoka 主题的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8cdn%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90"><span class="toc-number"></span> <span class="toc-text"> 利用 cdn 网络资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90"><span class="toc-number"></span> <span class="toc-text"> 利用本地资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%8B%E6%9D%BF%E5%A8%98%E7%9A%84%E6%A8%A1%E5%9D%97%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text"> 看板娘的模块问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text"> 关于背景图片的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9A%84%E7%BB%86%E8%8A%82%E6%94%B9shoka%E4%B8%BB%E9%A2%98%E5%8F%AF%E4%BB%A5%E5%8E%BB%E5%A4%A7%E4%BD%AC%E5%8D%9A%E5%AE%A2reversesacle%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD%E9%AD%94%E6%94%B9%E5%8D%9A%E5%AE%A2%E5%BE%88%E8%AF%A6%E7%BB%86-%E8%BF%AD%E4%BB%A3%E4%B8%AD"><span class="toc-number"></span> <span class="toc-text"> 一些基础的细节，改 shoka 主题可以去大佬博客 ReverseSacle，添加功能，魔改博客，很详细。迭代中........</span></a>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/reverse/" rel="bookmark" title="学习Reverse">学习Reverse</a></li><li class="active"><a href="/hexo/" rel="bookmark" title="hexo搭建">hexo搭建</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="cheuncey Zhang"
+      data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/16f8bec9f7fbb60bf0c3a1d2fa12affd.jpeg">
+  <p class="name" itemprop="name">cheuncey Zhang</p>
+  <div class="description" itemprop="description">刻意练习</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">33</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">11</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">16</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv" title="https:&#x2F;&#x2F;zephyr-cyber.github.io"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS8=" title="https:&#x2F;&#x2F;twitter.com&#x2F;"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS8=" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvbXkvbS9tdXNpYy9wbGF5bGlzdD9pZD0yMjI2MDQ2MDI3" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;my&#x2F;m&#x2F;music&#x2F;playlist?id&#x3D;2226046027"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20v" title="https:&#x2F;&#x2F;weibo.com&#x2F;"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS8=" title="https:&#x2F;&#x2F;about.me&#x2F;"><i class="ic i-address-card"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjEzMjc4MzcwMzFAcXEuY29tLmNvbQ==" title="mailto:1327837031@qq.com.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item facebook" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tLw==" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;"><i class="ic i-facebook"></i></span>
+      <span class="exturl item stackoverflow" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS8=" title="https:&#x2F;&#x2F;stackoverflow.com&#x2F;"><i class="ic i-stack-overflow "#1e88e5""></i></span>
+      <span class="exturl item youtube" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=" title="https:&#x2F;&#x2F;youtube.com&#x2F;"><i class="ic i-youtube  "#e60026""></i></span>
+      <span class="exturl item instagram" data-url="aHR0cHM6Ly9pbnN0YWdyYW0uY29tLw==" title="https:&#x2F;&#x2F;instagram.com&#x2F;"><i class="ic i-instagram "#1e88e5""></i></span>
+      <span class="exturl item skype" data-url="c2t5cGU6MTIzP2NhbGx8Y2hhdA==" title="skype:123?call|chat"><i class="ic i-skype "#1e88e5""></i></span>
+      <span class="exturl item douban" data-url="aHR0cHM6Ly93d3cuZG91YmFuLmNvbS9wZW9wbGUv" title="https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;"><i class="ic i-douban "#191717""></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>Friends</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-clipboard"></i>films</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/films/romantic/" rel="section"><i class="ic i-heart"></i>romantic</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/films/science/" rel="section"><i class="ic i-fedora"></i>science</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/films/misc/" rel="section"><i class="ic i-opera"></i>misc</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/fun-links/" rel="section"><i class="ic i-android"></i>fun-links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="In Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/course-1/" title="In 零基础学 Java 语言 - 浙江大学 - 翁恺">零基础学 Java 语言 - 浙江大学 - 翁恺</a>
+</div>
+
+    <span><a href="/computer-science/java/course-1/week-2/" title="第2周 判断">第2周 判断</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/markdown/" title="Markdown Style test">Markdown Style test</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/note/" title="In 二进制杂谈">二进制杂谈</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/note/theme-shoka-doc/" title="In Theme Shoka Documentation">Theme Shoka Documentation</a>
+</div>
+
+    <span><a href="/computer-science/note/theme-shoka-doc/config/" title="Step.2 基本配置">Step.2 基本配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/elements/" title="Elements">Elements</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/note/" title="In 二进制杂谈">二进制杂谈</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/note/theme-shoka-doc/" title="In Theme Shoka Documentation">Theme Shoka Documentation</a>
+</div>
+
+    <span><a href="/computer-science/note/theme-shoka-doc/display/" title="Step.3 界面显示">Step.3 界面显示</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/CTF/" title="In CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/CTF/Reverse/" title="In Reverse">Reverse</a>
+</div>
+
+    <span><a href="/hexo/" title="hexo搭建">hexo搭建</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/images/" title="Images">Images</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88/" title="日本語テスト">日本語テスト</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/crypto/" title="crypto">crypto</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">cheuncey Zhang @ Canary</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="Symbols count total">78k words</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="Reading time total">1:11</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'hexo/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

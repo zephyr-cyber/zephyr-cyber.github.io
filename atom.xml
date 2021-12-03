@@ -8,9 +8,72 @@
     <author>
       <name>cheuncey Zhang</name>
     </author>
-    <updated>2021-12-01T01:05:47.276Z</updated>
+    <updated>2021-12-03T11:53:01.713Z</updated>
     <category term="关键词1" />
     <category term="关键词2" />
+    <entry>
+        <id>https://zephyr-cyber.github.io.git/hexo/</id>
+        <title>hexo搭建</title>
+        <link rel="alternate" href="https://zephyr-cyber.github.io.git/hexo/"/>
+        <content type="html">&lt;h3 id=&#34;最近在学blog知识遇到无数问题小白的我又不会开发htmlcss在这里遇到的一些问题以及开发者没有提及到的&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#最近在学blog知识遇到无数问题小白的我又不会开发htmlcss在这里遇到的一些问题以及开发者没有提及到的&#34;&gt;#&lt;/a&gt; 最近在学 blog 知识，遇到无数问题，小白的我又不会开发 HTML+CSS, 在这里遇到的一些问题，以及开发者没有提及到的。&lt;/h3&gt;
+&lt;h1 id=&#34;关于本地头像hexo-clean容易被清除的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关于本地头像hexo-clean容易被清除的问题&#34;&gt;#&lt;/a&gt; 关于本地头像 hexo clean 容易被清除的问题&lt;/h1&gt;
+&lt;p&gt;github 上的拷贝的默认是本地的存储路径，每次更新 hexo clean，public 里面的文件都会被清除，导致每次更新 blog 很繁琐，毕竟有很多图片。&lt;/p&gt;
+&lt;h3 id=&#34;我们可以用cdn加速图片的方式部署&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#我们可以用cdn加速图片的方式部署&#34;&gt;#&lt;/a&gt; 我们可以用 cdn 加速图片的方式部署&lt;/h3&gt;
+&lt;p&gt;你的主题目录下的_config.yml&lt;/p&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;#Assets&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;statics&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; /&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;css&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; css&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;js&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; js&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;images&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; images&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;默认 images 会把下面的 avatar 后面的路径套上 /images/。所以除了输入本地文件，其他的没用 。&lt;/p&gt;
+&lt;p&gt;修改文件 &lt;code&gt;themes/shoka/layout/_partials/post/post.njk&lt;/code&gt;  下面的大概第五行的位置&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;meta itemprop=&amp;quot;image&amp;quot; content=&amp;quot;&amp;#123;&amp;#123; url_for(theme.statics + theme.images + &#39;/&#39; + theme.sidebar.avatar) &amp;#125;&amp;#125;&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;改为&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;meta itemprop=&amp;quot;image&amp;quot; content=&amp;quot;&amp;#123;&amp;#123; url_for(theme.sidebar.avatar) &amp;#125;&amp;#125;&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;修改文件 &lt;code&gt;themes/shoka/layout/_partials/sidebar/overview.njk&lt;/code&gt;  大概第三行的位置&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;data-src=&amp;quot;&amp;#123;&amp;#123; url_for(theme.statics + theme.images + &#39;/&#39; + theme.sidebar.avatar) &amp;#125;&amp;#125;&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;改为&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;data-src=&amp;quot;&amp;#123;&amp;#123; url_for(theme.sidebar.avatar) &amp;#125;&amp;#125;&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;去掉路径就可以了，然后&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/avatar.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;加上自己的 cdn 就行，图片就会出来。&lt;/p&gt;
+&lt;p&gt;感谢&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubGF2ZW5kZXJkaC5jbi8=&#34;&gt; Lavender&lt;/span&gt; 大佬提供帮助！&lt;/p&gt;
+&lt;h1 id=&#34;关于看板娘live2d-widget的shoka主题的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关于看板娘live2d-widget的shoka主题的问题&#34;&gt;#&lt;/a&gt; 关于看板娘 live2d-widget 的 shoka 主题的问题&lt;/h1&gt;
+&lt;p&gt;hexo-helper-live2d 模板的方法不在赘述，csdn 上有很多&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpc2h1d2VuNzk4Ni9hcnRpY2xlL2RldGFpbHMvMTA4ODYyNDIz&#34;&gt; hexo-helper-live2d&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;看板娘 live2d-widget 的源码&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3N0ZXZlbmpvZXpoYW5nL2xpdmUyZC13aWRnZXQ=&#34;&gt;点击这里&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;emmmm 介绍的很简单。&lt;/p&gt;
+&lt;h2 id=&#34;利用cdn网络资源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#利用cdn网络资源&#34;&gt;#&lt;/a&gt; 利用 cdn 网络资源&lt;/h2&gt;
+&lt;p&gt;把 live2d-widget 放在主题 source 下面&lt;/p&gt;
+&lt;p&gt;autoload.js 不必要改绝对路径&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; const live2d_path = &amp;quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/&amp;quot;; //const live2d_path = &amp;quot;/live2d-widget/&amp;quot;;&lt;/code&gt;  这行注释掉&lt;/p&gt;
+&lt;p&gt;然后进入主题下的 /layout/_partials/head/head.njk 里面的最后几行代码修改为&lt;/p&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;lt;link rel=&#34;alternate&#34; type=&#34;application/rss+xml&#34; title=&#34;&amp;lt;&lt;span class=&#34;token tag&#34;&gt;!--swig&lt;/span&gt;￼4&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&#34; href=&#34;&amp;lt;&lt;span class=&#34;token tag&#34;&gt;!--swig&lt;/span&gt;￼5&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&#34; /&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;lt;link rel=&#34;alternate&#34; type=&#34;application/atom+xml&#34; title=&#34;&amp;lt;&lt;span class=&#34;token tag&#34;&gt;!--swig&lt;/span&gt;￼6&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&#34; href=&#34;&amp;lt;&lt;span class=&#34;token tag&#34;&gt;!--swig&lt;/span&gt;￼7&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&#34; /&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;lt;link rel=&#34;alternate&#34; type=&#34;application/json&#34; title=&#34;&amp;lt;&lt;span class=&#34;token tag&#34;&gt;!--swig&lt;/span&gt;￼8&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&#34; href=&#34;&amp;lt;&lt;span class=&#34;token tag&#34;&gt;!--swig&lt;/span&gt;￼9&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&#34; /&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;lt;link rel=&#34;alternate&#34; type=&#34;application/json&#34; title=&#34;&amp;lt;&lt;span class=&#34;token tag&#34;&gt;!--swig&lt;/span&gt;￼10&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&#34; href=&#34;https&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;//cdn.jsdelivr.net/npm/font&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;awesome/css/font&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;awesome.min.css&#34; /&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;lt;script async src=&#34;https&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;//cdn.jsdelivr.net/gh/stevenjoezhang/live2d&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;widget@latest/autoload.js&#34;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&amp;lt;/script&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s&lt;/p&gt;
+&lt;h2 id=&#34;利用本地资源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#利用本地资源&#34;&gt;#&lt;/a&gt; 利用本地资源&lt;/h2&gt;
+&lt;p&gt;整个文件夹 live2d-widget 放到 /source/js 文件夹里面&lt;/p&gt;
+&lt;p&gt;autoload.js 的路径默认就行，也可以改本地，不影响。&lt;/p&gt;
+&lt;p&gt;然后进入主题下的 /layout/_partials/head/head.njk 里面的最后几行代码修改为&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-YML&#34;&gt;&amp;lt;link rel=&amp;quot;alternate&amp;quot; type=&amp;quot;application/rss+xml&amp;quot; title=&amp;quot;&amp;#123;&amp;#123;config.title&amp;#125;&amp;#125;&amp;quot; href=&amp;quot;&amp;#123;&amp;#123; full_url_for(&#39;/rss.xml&#39;) &amp;#125;&amp;#125;&amp;quot; /&amp;gt;
+&amp;lt;link rel=&amp;quot;alternate&amp;quot; type=&amp;quot;application/atom+xml&amp;quot; title=&amp;quot;&amp;#123;&amp;#123;config.title&amp;#125;&amp;#125;&amp;quot; href=&amp;quot;&amp;#123;&amp;#123; full_url_for(&#39;/atom.xml&#39;) &amp;#125;&amp;#125;&amp;quot; /&amp;gt;
+&amp;lt;link rel=&amp;quot;alternate&amp;quot; type=&amp;quot;application/json&amp;quot; title=&amp;quot;&amp;#123;&amp;#123;config.title&amp;#125;&amp;#125;&amp;quot; href=&amp;quot;&amp;#123;&amp;#123; full_url_for(&#39;/feed.json&#39;) &amp;#125;&amp;#125;&amp;quot; /&amp;gt;
+&amp;lt;link rel=&amp;quot;alternate&amp;quot; type=&amp;quot;application/json&amp;quot; title=&amp;quot;&amp;#123;&amp;#123;config.title&amp;#125;&amp;#125;&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&amp;quot; /&amp;gt;
+&amp;#123;&amp;#123; _js(&#39;/live2d-widget/autoload.js&#39;) &amp;#125;&amp;#125;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s&lt;/p&gt;
+&lt;p&gt;本地搭建是区别网上另一种方法，かねき けん师傅 tql&lt;/p&gt;
+&lt;p&gt;我 debug 的时候报的 js 渲染错误，后来发现是 minify (十个亚压缩插件，减少文件大小) 的问题，注释掉，&lt;s&gt;搅屎棍&lt;/s&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;看板娘的模块问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#看板娘的模块问题&#34;&gt;#&lt;/a&gt; 看板娘的模块问题&lt;/h3&gt;
+&lt;p&gt;个人认为 shoka 处理的不是很好，依赖项没怎么更新，也没有回复，插件的压缩依赖项没有及时支持 es6 规范，用 shoka 主题个人认为不推荐搞模块，大佬除外。&lt;/p&gt;
+&lt;h1 id=&#34;关于背景图片的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关于背景图片的问题&#34;&gt;#&lt;/a&gt; 关于背景图片的问题&lt;/h1&gt;
+&lt;p&gt;背景图片有两处地方一个是主题下的_images.yml 文件，还有一个是根目录下的 /source/__data 下的 images.yml&lt;/p&gt;
+&lt;p&gt;修改 source/__data 下的 images.yml 即可覆盖背景图，要 6 个以上，6 个以内好像有 bug。&lt;/p&gt;
+&lt;p&gt;推荐使用 cdn，jsdelivr 来加速图片，创建图床，免费使用&lt;/p&gt;
+&lt;h1 id=&#34;一些基础的细节改shoka主题可以去大佬博客reversesacle添加功能魔改博客很详细-迭代中&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一些基础的细节改shoka主题可以去大佬博客reversesacle添加功能魔改博客很详细-迭代中&#34;&gt;#&lt;/a&gt; 一些基础的细节，改 shoka 主题可以去大佬博客&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucmV2ZXJzZXNhY2xlLmNvbS9IZXhvLVNob2thJUU0JUI4JUJCJUU5JUEyJTk4JUU1JThBJTlGJUU4JTgzJUJEJUU0JUJCJThCJUU3JUJCJThEJUU4JUExJUE1JUU1JTg1JTg1JUU3JTgyJUI5Lw==&#34;&gt; ReverseSacle&lt;/span&gt;，添加功能，魔改博客，很详细。迭代中........&lt;/h1&gt;
+&lt;p&gt;hexo 搭建，自己在&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL3RoZW1lcy8=&#34;&gt; hexo 主题网站找&lt;/span&gt;一个自己喜欢的主题，都是各位大佬开发的，&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/QQ%E6%88%AA%E5%9B%BE20211202110816.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;博主用的 shoka 主题，说来惭愧换了无数个主题了。。。不能在这上面浪费时间了。。&lt;/p&gt;
+</content>
+        <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+        <category term="CTF" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/CTF/" />
+        <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/CTF/Reverse/" />
+        <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
+        <updated>2021-12-03T11:53:01.713Z</updated>
+    </entry>
     <entry>
         <id>https://zephyr-cyber.github.io.git/web/</id>
         <title>比赛Web题</title>
@@ -2062,16 +2125,5 @@ alt=&amp;quot;IMAGE ALT TEXT HERE&amp;quot; width=&amp;quot;240&amp;quot; height
         <content type="html">&lt;p&gt;This post doesn&#39;t have a title. Make sure it&#39;s accessible.&lt;/p&gt;
 </content>
         <updated>2013-12-25T14:57:49.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://zephyr-cyber.github.io.git/excerpts/</id>
-        <title>Excerpts</title>
-        <link rel="alternate" href="https://zephyr-cyber.github.io.git/excerpts/"/>
-        <content type="html">&lt;p&gt;The following contents should be invisible in home/archive page.&lt;/p&gt;
-&lt;p&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget urna vitae velit eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Aliquam eleifend dolor vitae libero pharetra adipiscing. Etiam adipiscing dolor a quam tempor, eu convallis nulla varius. Aliquam sollicitudin risus a porta aliquam. Ut nec velit dolor. Proin eget leo lobortis, aliquam est sed, mollis mauris. Fusce vitae leo pretium massa accumsan condimentum. Fusce malesuada gravida lectus vel vulputate. Donec bibendum porta nibh ut aliquam.&lt;/p&gt;
-&lt;p&gt;Sed lorem felis, congue non fringilla eu, aliquam eu eros. Curabitur orci libero, mollis sed semper vitae, adipiscing in lectus. Aenean non egestas odio. Donec sollicitudin nisi quis lorem gravida, in pharetra mauris fringilla. Duis sit amet faucibus dolor, id aliquam neque. In egestas, odio gravida tempor dictum, mauris felis faucibus purus, sit amet commodo lacus diam vitae est. Ut ut quam eget massa semper sodales. Aenean non ipsum cursus, blandit lectus in, ornare odio. Curabitur ultrices porttitor vulputate.&lt;/p&gt;
-</content>
-        <updated>2013-12-24T16:23:23.000Z</updated>
     </entry>
 </feed>
