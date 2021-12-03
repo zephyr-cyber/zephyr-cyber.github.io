@@ -1864,7 +1864,7 @@ main >.inner {
   transform: translateY(-100%);
 }
 #nav.show {
-  background: var(--nav-bg);
+  background: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
   box-shadow: 0.1rem 0.1rem 0.2rem var(--grey-9-a1);
   text-shadow: 0rem 0rem 0.0625rem var(--grey-9-a1);
   color: var(--text-color);
@@ -1882,7 +1882,7 @@ main >.inner {
   background-color: var(--grey-1);
 }
 #nav.show .menu .submenu .item.active a {
-  color: var(--grey-0);
+  color: var(--color-cyan-light);
   opacity: 1;
 }
 #nav .inner {
