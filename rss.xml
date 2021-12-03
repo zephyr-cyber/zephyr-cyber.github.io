@@ -16,7 +16,7 @@
         <category term="关键词2" />
         <item>
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/hexo/</guid>
-            <title>hexo搭建</title>
+            <title>hexo搭建的一些问题</title>
             <link>https://zephyr-cyber.github.io.git/hexo/</link>
             <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
             <category term="CTF" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/CTF/" />
