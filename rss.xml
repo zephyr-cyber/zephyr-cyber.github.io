@@ -35,9 +35,9 @@
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/hexo/</guid>
             <title>hexo搭建的一些问题</title>
             <link>https://zephyr-cyber.github.io.git/hexo/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
-            <category term="CTF" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" />
-            <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="CTF" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/CTF/" />
+            <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/CTF/Reverse/" />
             <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
             <pubDate>Fri, 03 Dec 2021 19:53:01 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;最近在学blog知识遇到无数问题小白的我又不会开发htmlcss在这里遇到的一些问题以及开发者没有提及到的&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#最近在学blog知识遇到无数问题小白的我又不会开发htmlcss在这里遇到的一些问题以及开发者没有提及到的&#34;&gt;#&lt;/a&gt; 最近在学 blog 知识，遇到无数问题，小白的我又不会开发 HTML+CSS, 在这里遇到的一些问题，以及开发者没有提及到的。&lt;/h3&gt;
@@ -88,9 +88,9 @@
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/reverse/</guid>
             <title>学习Reverse</title>
             <link>https://zephyr-cyber.github.io.git/reverse/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
-            <category term="CTF" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" />
-            <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="CTF" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/CTF/" />
+            <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/CTF/Reverse/" />
             <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
             <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/tags/Reverse/" />
             <pubDate>Wed, 01 Dec 2021 09:05:47 +0800</pubDate>
@@ -317,7 +317,7 @@ print &#39;c = &#39; + str(c)
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/%E6%AF%94%E8%B5%9Bmisc/</guid>
             <title>比赛MISC</title>
             <link>https://zephyr-cyber.github.io.git/%E6%AF%94%E8%B5%9Bmisc/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
             <category term="CTF" scheme="https://zephyr-cyber.github.io.git/categories/CTF/" />
             <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
             <category term="Misc" scheme="https://zephyr-cyber.github.io.git/tags/Misc/" />
@@ -380,9 +380,9 @@ deepsound2john.py 脚本&lt;br /&gt;
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/special/</guid>
             <title>Step.4 主题特殊功能</title>
             <link>https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/special/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
-            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/" />
-            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/Theme-Shoka-Documentation/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/" />
+            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/Theme-Shoka-Documentation/" />
             <category term="Hexo" scheme="https://zephyr-cyber.github.io.git/tags/Hexo/" />
             <category term="教程" scheme="https://zephyr-cyber.github.io.git/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Thu, 13 Aug 2020 21:45:48 +0800</pubDate>
@@ -945,9 +945,9 @@ c-16-25.333-24-45-24-59z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/spa
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/display/</guid>
             <title>Step.3 界面显示</title>
             <link>https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/display/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
-            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/" />
-            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/Theme-Shoka-Documentation/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/" />
+            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/Theme-Shoka-Documentation/" />
             <category term="Hexo" scheme="https://zephyr-cyber.github.io.git/tags/Hexo/" />
             <category term="教程" scheme="https://zephyr-cyber.github.io.git/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Thu, 13 Aug 2020 21:12:48 +0800</pubDate>
@@ -1089,9 +1089,9 @@ c-16-25.333-24-45-24-59z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/spa
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/config/</guid>
             <title>Step.2 基本配置</title>
             <link>https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/config/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
-            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/" />
-            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/Theme-Shoka-Documentation/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/" />
+            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/Theme-Shoka-Documentation/" />
             <category term="Hexo" scheme="https://zephyr-cyber.github.io.git/tags/Hexo/" />
             <category term="教程" scheme="https://zephyr-cyber.github.io.git/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Thu, 13 Aug 2020 20:56:48 +0800</pubDate>
@@ -1251,9 +1251,9 @@ PS：jsDelivr 并不是实时更新，重新生成文件后需要耐心等待&lt
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/dependents/</guid>
             <title>Step.1 依赖插件</title>
             <link>https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/dependents/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
-            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/" />
-            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/Theme-Shoka-Documentation/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/" />
+            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/Theme-Shoka-Documentation/" />
             <category term="Hexo" scheme="https://zephyr-cyber.github.io.git/tags/Hexo/" />
             <category term="教程" scheme="https://zephyr-cyber.github.io.git/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Thu, 13 Aug 2020 20:46:48 +0800</pubDate>
@@ -1348,9 +1348,9 @@ PS：jsDelivr 并不是实时更新，重新生成文件后需要耐心等待&lt
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/</guid>
             <title>Hexo主题Shoka &amp; multi-markdown-it渲染器使用说明</title>
             <link>https://zephyr-cyber.github.io.git/computer-science/note/theme-shoka-doc/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
-            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/" />
-            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/Theme-Shoka-Documentation/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="二进制杂谈" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/" />
+            <category term="Theme Shoka Documentation" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/note/Theme-Shoka-Documentation/" />
             <category term="Hexo" scheme="https://zephyr-cyber.github.io.git/tags/Hexo/" />
             <category term="教程" scheme="https://zephyr-cyber.github.io.git/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Thu, 13 Aug 2020 20:45:48 +0800</pubDate>
@@ -1473,9 +1473,9 @@ PS：jsDelivr 并不是实时更新，重新生成文件后需要耐心等待&lt
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/computer-science/java/course-1/week-2/</guid>
             <title>第2周 判断</title>
             <link>https://zephyr-cyber.github.io.git/computer-science/java/course-1/week-2/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
-            <category term="Java" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/Java/" />
-            <category term="零基础学Java语言-浙江大学-翁恺" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/Java/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%AD%A6Java%E8%AF%AD%E8%A8%80-%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6-%E7%BF%81%E6%81%BA/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="Java" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/java/" />
+            <category term="零基础学Java语言-浙江大学-翁恺" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/java/course-1/" />
             <pubDate>Mon, 13 Apr 2020 19:12:45 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;:::note info&lt;br /&gt;
  以下为个人学习笔记和习题整理&lt;br /&gt;
@@ -1646,9 +1646,9 @@ grape&lt;/p&gt;
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/computer-science/java/course-1/week-1/</guid>
             <title>第1周 计算</title>
             <link>https://zephyr-cyber.github.io.git/computer-science/java/course-1/week-1/</link>
-            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" />
-            <category term="Java" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/Java/" />
-            <category term="零基础学Java语言-浙江大学-翁恺" scheme="https://zephyr-cyber.github.io.git/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/Java/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%AD%A6Java%E8%AF%AD%E8%A8%80-%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6-%E7%BF%81%E6%81%BA/" />
+            <category term="计算机科学" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="Java" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/java/" />
+            <category term="零基础学Java语言-浙江大学-翁恺" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/java/course-1/" />
             <pubDate>Sun, 12 Apr 2020 20:46:25 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;:::note info&lt;br /&gt;
  以下为个人学习笔记和习题整理&lt;br /&gt;
