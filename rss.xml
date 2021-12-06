@@ -10,10 +10,23 @@
         </author>
         <description>刻意练习</description>
         <language>en</language>
-        <pubDate>Fri, 03 Dec 2021 19:53:01 +0800</pubDate>
-        <lastBuildDate>Fri, 03 Dec 2021 19:53:01 +0800</lastBuildDate>
+        <pubDate>Fri, 03 Dec 2021 20:13:44 +0800</pubDate>
+        <lastBuildDate>Fri, 03 Dec 2021 20:13:44 +0800</lastBuildDate>
         <category term="关键词1" />
         <category term="关键词2" />
+        <item>
+            <guid isPermalink="true">https://zephyr-cyber.github.io.git/English/</guid>
+            <title>insist learn english</title>
+            <link>https://zephyr-cyber.github.io.git/English/</link>
+            <category term="English" scheme="https://zephyr-cyber.github.io.git/categories/English/" />
+            <category term="English" scheme="https://zephyr-cyber.github.io.git/tags/English/" />
+            <pubDate>Fri, 03 Dec 2021 20:13:44 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;Study English ，Test IELTS!!!!!&lt;/p&gt;
+&lt;h1 id=&#34;study-english-test-ielts&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#study-english-test-ielts&#34;&gt;#&lt;/a&gt; Study English ，Test IELTS!!!!!&lt;/h1&gt;
+&lt;h2 id=&#34;now-i-will-use-a-language-which-is-english-to-write&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#now-i-will-use-a-language-which-is-english-to-write&#34;&gt;#&lt;/a&gt; Now , I will use a language which is English to write .&lt;/h2&gt;
+&lt;p&gt;Accmulating some words&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/hexo/</guid>
             <title>hexo搭建的一些问题</title>
@@ -2109,14 +2122,6 @@ alt=&amp;quot;IMAGE ALT TEXT HERE&amp;quot; width=&amp;quot;240&amp;quot; height
 &lt;p&gt;&lt;img data-src=&#34;/assets/wallpaper-2311325.jpg&#34; alt=&#34;Caption&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;/assets/wallpaper-878514.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://placehold.it/350x150.jpg&#34; alt=&#34;Small Picture&#34; /&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://zephyr-cyber.github.io.git/no-title/</guid>
-            <title></title>
-            <link>https://zephyr-cyber.github.io.git/no-title/</link>
-            <pubDate>Wed, 25 Dec 2013 22:57:49 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;This post doesn&#39;t have a title. Make sure it&#39;s accessible.&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

@@ -8,9 +8,22 @@
     <author>
       <name>cheuncey Zhang</name>
     </author>
-    <updated>2021-12-03T11:53:01.713Z</updated>
+    <updated>2021-12-03T12:13:44.623Z</updated>
     <category term="关键词1" />
     <category term="关键词2" />
+    <entry>
+        <id>https://zephyr-cyber.github.io.git/English/</id>
+        <title>insist learn english</title>
+        <link rel="alternate" href="https://zephyr-cyber.github.io.git/English/"/>
+        <content type="html">&lt;p&gt;Study English ，Test IELTS!!!!!&lt;/p&gt;
+&lt;h1 id=&#34;study-english-test-ielts&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#study-english-test-ielts&#34;&gt;#&lt;/a&gt; Study English ，Test IELTS!!!!!&lt;/h1&gt;
+&lt;h2 id=&#34;now-i-will-use-a-language-which-is-english-to-write&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#now-i-will-use-a-language-which-is-english-to-write&#34;&gt;#&lt;/a&gt; Now , I will use a language which is English to write .&lt;/h2&gt;
+&lt;p&gt;Accmulating some words&lt;/p&gt;
+</content>
+        <category term="English" scheme="https://zephyr-cyber.github.io.git/categories/English/" />
+        <category term="English" scheme="https://zephyr-cyber.github.io.git/tags/English/" />
+        <updated>2021-12-03T12:13:44.623Z</updated>
+    </entry>
     <entry>
         <id>https://zephyr-cyber.github.io.git/hexo/</id>
         <title>hexo搭建的一些问题</title>
@@ -2107,13 +2120,5 @@ alt=&amp;quot;IMAGE ALT TEXT HERE&amp;quot; width=&amp;quot;240&amp;quot; height
 &lt;p&gt;&lt;img data-src=&#34;https://placehold.it/350x150.jpg&#34; alt=&#34;Small Picture&#34; /&gt;&lt;/p&gt;
 </content>
         <updated>2013-12-26T14:46:49.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://zephyr-cyber.github.io.git/no-title/</id>
-        <title></title>
-        <link rel="alternate" href="https://zephyr-cyber.github.io.git/no-title/"/>
-        <content type="html">&lt;p&gt;This post doesn&#39;t have a title. Make sure it&#39;s accessible.&lt;/p&gt;
-</content>
-        <updated>2013-12-25T14:57:49.000Z</updated>
     </entry>
 </feed>
