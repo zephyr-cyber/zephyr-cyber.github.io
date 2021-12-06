@@ -8,15 +8,24 @@
     <author>
       <name>cheuncey Zhang</name>
     </author>
-    <updated>2021-12-06T07:19:14.875Z</updated>
+    <updated>2021-12-06T08:52:43.768Z</updated>
     <category term="关键词1" />
     <category term="关键词2" />
     <entry>
-        <id>https://zephyr-cyber.github.io.git/psychology/research/research/</id>
-        <title>psychology</title>
-        <link rel="alternate" href="https://zephyr-cyber.github.io.git/psychology/research/research/"/>
-        <content type="html">&lt;h1 id=&#34;psychoanalytic-theory&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#psychoanalytic-theory&#34;&gt;#&lt;/a&gt; Psychoanalytic Theory&lt;/h1&gt;
-&lt;p&gt;Psychoanalytic theory was founded by Austrian psychiatrist Freud at the end of the 19th century and the beginning of the 20th century. Psychoanalytic theory is the cornerstone of modern psychology. Its influence is far from limited to the field of clinical psychology. It has a far-reaching impact on the whole psychological science and even all fields of western humanities. Its influence can be compared with Darwin&#39;s theory of evolution. He proposed that the motivation of behavior comes from strong internal drive and impulse, such as sexual instinct and aggressive instinct. He also believes that the root cause of adult behavior is the unresolved psychological conflict left over by childhood experience. What psychologists need to do is to understand this internal drive, whether conscious or unconscious, will give behavior energy and guide behavior&lt;/p&gt;
+        <id>https://zephyr-cyber.github.io.git/psychology/research/</id>
+        <title>chology</title>
+        <link rel="alternate" href="https://zephyr-cyber.github.io.git/psychology/research/"/>
+        <content type="html">&lt;h1 id=&#34;Psychoanalytic-Theory&#34;&gt;&lt;a href=&#34;#Psychoanalytic-Theory&#34; class=&#34;headerlink&#34; title=&#34;Psychoanalytic Theory&#34;&gt;&lt;/a&gt;Psychoanalytic Theory&lt;/h1&gt;&lt;p&gt;Psychoanalytic theory was founded by Austrian psychiatrist Freud at the end of the 19th century and the beginning of the 20th century. Psychoanalytic theory is the cornerstone of modern psychology. Its influence is far from limited to the field of clinical psychology. It has a far-reaching impact on the whole psychological science and even all fields of western humanities. Its influence can be compared with Darwin’s theory of evolution. He proposed that the motivation of behavior comes from strong internal drive and impulse, such as sexual instinct and aggressive instinct. He also believes that the root cause of adult behavior is the unresolved psychological conflict left over by childhood experience. What psychologists need to do is to understand this internal drive, whether conscious or unconscious, will give behavior energy and guide behavior&lt;/p&gt;
+</content>
+        <category term="psychology" scheme="https://zephyr-cyber.github.io.git/categories/psychology/" />
+        <category term="re" scheme="https://zephyr-cyber.github.io.git/categories/psychology/re/" />
+        <updated>2021-12-06T08:52:43.768Z</updated>
+    </entry>
+    <entry>
+        <id>https://zephyr-cyber.github.io.git/psychology/re/research/</id>
+        <title>chology</title>
+        <link rel="alternate" href="https://zephyr-cyber.github.io.git/psychology/re/research/"/>
+        <content type="html">&lt;h1 id=&#34;Psychoanalytic-Theory&#34;&gt;&lt;a href=&#34;#Psychoanalytic-Theory&#34; class=&#34;headerlink&#34; title=&#34;Psychoanalytic Theory&#34;&gt;&lt;/a&gt;Psychoanalytic Theory&lt;/h1&gt;&lt;p&gt;Psychoanalytic theory was founded by Austrian psychiatrist Freud at the end of the 19th century and the beginning of the 20th century. Psychoanalytic theory is the cornerstone of modern psychology. Its influence is far from limited to the field of clinical psychology. It has a far-reaching impact on the whole psychological science and even all fields of western humanities. Its influence can be compared with Darwin’s theory of evolution. He proposed that the motivation of behavior comes from strong internal drive and impulse, such as sexual instinct and aggressive instinct. He also believes that the root cause of adult behavior is the unresolved psychological conflict left over by childhood experience. What psychologists need to do is to understand this internal drive, whether conscious or unconscious, will give behavior energy and guide behavior&lt;/p&gt;
 </content>
         <category term="psychology" scheme="https://zephyr-cyber.github.io.git/categories/psychology/" />
         <category term="re" scheme="https://zephyr-cyber.github.io.git/categories/psychology/re/" />
@@ -863,17 +872,5 @@ alt=&amp;quot;IMAGE ALT TEXT HERE&amp;quot; width=&amp;quot;240&amp;quot; height
 &lt;p&gt;Sed lorem felis, congue non fringilla eu, aliquam eu eros. Curabitur orci libero, mollis sed semper vitae, adipiscing in lectus. Aenean non egestas odio. Donec sollicitudin nisi quis lorem gravida, in pharetra mauris fringilla. Duis sit amet faucibus dolor, id aliquam neque. In egestas, odio gravida tempor dictum, mauris felis faucibus purus, sit amet commodo lacus diam vitae est. Ut ut quam eget massa semper sodales. Aenean non ipsum cursus, blandit lectus in, ornare odio. Curabitur ultrices porttitor vulputate.&lt;/p&gt;
 </content>
         <updated>2013-12-24T16:23:23.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://zephyr-cyber.github.io.git/videos/</id>
-        <title>Videos</title>
-        <link rel="alternate" href="https://zephyr-cyber.github.io.git/videos/"/>
-        <content type="html">&lt;p&gt;This is a video test post.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Youtube&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://www.youtube.com/embed/TIbZDRXM-Tg&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Vimeo&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://player.vimeo.com/video/82090131&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
-</content>
-        <updated>2013-12-24T16:19:15.000Z</updated>
     </entry>
 </feed>

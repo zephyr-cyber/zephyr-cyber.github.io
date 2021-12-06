@@ -10,19 +10,28 @@
         </author>
         <description>刻意练习</description>
         <language>en</language>
-        <pubDate>Mon, 06 Dec 2021 15:19:14 +0800</pubDate>
-        <lastBuildDate>Mon, 06 Dec 2021 15:19:14 +0800</lastBuildDate>
+        <pubDate>Mon, 06 Dec 2021 16:52:43 +0800</pubDate>
+        <lastBuildDate>Mon, 06 Dec 2021 16:52:43 +0800</lastBuildDate>
         <category term="关键词1" />
         <category term="关键词2" />
         <item>
-            <guid isPermalink="true">https://zephyr-cyber.github.io.git/psychology/research/research/</guid>
-            <title>psychology</title>
-            <link>https://zephyr-cyber.github.io.git/psychology/research/research/</link>
+            <guid isPermalink="true">https://zephyr-cyber.github.io.git/psychology/research/</guid>
+            <title>chology</title>
+            <link>https://zephyr-cyber.github.io.git/psychology/research/</link>
+            <category term="psychology" scheme="https://zephyr-cyber.github.io.git/categories/psychology/" />
+            <category term="re" scheme="https://zephyr-cyber.github.io.git/categories/psychology/re/" />
+            <pubDate>Mon, 06 Dec 2021 16:52:43 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;Psychoanalytic-Theory&#34;&gt;&lt;a href=&#34;#Psychoanalytic-Theory&#34; class=&#34;headerlink&#34; title=&#34;Psychoanalytic Theory&#34;&gt;&lt;/a&gt;Psychoanalytic Theory&lt;/h1&gt;&lt;p&gt;Psychoanalytic theory was founded by Austrian psychiatrist Freud at the end of the 19th century and the beginning of the 20th century. Psychoanalytic theory is the cornerstone of modern psychology. Its influence is far from limited to the field of clinical psychology. It has a far-reaching impact on the whole psychological science and even all fields of western humanities. Its influence can be compared with Darwin’s theory of evolution. He proposed that the motivation of behavior comes from strong internal drive and impulse, such as sexual instinct and aggressive instinct. He also believes that the root cause of adult behavior is the unresolved psychological conflict left over by childhood experience. What psychologists need to do is to understand this internal drive, whether conscious or unconscious, will give behavior energy and guide behavior&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://zephyr-cyber.github.io.git/psychology/re/research/</guid>
+            <title>chology</title>
+            <link>https://zephyr-cyber.github.io.git/psychology/re/research/</link>
             <category term="psychology" scheme="https://zephyr-cyber.github.io.git/categories/psychology/" />
             <category term="re" scheme="https://zephyr-cyber.github.io.git/categories/psychology/re/" />
             <pubDate>Mon, 06 Dec 2021 15:19:14 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;psychoanalytic-theory&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#psychoanalytic-theory&#34;&gt;#&lt;/a&gt; Psychoanalytic Theory&lt;/h1&gt;
-&lt;p&gt;Psychoanalytic theory was founded by Austrian psychiatrist Freud at the end of the 19th century and the beginning of the 20th century. Psychoanalytic theory is the cornerstone of modern psychology. Its influence is far from limited to the field of clinical psychology. It has a far-reaching impact on the whole psychological science and even all fields of western humanities. Its influence can be compared with Darwin&#39;s theory of evolution. He proposed that the motivation of behavior comes from strong internal drive and impulse, such as sexual instinct and aggressive instinct. He also believes that the root cause of adult behavior is the unresolved psychological conflict left over by childhood experience. What psychologists need to do is to understand this internal drive, whether conscious or unconscious, will give behavior energy and guide behavior&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;Psychoanalytic-Theory&#34;&gt;&lt;a href=&#34;#Psychoanalytic-Theory&#34; class=&#34;headerlink&#34; title=&#34;Psychoanalytic Theory&#34;&gt;&lt;/a&gt;Psychoanalytic Theory&lt;/h1&gt;&lt;p&gt;Psychoanalytic theory was founded by Austrian psychiatrist Freud at the end of the 19th century and the beginning of the 20th century. Psychoanalytic theory is the cornerstone of modern psychology. Its influence is far from limited to the field of clinical psychology. It has a far-reaching impact on the whole psychological science and even all fields of western humanities. Its influence can be compared with Darwin’s theory of evolution. He proposed that the motivation of behavior comes from strong internal drive and impulse, such as sexual instinct and aggressive instinct. He also believes that the root cause of adult behavior is the unresolved psychological conflict left over by childhood experience. What psychologists need to do is to understand this internal drive, whether conscious or unconscious, will give behavior energy and guide behavior&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -865,18 +874,6 @@ alt=&amp;quot;IMAGE ALT TEXT HERE&amp;quot; width=&amp;quot;240&amp;quot; height
 &lt;p&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget urna vitae velit eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Aliquam eleifend dolor vitae libero pharetra adipiscing. Etiam adipiscing dolor a quam tempor, eu convallis nulla varius. Aliquam sollicitudin risus a porta aliquam. Ut nec velit dolor. Proin eget leo lobortis, aliquam est sed, mollis mauris. Fusce vitae leo pretium massa accumsan condimentum. Fusce malesuada gravida lectus vel vulputate. Donec bibendum porta nibh ut aliquam.&lt;/p&gt;
 &lt;p&gt;Sed lorem felis, congue non fringilla eu, aliquam eu eros. Curabitur orci libero, mollis sed semper vitae, adipiscing in lectus. Aenean non egestas odio. Donec sollicitudin nisi quis lorem gravida, in pharetra mauris fringilla. Duis sit amet faucibus dolor, id aliquam neque. In egestas, odio gravida tempor dictum, mauris felis faucibus purus, sit amet commodo lacus diam vitae est. Ut ut quam eget massa semper sodales. Aenean non ipsum cursus, blandit lectus in, ornare odio. Curabitur ultrices porttitor vulputate.&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://zephyr-cyber.github.io.git/videos/</guid>
-            <title>Videos</title>
-            <link>https://zephyr-cyber.github.io.git/videos/</link>
-            <pubDate>Wed, 25 Dec 2013 00:19:15 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;This is a video test post.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Youtube&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://www.youtube.com/embed/TIbZDRXM-Tg&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Vimeo&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://player.vimeo.com/video/82090131&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

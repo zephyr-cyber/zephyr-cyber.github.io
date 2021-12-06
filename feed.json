@@ -7,11 +7,22 @@
     "home_page_url": "https://zephyr-cyber.github.io.git",
     "items": [
         {
-            "id": "https://zephyr-cyber.github.io.git/psychology/research/research/",
-            "url": "https://zephyr-cyber.github.io.git/psychology/research/research/",
-            "title": "psychology",
+            "id": "https://zephyr-cyber.github.io.git/psychology/research/",
+            "url": "https://zephyr-cyber.github.io.git/psychology/research/",
+            "title": "chology",
+            "date_published": "2021-12-06T08:52:43.768Z",
+            "content_html": "<h1 id=\"Psychoanalytic-Theory\"><a href=\"#Psychoanalytic-Theory\" class=\"headerlink\" title=\"Psychoanalytic Theory\"></a>Psychoanalytic Theory</h1><p>Psychoanalytic theory was founded by Austrian psychiatrist Freud at the end of the 19th century and the beginning of the 20th century. Psychoanalytic theory is the cornerstone of modern psychology. Its influence is far from limited to the field of clinical psychology. It has a far-reaching impact on the whole psychological science and even all fields of western humanities. Its influence can be compared with Darwin’s theory of evolution. He proposed that the motivation of behavior comes from strong internal drive and impulse, such as sexual instinct and aggressive instinct. He also believes that the root cause of adult behavior is the unresolved psychological conflict left over by childhood experience. What psychologists need to do is to understand this internal drive, whether conscious or unconscious, will give behavior energy and guide behavior</p>\n",
+            "tags": [
+                "psychology",
+                "re"
+            ]
+        },
+        {
+            "id": "https://zephyr-cyber.github.io.git/psychology/re/research/",
+            "url": "https://zephyr-cyber.github.io.git/psychology/re/research/",
+            "title": "chology",
             "date_published": "2021-12-06T07:19:14.875Z",
-            "content_html": "<h1 id=\"psychoanalytic-theory\"><a class=\"anchor\" href=\"#psychoanalytic-theory\">#</a> Psychoanalytic Theory</h1>\n<p>Psychoanalytic theory was founded by Austrian psychiatrist Freud at the end of the 19th century and the beginning of the 20th century. Psychoanalytic theory is the cornerstone of modern psychology. Its influence is far from limited to the field of clinical psychology. It has a far-reaching impact on the whole psychological science and even all fields of western humanities. Its influence can be compared with Darwin's theory of evolution. He proposed that the motivation of behavior comes from strong internal drive and impulse, such as sexual instinct and aggressive instinct. He also believes that the root cause of adult behavior is the unresolved psychological conflict left over by childhood experience. What psychologists need to do is to understand this internal drive, whether conscious or unconscious, will give behavior energy and guide behavior</p>\n",
+            "content_html": "<h1 id=\"Psychoanalytic-Theory\"><a href=\"#Psychoanalytic-Theory\" class=\"headerlink\" title=\"Psychoanalytic Theory\"></a>Psychoanalytic Theory</h1><p>Psychoanalytic theory was founded by Austrian psychiatrist Freud at the end of the 19th century and the beginning of the 20th century. Psychoanalytic theory is the cornerstone of modern psychology. Its influence is far from limited to the field of clinical psychology. It has a far-reaching impact on the whole psychological science and even all fields of western humanities. Its influence can be compared with Darwin’s theory of evolution. He proposed that the motivation of behavior comes from strong internal drive and impulse, such as sexual instinct and aggressive instinct. He also believes that the root cause of adult behavior is the unresolved psychological conflict left over by childhood experience. What psychologists need to do is to understand this internal drive, whether conscious or unconscious, will give behavior energy and guide behavior</p>\n",
             "tags": [
                 "psychology",
                 "re"
@@ -203,14 +214,6 @@
             "title": "Excerpts",
             "date_published": "2013-12-24T16:23:23.000Z",
             "content_html": "<p>The following contents should be invisible in home/archive page.</p>\n<p><span id=\"more\"></span></p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget urna vitae velit eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Aliquam eleifend dolor vitae libero pharetra adipiscing. Etiam adipiscing dolor a quam tempor, eu convallis nulla varius. Aliquam sollicitudin risus a porta aliquam. Ut nec velit dolor. Proin eget leo lobortis, aliquam est sed, mollis mauris. Fusce vitae leo pretium massa accumsan condimentum. Fusce malesuada gravida lectus vel vulputate. Donec bibendum porta nibh ut aliquam.</p>\n<p>Sed lorem felis, congue non fringilla eu, aliquam eu eros. Curabitur orci libero, mollis sed semper vitae, adipiscing in lectus. Aenean non egestas odio. Donec sollicitudin nisi quis lorem gravida, in pharetra mauris fringilla. Duis sit amet faucibus dolor, id aliquam neque. In egestas, odio gravida tempor dictum, mauris felis faucibus purus, sit amet commodo lacus diam vitae est. Ut ut quam eget massa semper sodales. Aenean non ipsum cursus, blandit lectus in, ornare odio. Curabitur ultrices porttitor vulputate.</p>\n",
-            "tags": []
-        },
-        {
-            "id": "https://zephyr-cyber.github.io.git/videos/",
-            "url": "https://zephyr-cyber.github.io.git/videos/",
-            "title": "Videos",
-            "date_published": "2013-12-24T16:19:15.000Z",
-            "content_html": "<p>This is a video test post.</p>\n<p><strong>Youtube</strong></p>\n<p><div class=\"video-container\"><iframe src=\"https://www.youtube.com/embed/TIbZDRXM-Tg\" frameborder=\"0\" loading=\"lazy\" allowfullscreen></iframe></div></p>\n<p><strong>Vimeo</strong></p>\n<p><div class=\"video-container\"><iframe src=\"https://player.vimeo.com/video/82090131\" frameborder=\"0\" loading=\"lazy\" allowfullscreen></iframe></div></p>\n",
             "tags": []
         }
     ]
