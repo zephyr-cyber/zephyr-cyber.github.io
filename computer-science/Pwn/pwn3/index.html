@@ -27,12 +27,12 @@
 
   
 
-<link rel="canonical" href="https://zephyr-cyber.github.io.git/no-title/">
+<link rel="canonical" href="https://zephyr-cyber.github.io.git/computer-science/Pwn/pwn3/">
 
 
 
   <title>
- |
+pwn2 - Pwn - computer-science |
 Canary = Canary's Blog</title>
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,23 +60,23 @@ Canary = Canary's Blog</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">
+  <h1 itemprop="name headline">pwn2
   </h1>
   
 <div class="meta">
-  <span class="item" title="Created: 2013-12-25 22:57:49">
+  <span class="item" title="Created: 2021-12-09 16:52:14">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">Posted on</span>
-    <time itemprop="dateCreated datePublished" datetime="2013-12-25T22:57:49+08:00">2013-12-25</time>
+    <time itemprop="dateCreated datePublished" datetime="2021-12-09T16:52:14+08:00">2021-12-09</time>
   </span>
   <span class="item" title="Symbols count in article">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>49</span>
+    <span>1.1k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -117,12 +117,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54168-BanG_Dream-MinatoYukina-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/43488-Imouto_sae_Irebaii-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54302-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic2.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/20833_kin-iro_mosaic.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51944-higehiro-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50410-OredakeHaireruKakushiDungeon-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic5.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54234-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32308-Netoge_no_Yome-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54291-LoveLive_Nijigasaki-KonoeKanata-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51227-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
         </ul>
       </div>
     </header>
@@ -147,11 +147,16 @@ Canary = Canary's Blog</title>
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">Home</a></span>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="In computer-science"><span itemprop="name">computer-science</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/Pwn/" itemprop="item" rel="index" title="In Pwn"><span itemprop="name">Pwn</span></a>
+<meta itemprop="position" content="2" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="https://zephyr-cyber.github.io.git/no-title/">
+  <link itemprop="mainEntityOfPage" href="https://zephyr-cyber.github.io.git/computer-science/Pwn/pwn3/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/16f8bec9f7fbb60bf0c3a1d2fa12affd.jpeg">
@@ -166,7 +171,52 @@ Canary = Canary's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>This post doesn't have a title. Make sure it's accessible.</p>
+    <h1 id="Base-pwn"><a href="#Base-pwn" class="headerlink" title="Base_pwn"></a>Base_pwn</h1><p>一般入门pwn会一点c，常见的register了解下，然后刷题就会有很大的提升，能解决一些基础的pwn题，想继续学下去的话，基础的优势就会显现出来。不然就会很难理解一些底层的东西，思路迷糊，无从下手。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/1919808-20200313174430270-1652724193.png"></p>
+<pre><code class="cmd">+------------------------+ Oxffffffff
+        |     kernel space       |  # 内核空间
+        +------------------------+ 0xC0000000
+        |        stack           |
+        +------------------------+
+        |                        |
+        |        unused          |
+        |                        |
+        +------------------------+
+        |   dynamic libraries    | # 动态库
+        +------------------------+ 0x40000000
+        |                        |
+        |        unused          |
+        |                        |
+        +------------------------+
+        |         heap           | # 堆 动态内存分配的空间 进程调用
+        +------------------------+ # malloc、free等函数时变化
+        |  read/write sections   |
+        |      (.data .bss)      |
+        +------------------------+
+        |   read only sections   |
+        | (.init .rodata .text)  |
+        +------------------------+ 0x08048000
+        |       reserved         | 
+        +------------------------+
+</code></pre>
+<p>ELF文件结构：</p>
+<pre><code class="cmd">ELF file format:
++---------------+
+|  File header  | # 文件头保存每个段类型和长度
++---------------+ 
+| .text section | # 代码段 存放代码和指令
++---------------+
+| .data section | # 数据段 
++---------------+
+| .bss section  | # bss段 存放未初始化的全局变量和静态变量,一般可读可写
++---------------+ # 是存放shellcode的好地方。
+|      ...      |
++---------------+
+|  xxx section  |# 还有字符串段、符号表段行号表段等
++---------------+
+# 局部变量和函数参数分别在栈中分配(栈和堆分别在内存中分配,在elf文件中不存在对应的部分)
+</code></pre>
+<p>​    ![](<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL3plcGh5ci1jeWJlci9CbG9nLUdhbGxlcnlAbWFpbi8vYmxvZy1pbWcvU2NyZWVuc2hvdA==">https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Screenshot</span> 2021-12-09 171807.png)</p>
 
   </div>
 
@@ -178,9 +228,9 @@ Canary = Canary's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2021-11-30 10:27:25" itemprop="dateModified" datetime="2021-11-30T10:27:25+08:00">2021-11-30</time>
+    <time title="Modified: 2021-12-09 17:19:19" itemprop="dateModified" datetime="2021-12-09T17:19:19+08:00">2021-12-09</time>
   </span>
-  <span id="no-title/" class="item leancloud_visitors" data-flag-title="" title="Views">
+  <span id="computer-science/Pwn/pwn3/" class="item leancloud_visitors" data-flag-title="pwn2" title="Views">
       <span class="icon">
         <i class="ic i-eye"></i>
       </span>
@@ -222,7 +272,7 @@ Canary = Canary's Blog</title>
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="https://zephyr-cyber.github.io.git/no-title/" title="">https://zephyr-cyber.github.io.git/no-title/</a>
+    <a href="https://zephyr-cyber.github.io.git/computer-science/Pwn/pwn3/" title="pwn2">https://zephyr-cyber.github.io.git/computer-science/Pwn/pwn3/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -241,22 +291,14 @@ Canary = Canary's Blog</title>
     <div class="item left">
       
 
-  <a href="/excerpts/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;50410-OredakeHaireruKakushiDungeon-PC-Wallpaper.jpg" title="Excerpts">
+  <a href="/psychology/ana/research/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;50447-JakuChara_Tomozakikun-PC-Wallpaper.jpg" title="chology">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>Excerpts</h3>
+  <span class="category"><i class="ic i-flag"></i> ana</span>
+  <h3>chology</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/images/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;amehime&#x2F;shoka@latest&#x2F;images&#x2F;avatar.jpg" title="Images">
-  <span class="type">Next Post</span>
-  <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>Images</h3>
-  </a>
-
     </div>
 </div>
 
@@ -273,8 +315,12 @@ Canary = Canary's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Base-pwn"><span class="toc-number">1.</span> <span class="toc-text">Base_pwn</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/computer-science/Pwn/pwn/" rel="bookmark" title="pwn1">pwn1</a></li><li><a href="/computer-science/Pwn/pwn2/" rel="bookmark" title="pwn2">pwn2</a></li><li class="active"><a href="/computer-science/Pwn/pwn3/" rel="bookmark" title="pwn2">pwn2</a></li>
+        </ul>
       </div>
       <div class="overview panel" data-title="Overview">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -378,12 +424,10 @@ Canary = Canary's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/excerpts/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/images/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -405,6 +449,24 @@ Canary = Canary's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+</div>
+
+    <span><a href="/code-highlight/" title="Code Highlight Style test">Code Highlight Style test</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/videos/" title="Videos">Videos</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/Web/" title="In Web">Web</a>
@@ -417,12 +479,14 @@ Canary = Canary's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" title="In CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" title="In Reverse">Reverse</a>
 </div>
 
-    <span><a href="/computer-science/Pwn/pwn2/" title="pwn学习(2)">pwn学习(2)</a></span>
+    <span><a href="/hexo/" title="hexo搭建的一些问题">hexo搭建的一些问题</a></span>
   </li>
 
       
@@ -431,19 +495,25 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/tags/" title="Tags">Tags</a></span>
+    <span><a href="/images/" title="Images">Images</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
 </div>
 
-    <span><a href="/computer-science/Reverse/reverse/" title="学习Reverse">学习Reverse</a></span>
+    <span><a href="/crypto/" title="crypto">crypto</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/excerpts/" title="Excerpts">Excerpts</a></span>
   </li>
 
       
@@ -462,10 +532,9 @@ Canary = Canary's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/English/" title="In English">English</a>
 </div>
 
-    <span><a href="/English/" title="Learn English">Learn English</a></span>
+    <span><a href="/tags/" title="Tags">Tags</a></span>
   </li>
 
       
@@ -474,34 +543,7 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/images/" title="Images">Images</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/code-highlight/" title="Code Highlight Style test">Code Highlight Style test</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/no-title/" title="Untitled">Untitled</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><span class="exturl" data-url="aHR0cDovL3d3dy5nb29nbGUuY29tLw==" title="Link Post">Link Post<i class="ic i-link-alt"></i></span></span>
+    <span><a href="/elements/" title="Elements">Elements</a></span>
   </li>
 
   </ul>
@@ -526,13 +568,13 @@ Canary = Canary's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">58k words</span>
+    <span title="Symbols count total">60k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">53 mins.</span>
+    <span title="Reading time total">54 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>
@@ -544,7 +586,7 @@ Canary = Canary's Blog</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'no-title/',
+    path: 'computer-science/Pwn/pwn3/',
     favicon: {
       show: "（●´3｀●）Goooood",
       hide: "(´Д｀)Booooom"
