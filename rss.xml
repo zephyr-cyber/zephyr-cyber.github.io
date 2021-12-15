@@ -19,9 +19,6 @@
             <title>MiniLCTF_2020题解</title>
             <link>https://zephyr-cyber.github.io.git/MiniLCTF_2020%E9%A2%98%E8%A7%A3/</link>
             <category term="computer-science" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
-            <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/" />
-            <category term="Misc" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/" />
-            <category term="Web" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/Web/" />
             <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
             <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/tags/Reverse/" />
             <category term="Misc" scheme="https://zephyr-cyber.github.io.git/tags/Misc/" />
@@ -101,9 +98,6 @@ return preg_replace($filter,&#39;hack!!!!&#39;,$payload);
             <title>MoeCTF_2021题解</title>
             <link>https://zephyr-cyber.github.io.git/moeCTF_2021%E9%A2%98%E8%A7%A3/</link>
             <category term="computer-science" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
-            <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/" />
-            <category term="Misc" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/" />
-            <category term="Web" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/Web/" />
             <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
             <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/tags/Reverse/" />
             <category term="Misc" scheme="https://zephyr-cyber.github.io.git/tags/Misc/" />
@@ -454,9 +448,6 @@ flag5，摩斯密码： &lt;strong&gt;tyg00d!｝&lt;/strong&gt;&lt;br /&gt;
             <title>MiniLCTF_2021题解</title>
             <link>https://zephyr-cyber.github.io.git/MiniLCTF_2021%E9%A2%98%E8%A7%A3/</link>
             <category term="computer-science" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
-            <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/" />
-            <category term="Misc" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/" />
-            <category term="Web" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/Web/" />
             <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
             <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/tags/Reverse/" />
             <category term="Misc" scheme="https://zephyr-cyber.github.io.git/tags/Misc/" />

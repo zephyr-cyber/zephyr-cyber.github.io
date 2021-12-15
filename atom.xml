@@ -84,9 +84,6 @@ return preg_replace($filter,&#39;hack!!!!&#39;,$payload);
 &lt;p&gt;题目思路来源&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL1hEU0VDL21vZUNURl8yMDIw&#34;&gt;西电安全协会&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="computer-science" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
-        <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/" />
-        <category term="Misc" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/" />
-        <category term="Web" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/Web/" />
         <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
         <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/tags/Reverse/" />
         <category term="Misc" scheme="https://zephyr-cyber.github.io.git/tags/Misc/" />
@@ -437,9 +434,6 @@ flag5，摩斯密码： &lt;strong&gt;tyg00d!｝&lt;/strong&gt;&lt;br /&gt;
 &lt;p&gt;题目思路来源&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL1hEU0VDL21vZUNURl8yMDIw&#34;&gt;西电安全协会&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="computer-science" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
-        <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/" />
-        <category term="Misc" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/" />
-        <category term="Web" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/Web/" />
         <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
         <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/tags/Reverse/" />
         <category term="Misc" scheme="https://zephyr-cyber.github.io.git/tags/Misc/" />
@@ -618,9 +612,6 @@ q12_1: ┤1                     ├──■──┤ X ├┤M├
 &lt;p&gt;题目思路来源&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL1hEU0VDL21vZUNURl8yMDIw&#34;&gt;西电安全协会&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="computer-science" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
-        <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/" />
-        <category term="Misc" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/" />
-        <category term="Web" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/Reverse/Misc/Web/" />
         <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
         <category term="Reverse" scheme="https://zephyr-cyber.github.io.git/tags/Reverse/" />
         <category term="Misc" scheme="https://zephyr-cyber.github.io.git/tags/Misc/" />
