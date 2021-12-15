@@ -119,12 +119,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/44762-imas-cinderella-MorikuboNono-PC.jpg"></li>
           <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/53968-LoveLive_Nijigasaki-MifuneShioriko-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51224-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51227-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50380-IDOLY_PRIDE-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54237-BanG_Dream-ShirasagiChisato-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54302-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54231-BanG_Dream-YamatoMaya-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54233-BanG_Dream-WakamiyaEve-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic3.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54291-LoveLive_Nijigasaki-KonoeKanata-PC-Wallpaper.jpg"></li>
         </ul>
       </div>
     </header>
@@ -180,9 +180,10 @@ Canary = Canary's Blog</title>
     
 
     <p><span class="exturl" data-url="aHR0cHM6Ly9jdGYueGlkaWFuLmVkdS5jbi9jaGFsbGVuZ2Vz">平台</span>上只有 web 的题目，只写了 web。比赛的时候应该还有其他的。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hEU0VDL21vZUNURl8yMDIwL3RyZWUvbWFpbi9NaXNj">西电的信息安全协会里有题目</span>，<s>什么时候复现一下</s></p>
 <h1 id="web"><a class="anchor" href="#web">#</a> Web</h1>
 <h3 id="id_wife"><a class="anchor" href="#id_wife">#</a> id_wife</h3>
-<p>这个题怎么说，好像根据 BUUCTF 的那个随便注改的吧？之前我也写过那个题的 wp. 但最开始没想到堆叠注入，试了挺多方法写脚本跑一下库名表名，最后得到了库名 miniL，没跑出来表名，这个就是用二分法不断的尝试</p>
+<p>好像根据 BUUCTF 的那个随便注改的吧？之前我也写过那个题的 wp. 但最开始没想到堆叠注入，试了挺多方法写脚本跑一下库名表名，最后得到了库名 miniL，没跑出来表名，这个就是用二分法不断的尝试</p>
 <pre><code>id=1') or (ascii(substr(database(),1,1)))&lt;150#
 </code></pre>
 <p>后来想起来应该是堆叠注入，得到了俩表 user 和 1145141919810，查看下内容</p>
@@ -244,6 +245,7 @@ return preg_replace($filter,'hack!!!!',$payload);
 <pre><code>payload=phpphpphpphpphpphpphp&quot;;s:3:&quot;V0n&quot;;s:14:&quot;has_girlfriend&quot;;&#125;
 </code></pre>
 <p 7f3ea366-f5ab-463c-b511-af63d6dc7715="">minil</p>
+<p>题目思路来源<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hEU0VDL21vZUNURl8yMDIw">西电安全协会</span></p>
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -261,7 +263,7 @@ return preg_replace($filter,'hack!!!!',$payload);
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2021-12-15 15:56:03" itemprop="dateModified" datetime="2021-12-15T15:56:03+08:00">2021-12-15</time>
+    <time title="Modified: 2021-12-15 16:11:40" itemprop="dateModified" datetime="2021-12-15T16:11:40+08:00">2021-12-15</time>
   </span>
   <span id="MiniLCTF_2020题解/" class="item leancloud_visitors" data-flag-title="MiniLCTF_2020 题解" title="Views">
       <span class="icon">
@@ -324,7 +326,7 @@ return preg_replace($filter,'hack!!!!',$payload);
     <div class="item left">
       
 
-  <a href="/moeCTF%E9%A2%98%E8%A7%A3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;44762-imas-cinderella-MorikuboNono-PC.jpg" title="MoeCTF_2021题解">
+  <a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54236-BanG_Dream-ShirasagiChisato-PC-Wallpaper.jpg" title="MoeCTF_2021题解">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> Web</span>
   <h3>MoeCTF_2021题解</h3>
@@ -352,7 +354,7 @@ return preg_replace($filter,'hack!!!!',$payload);
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/MiniLCTF%E9%A2%98%E8%A7%A3/" rel="bookmark" title="MiniLCTF_2021题解">MiniLCTF_2021题解</a></li><li><a href="/moeCTF%E9%A2%98%E8%A7%A3/" rel="bookmark" title="MoeCTF_2021题解">MoeCTF_2021题解</a></li><li class="active"><a href="/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" rel="bookmark" title="MiniLCTF_2020题解">MiniLCTF_2020题解</a></li>
+          <li><a href="/MiniLCTF_2021%E9%A2%98%E8%A7%A3/" rel="bookmark" title="MiniLCTF_2021题解">MiniLCTF_2021题解</a></li><li><a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" rel="bookmark" title="MoeCTF_2021题解">MoeCTF_2021题解</a></li><li class="active"><a href="/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" rel="bookmark" title="MiniLCTF_2020题解">MiniLCTF_2020题解</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -484,7 +486,46 @@ return preg_replace($filter,'hack!!!!',$payload);
 <div class="breadcrumb">
 </div>
 
+    <span><a href="/code-highlight/" title="Code Highlight Style test">Code Highlight Style test</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Crypto/" title="In Crypto">Crypto</a>
+</div>
+
+    <span><a href="/computer-science/Crypto/Crypto/" title="Crypto">Crypto</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
     <span><a href="/markdown/" title="Markdown Style test">Markdown Style test</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/long-title/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/elements/" title="Elements">Elements</a></span>
   </li>
 
       
@@ -525,14 +566,9 @@ return preg_replace($filter,'hack!!!!',$payload);
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" title="In CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" title="In Reverse">Reverse</a>
 </div>
 
-    <span><a href="/hexo/" title="hexo搭建的一些问题">hexo搭建的一些问题</a></span>
+    <span><a href="/gallery-post/" title="Gallery Post">Gallery Post</a></span>
   </li>
 
       
@@ -541,52 +577,14 @@ return preg_replace($filter,'hack!!!!',$payload);
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
-</div>
-
-    <span><a href="/computer-science/Pwn/pwn2/" title="pwn2">pwn2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/excerpts/" title="Excerpts">Excerpts</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
-</div>
-
-    <span><a href="/computer-science/Pwn/pwn/" title="pwn1">pwn1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<a href="/categories/computer-science/Reverse/Misc/" title="In Misc">Misc</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Crypto/" title="In Crypto">Crypto</a>
+<a href="/categories/computer-science/Reverse/Misc/Web/" title="In Web">Web</a>
 </div>
 
-    <span><a href="/computer-science/Crypto/Crypto/" title="Crypto">Crypto</a></span>
+    <span><a href="/MiniLCTF_2021%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2021题解">MiniLCTF_2021题解</a></span>
   </li>
 
   </ul>
