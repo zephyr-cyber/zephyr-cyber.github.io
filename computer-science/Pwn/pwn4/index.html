@@ -76,7 +76,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>377</span>
+    <span>379</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -117,12 +117,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54305-projectSEKAI-AsahinaMafuyu-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/53967-LoveLive_Nijigasaki-MifuneShioriko-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50410-OredakeHaireruKakushiDungeon-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54235-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54236-BanG_Dream-ShirasagiChisato-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54309-projectSEKAI-HatsuneMiku-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54308-projectSEKAI-HatsuneMiku-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/49236-Kanokari-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/43488-Imouto_sae_Irebaii-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50381-IDOLY_PRIDE-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54233-BanG_Dream-WakamiyaEve-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54234-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
         </ul>
       </div>
     </header>
@@ -171,9 +171,15 @@ Canary = Canary's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="0x01-stack-pivoting"><a href="#0x01-stack-pivoting" class="headerlink" title="0x01 stack pivoting"></a>0x01 stack pivoting</h2><p>栈迁移就是因为可写空间太小不够rop，就把栈迁移到别的地方去构造payload。<br> 而栈迁移最重要的是两个汇编命令，在程序调用完成 call 返回的时候。</p>
-<p> leave； ret;<br> leave相对于是mov esp，ebp；pop ebp；把bp的值给sp，弹出bp;<br> ret是pop eip;</p>
-<h2 id="0x02-Principle"><a href="#0x02-Principle" class="headerlink" title="0x02 Principle"></a>0x02 Principle</h2><p>先从32位来理解栈迁移的利用原理。<br>stack pivoting，正如它所描述的，该技巧就是劫持栈指针指向攻击者所能控制的内存处，然后再在相应的位置进行 ROP。一般来说，我们可能在以下情况需要使用 stack pivoting</p>
+    <h2 id="0x01-stack-pivoting"><a class="anchor" href="#0x01-stack-pivoting">#</a> 0x01 stack pivoting</h2>
+<p>栈迁移就是因为可写空间太小不够 rop，就把栈迁移到别的地方去构造 payload。<br />
+而栈迁移最重要的是两个汇编命令，在程序调用完成 call 返回的时候。</p>
+<p>leave； ret;<br />
+leave 相对于是 mov esp，ebp；pop ebp；把 bp 的值给 sp，弹出 bp;<br />
+ret 是 pop eip;</p>
+<h2 id="0x02-principle"><a class="anchor" href="#0x02-principle">#</a> 0x02 Principle</h2>
+<p>先从 32 位来理解栈迁移的利用原理。<br />
+stack pivoting，正如它所描述的，该技巧就是劫持栈指针指向攻击者所能控制的内存处，然后再在相应的位置进行 ROP。一般来说，我们可能在以下情况需要使用 stack pivoting</p>
 <ol>
 <li>可以控制的栈溢出的字节数较少，难以构造较长的 ROP 链</li>
 <li>开启了 PIE 保护，栈地址未知，我们可以将栈劫持到已知的区域。</li>
@@ -253,7 +259,7 @@ Canary = Canary's Blog</title>
     <div class="item left">
       
 
-  <a href="/computer-science/Pwn/pwn3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54235-BanG_Dream-HikawaHina-PC-Wallpaper.jpg" title="pwn3">
+  <a href="/computer-science/Pwn/pwn3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;pic5.jpg" title="pwn3">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> Pwn</span>
   <h3>pwn3</h3>
@@ -263,7 +269,7 @@ Canary = Canary's Blog</title>
     <div class="item right">
       
 
-  <a href="/computer-science/Reverse/reverse2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;50381-IDOLY_PRIDE-PC-Wallpaper.jpg" title="学习Reverse2">
+  <a href="/computer-science/Reverse/reverse2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54232-BanG_Dream-WakamiyaEve-PC-Wallpaper.jpg" title="学习Reverse2">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> Reverse</span>
   <h3>学习Reverse2</h3>
@@ -285,7 +291,7 @@ Canary = Canary's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-stack-pivoting"><span class="toc-number">1.</span> <span class="toc-text">0x01 stack pivoting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-Principle"><span class="toc-number">2.</span> <span class="toc-text">0x02 Principle</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-stack-pivoting"><span class="toc-number">1.</span> <span class="toc-text"> 0x01 stack pivoting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-principle"><span class="toc-number">2.</span> <span class="toc-text"> 0x02 Principle</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -421,6 +427,27 @@ Canary = Canary's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Web/" title="In Web">Web</a>
+</div>
+
+    <span><a href="/computer-science/Web/Web/" title="web学习">web学习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><span class="exturl" data-url="aHR0cDovL3d3dy5nb29nbGUuY29tLw==" title="Link Post">Link Post<i class="ic i-link-alt"></i></span></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 </div>
 
     <span><a href="/tags/" title="Tags">Tags</a></span>
@@ -444,19 +471,25 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
+    <span><a href="/images/" title="Images">Images</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
 </div>
 
-    <span><a href="/computer-science/Misc/BUGKUmisc/" title="bugku-MISC">bugku-MISC</a></span>
+    <span><a href="/markdown/" title="Markdown Style test">Markdown Style test</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/tag-plugins/" title="Tag Plugins">Tag Plugins</a></span>
   </li>
 
       
@@ -477,49 +510,24 @@ Canary = Canary's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-</div>
-
-    <span><span class="exturl" data-url="aHR0cDovL3d3dy5nb29nbGUuY29tLw==" title="Link Post">Link Post<i class="ic i-link-alt"></i></span></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/images/" title="Images">Images</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/psychology/" title="In psychology">psychology</a>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/psychology/ana/" title="In ana">ana</a>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" title="In CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" title="In Reverse">Reverse</a>
 </div>
 
-    <span><a href="/psychology/ana/research/" title="chology">chology</a></span>
+    <span><a href="/hexo/" title="hexo搭建的一些问题">hexo搭建的一些问题</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<a href="/categories/English/" title="In English">English</a>
 </div>
 
-    <span><a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" title="MoeCTF_2021题解">MoeCTF_2021题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/English/" title="Learn English">Learn English</a></span>
   </li>
 
   </ul>
@@ -544,13 +552,13 @@ Canary = Canary's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k words</span>
+    <span title="Symbols count total">113k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:43</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>

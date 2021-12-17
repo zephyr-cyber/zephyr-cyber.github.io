@@ -76,7 +76,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>4.7k</span>
+    <span>4k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -117,12 +117,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/53967-LoveLive_Nijigasaki-MifuneShioriko-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54237-BanG_Dream-ShirasagiChisato-PC-Wallpaper.jpg"></li>
           <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic7.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/43487-Imouto_sae_Irebaii-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54169-BanG_Dream-MinatoYukina-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54168-BanG_Dream-MinatoYukina-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32308-Netoge_no_Yome-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32933-ANNE_HAPPY-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54234-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/44762-imas-cinderella-MorikuboNono-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54303-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg"></li>
         </ul>
       </div>
     </header>
@@ -166,252 +166,9 @@ Canary = Canary's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>Make sure all the code blocks highlighted correctly. All the code samples are come from the demo of <span class="exturl" data-url="aHR0cHM6Ly9oaWdobGlnaHRqcy5vcmcv">https://highlightjs.org</span></p>
-<span id="more"></span>
-
-<pre><code class="plain">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-</code></pre>
-<pre><code class="rust">#[derive(Debug)]
-pub enum State &#123;
-    Start,
-    Transient,
-    Closed,
-&#125;
-
-impl From&lt;&amp;&#39;a str&gt; for State &#123;
-    fn from(s: &amp;&#39;a str) -&gt; Self &#123;
-        match s &#123;
-            &quot;start&quot; =&gt; State::Start,
-            &quot;closed&quot; =&gt; State::Closed,
-            _ =&gt; unreachable!(),
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-<pre><code class="json">[
-  &#123;
-    &quot;title&quot;: &quot;apples&quot;,
-    &quot;count&quot;: [12000, 20000],
-    &quot;description&quot;: &#123;&quot;text&quot;: &quot;...&quot;, &quot;sensitive&quot;: false&#125;
-  &#125;,
-  &#123;
-    &quot;title&quot;: &quot;oranges&quot;,
-    &quot;count&quot;: [17500, null],
-    &quot;description&quot;: &#123;&quot;text&quot;: &quot;...&quot;, &quot;sensitive&quot;: false&#125;
-  &#125;
-]
-</code></pre>
-<pre><code class="python">@requires_authorization
-def somefunc(param1=&#39;&#39;, param2=0):
-    r&#39;&#39;&#39;A docstring&#39;&#39;&#39;
-    if param1 &gt; param2: # interesting
-        print &#39;Gre\&#39;ater&#39;
-    return (param2 - param1 + 1 + 0b10l) or None
-
-class SomeClass:
-    pass
-
-&gt;&gt;&gt; message = &#39;&#39;&#39;interpreter
-... prompt&#39;&#39;&#39;
-</code></pre>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;title&gt;Title&lt;/title&gt;
-
-&lt;style&gt;body &#123;width: 500px;&#125;&lt;/style&gt;
-
-&lt;script type=&quot;application/javascript&quot;&gt;
-  function $init() &#123;return true;&#125;
-&lt;/script&gt;
-
-&lt;body&gt;
-  &lt;p checked class=&quot;title&quot; id=&#39;title&#39;&gt;Title&lt;/p&gt;
-  &lt;!-- here goes the rest of the page --&gt;
-&lt;/body&gt;
-</code></pre>
-<pre><code class="javascript">function $initHighlight(block, cls) &#123;
-  try &#123;
-    if (cls.search(/\bno\-highlight\b/) != -1)
-      return process(block, true, 0x0F) +
-             ` class=&quot;$&#123;cls&#125;&quot;`;
-  &#125; catch (e) &#123;
-    /* handle exception */
-  &#125;
-  for (var i = 0 / 2; i &lt; classes.length; i++) &#123;
-    if (checkCondition(classes[i]) === undefined)
-      console.log(&#39;undefined&#39;);
-  &#125;
-
-  return (
-    &lt;div&gt;
-      &lt;web-component&gt;&#123;block&#125;&lt;/web-component&gt;
-    &lt;/div&gt;
-  )
-&#125;
-
-export $initHighlight;
-</code></pre>
-<pre><code class="cpp">#include &lt;iostream&gt;
-
-int main(int argc, char *argv[]) &#123;
-
-  /* An annoying &quot;Hello World&quot; example */
-  for (auto i = 0; i &lt; 0xFFFF; i++)
-    cout &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; endl;
-
-  char c = &#39;\n&#39;;
-  unordered_map &lt;string, vector&lt;string&gt; &gt; m;
-  m[&quot;key&quot;] = &quot;\\\\&quot;; // this is an error
-
-  return -2e3 + 12l;
-&#125;
-</code></pre>
-<pre><code class="sql">CREATE TABLE &quot;topic&quot; (
-    &quot;id&quot; serial NOT NULL PRIMARY KEY,
-    &quot;forum_id&quot; integer NOT NULL,
-    &quot;subject&quot; varchar(255) NOT NULL
-);
-ALTER TABLE &quot;topic&quot;
-ADD CONSTRAINT forum_id FOREIGN KEY (&quot;forum_id&quot;)
-REFERENCES &quot;forum&quot; (&quot;id&quot;);
-
--- Initials
-insert into &quot;topic&quot; (&quot;forum_id&quot;, &quot;subject&quot;)
-values (2, &#39;D&#39;&#39;artagnian&#39;);
-</code></pre>
-<pre><code class="objectivec">#import &lt;UIKit/UIKit.h&gt;
-#import &quot;Dependency.h&quot;
-
-@protocol WorldDataSource
-@optional
-- (NSString*)worldName;
-@required
-- (BOOL)allowsToLive;
-@end
-
-@property (nonatomic, readonly) NSString *title;
-- (IBAction) show;
-@end
-</code></pre>
-<pre><code class="java">/**
- * @author John Smith &lt;john.smith@example.com&gt;
-*/
-package l2f.gameserver.model;
-
-public abstract class L2Char extends L2Object &#123;
-  public static final Short ERROR = 0x0001;
-
-  public void moveTo(int x, int y, int z) &#123;
-    _ai = null;
-    log(&quot;Should not be called&quot;);
-    if (1 &gt; 5) &#123; // wtf!?
-      return;
-    &#125;
-  &#125;
-&#125;
-</code></pre>
-<pre><code class="swift">import Foundation
-
-@objc class Person: Entity &#123;
-  var name: String!
-  var age:  Int!
-
-  init(name: String, age: Int) &#123;
-    /* /* ... */ */
-  &#125;
-
-  // Return a descriptive string for this person
-  func description(offset: Int = 0) -&gt; String &#123;
-    return &quot;\(name) is \(age + offset) years old&quot;
-  &#125;
-&#125;
-</code></pre>
-<pre><code class="css">@font-face &#123;
-  font-family: Chunkfive; src: url(&#39;Chunkfive.otf&#39;);
-&#125;
-
-body, .usertext &#123;
-  color: #F0F0F0; background: #600;
-  font-family: Chunkfive, sans;
-&#125;
-
-@import url(print.css);
-@media print &#123;
-  a[href^=http]::after &#123;
-    content: attr(href)
-  &#125;
-&#125;
-</code></pre>
-<pre><code class="ruby"># The Greeter class
-class Greeter
-  def initialize(name)
-    @name = name.capitalize
-  end
-
-  def salute
-    puts &quot;Hello #&#123;@name&#125;!&quot;
-  end
-end
-
-g = Greeter.new(&quot;world&quot;)
-g.salute
-</code></pre>
-<pre><code class="makefile"># Makefile
-
-BUILDDIR      = _build
-EXTRAS       ?= $(BUILDDIR)/extras
-
-.PHONY: main clean
-
-main:
-    @echo &quot;Building main facility...&quot;
-    build_main $(BUILDDIR)
-
-clean:
-    rm -rf $(BUILDDIR)/*
-</code></pre>
-<pre><code class="go">package main
-
-import &quot;fmt&quot;
-
-func main() &#123;
-    ch := make(chan float64)
-    ch &lt;- 1.0e10    // magic number
-    x, ok := &lt;- ch
-    defer fmt.Println(`exitting now\`)
-    go println(len(&quot;hello world!&quot;))
-    return
-&#125;
-</code></pre>
-<pre><code class="bash">#!/bin/bash
-
-###### CONFIG
-ACCEPTED_HOSTS=&quot;/root/.hag_accepted.conf&quot;
-BE_VERBOSE=false
-
-if [ &quot;$UID&quot; -ne 0 ]
-then
-  echo &quot;Superuser rights required&quot;
-  exit 2
-fi
-
-genApacheConf()&#123;
-  echo -e &quot;# Host $&#123;HOME_DIR&#125;$1/$2 :&quot;
-&#125;
-</code></pre>
-<pre><code class="ini">; boilerplate
-[package]
-name = &quot;some_name&quot;
-authors = [&quot;Author&quot;]
-description = &quot;This is \
-a description&quot;
-
-[[lib]]
-name = $&#123;NAME&#125;
-default = True
-auto = no
-counter = 1_000
-</code></pre>
-
+    <p>Make sure all the code blocks highlighted correctly. All the code samples are come from the demo of <span class="exturl" data-url="aHR0cHM6Ly9oaWdobGlnaHRqcy5vcmc=">https://highlightjs.org</span></p>
+<p><span id="more"></span></p>
+<figure class="highlight plain"><figcaption data-lang="plain"><span>n</span></figcaption><table><tr><td data-num="1"></td><td><pre>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</pre></td></tr></table></figure><figure class="highlight rust"><figcaption data-lang="rust"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token attribute attr-name">#[derive(Debug)]</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">pub</span> <span class="token keyword">enum</span> <span class="token type-definition class-name">State</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token class-name">Start</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token class-name">Transient</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token class-name">Closed</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">impl</span> <span class="token class-name">From</span><span class="token operator">&lt;</span><span class="token operator">&amp;</span><span class="token lifetime-annotation symbol">'a</span> <span class="token keyword">str</span><span class="token operator">></span> <span class="token keyword">for</span> <span class="token class-name">State</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">fn</span> <span class="token function-definition function">from</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token lifetime-annotation symbol">'a</span> <span class="token keyword">str</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">Self</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token keyword">match</span> s <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>            <span class="token string">"start"</span> <span class="token operator">=></span> <span class="token class-name">State</span><span class="token punctuation">::</span><span class="token class-name">Start</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="12"></td><td><pre>            <span class="token string">"closed"</span> <span class="token operator">=></span> <span class="token class-name">State</span><span class="token punctuation">::</span><span class="token class-name">Closed</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            _ <span class="token operator">=></span> <span class="token macro property">unreachable!</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><figure class="highlight json"><figcaption data-lang="JSON"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token punctuation">[</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"apples"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token property">"count"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">12000</span><span class="token punctuation">,</span> <span class="token number">20000</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token property">"text"</span><span class="token operator">:</span> <span class="token string">"..."</span><span class="token punctuation">,</span> <span class="token property">"sensitive"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"oranges"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token property">"count"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">17500</span><span class="token punctuation">,</span> <span class="token null keyword">null</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token property">"text"</span><span class="token operator">:</span> <span class="token string">"..."</span><span class="token punctuation">,</span> <span class="token property">"sensitive"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token punctuation">]</span></pre></td></tr></table></figure><figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token decorator annotation punctuation">@requires_authorization</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">def</span> <span class="token function">somefunc</span><span class="token punctuation">(</span>param1<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> param2<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token triple-quoted-string string">r'''A docstring'''</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">if</span> param1 <span class="token operator">></span> param2<span class="token punctuation">:</span> <span class="token comment"># interesting</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">print</span> <span class="token string">'Gre\'ater'</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token keyword">return</span> <span class="token punctuation">(</span>param2 <span class="token operator">-</span> param1 <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> 0b10l<span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token boolean">None</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">class</span> <span class="token class-name">SomeClass</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">pass</span></pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token operator">>></span><span class="token operator">></span> message <span class="token operator">=</span> <span class="token triple-quoted-string string">'''interpreter</pre></td></tr><tr><td data-num="12"></td><td><pre>... prompt'''</span></pre></td></tr></table></figure><figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><span class="token selector">body</span> <span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span><span class="token punctuation">&#125;</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>application/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token keyword">function</span> <span class="token function">$init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="11"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">checked</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>title<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="12"></td><td><pre>  <span class="token comment">&lt;!-- here goes the rest of the page --></span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">$initHighlight</span><span class="token punctuation">(</span><span class="token parameter">block<span class="token punctuation">,</span> cls</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>cls<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\bno\-highlight\b</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>      <span class="token keyword">return</span> <span class="token function">process</span><span class="token punctuation">(</span>block<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">0x0F</span><span class="token punctuation">)</span> <span class="token operator">+</span></pre></td></tr><tr><td data-num="5"></td><td><pre>             <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> class="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cls<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">"</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token comment">/* handle exception */</span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> classes<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">checkCondition</span><span class="token punctuation">(</span>classes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'undefined'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="13"></td><td><pre></pre></td></tr><tr><td data-num="14"></td><td><pre>  <span class="token keyword">return</span> <span class="token punctuation">(</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token operator">&lt;</span>div<span class="token operator">></span></pre></td></tr><tr><td data-num="16"></td><td><pre>      <span class="token operator">&lt;</span>web<span class="token operator">-</span>component<span class="token operator">></span><span class="token punctuation">&#123;</span>block<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>web<span class="token operator">-</span>component<span class="token operator">></span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></pre></td></tr><tr><td data-num="18"></td><td><pre>  <span class="token punctuation">)</span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="20"></td><td><pre></pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token keyword">export</span> $initHighlight<span class="token punctuation">;</span></pre></td></tr></table></figure><figure class="highlight cpp"><figcaption data-lang="C++"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token comment">/* An annoying "Hello World" example */</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">0xFFFF</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello, World!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token keyword">char</span> c <span class="token operator">=</span> <span class="token string">'\n'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  unordered_map <span class="token operator">&lt;</span>string<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token operator">></span> m<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>  m<span class="token punctuation">[</span><span class="token string">"key"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"\\\\"</span><span class="token punctuation">;</span> <span class="token comment">// this is an error</span></pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre>  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">2e3</span> <span class="token operator">+</span> <span class="token number">12l</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token string">"topic"</span> <span class="token punctuation">(</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token string">"id"</span> <span class="token keyword">serial</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token string">"forum_id"</span> <span class="token keyword">integer</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token string">"subject"</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token string">"topic"</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> forum_id <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token string">"forum_id"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">REFERENCES</span> <span class="token string">"forum"</span> <span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token comment">-- Initials</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token keyword">insert</span> <span class="token keyword">into</span> <span class="token string">"topic"</span> <span class="token punctuation">(</span><span class="token string">"forum_id"</span><span class="token punctuation">,</span> <span class="token string">"subject"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'D''artagnian'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><figure class="highlight objectivec"><figcaption data-lang="Objective-C"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token expression"><span class="token operator">&lt;</span>UIKit<span class="token operator">/</span>UIKit<span class="token punctuation">.</span>h<span class="token operator">></span></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">"Dependency.h"</span></span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">@protocol</span> WorldDataSource</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token operator">@</span>optional</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token operator">-</span> <span class="token punctuation">(</span>NSString<span class="token operator">*</span><span class="token punctuation">)</span>worldName<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token operator">@</span>required</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token operator">-</span> <span class="token punctuation">(</span>BOOL<span class="token punctuation">)</span>allowsToLive<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">@end</span></pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token keyword">@property</span> <span class="token punctuation">(</span>nonatomic<span class="token punctuation">,</span> readonly<span class="token punctuation">)</span> NSString <span class="token operator">*</span>title<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token operator">-</span> <span class="token punctuation">(</span>IBAction<span class="token punctuation">)</span> show<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token keyword">@end</span></pre></td></tr></table></figure><figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">/**</pre></td></tr><tr><td data-num="2"></td><td><pre> * @author John Smith &lt;john.smith@example.com></pre></td></tr><tr><td data-num="3"></td><td><pre>*/</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">package</span> <span class="token namespace">l2f<span class="token punctuation">.</span>gameserver<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">L2Char</span> <span class="token keyword">extends</span> <span class="token class-name">L2Object</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Short</span> ERROR <span class="token operator">=</span> <span class="token number">0x0001</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">moveTo</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> <span class="token keyword">int</span> z<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    _ai <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Should not be called"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// wtf!?</span></pre></td></tr><tr><td data-num="13"></td><td><pre>      <span class="token keyword">return</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><figure class="highlight swift"><figcaption data-lang="swift"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> <span class="token class-name">Foundation</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token attribute atrule">@objc</span> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span> <span class="token class-name">Entity</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">!</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token keyword">var</span> age<span class="token punctuation">:</span>  <span class="token class-name">Int</span><span class="token operator">!</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token comment">/* /* ... */ */</span></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre>  <span class="token comment">// Return a descriptive string for this person</span></pre></td></tr><tr><td data-num="12"></td><td><pre>  <span class="token keyword">func</span> <span class="token function-definition function">description</span><span class="token punctuation">(</span>offset<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">String</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> is </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">age <span class="token operator">+</span> offset</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> years old"</span></span></pre></td></tr><tr><td data-num="14"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token property">font-family</span><span class="token punctuation">:</span> Chunkfive<span class="token punctuation">;</span> <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'Chunkfive.otf'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token selector">body, .usertext</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token property">color</span><span class="token punctuation">:</span> #F0F0F0<span class="token punctuation">;</span> <span class="token property">background</span><span class="token punctuation">:</span> #600<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token property">font-family</span><span class="token punctuation">:</span> Chunkfive<span class="token punctuation">,</span> sans<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token atrule"><span class="token rule">@import</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>print.css<span class="token punctuation">)</span></span><span class="token punctuation">;</span></span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token atrule"><span class="token rule">@media</span> print</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>  <span class="token selector">a[href^=http]::after</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><figure class="highlight ruby"><figcaption data-lang="ruby"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># The Greeter class</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">class</span> <span class="token class-name">Greeter</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>name<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token variable">@name</span> <span class="token operator">=</span> name<span class="token punctuation">.</span>capitalize</pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token keyword">end</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">salute</span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>    puts <span class="token string">"Hello <span class="token interpolation"><span class="token delimiter tag">#&#123;</span><span class="token variable">@name</span><span class="token delimiter tag">&#125;</span></span>!"</span></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token keyword">end</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token keyword">end</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre>g <span class="token operator">=</span> <span class="token constant">Greeter</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">"world"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>g<span class="token punctuation">.</span>salute</pre></td></tr></table></figure><figure class="highlight makefile"><figcaption data-lang="makefile"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># Makefile</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>BUILDDIR      <span class="token operator">=</span> _build</pre></td></tr><tr><td data-num="4"></td><td><pre>EXTRAS       <span class="token operator">?=</span> <span class="token variable">$</span><span class="token punctuation">(</span>BUILDDIR<span class="token punctuation">)</span>/extras</pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token builtin">.PHONY</span><span class="token punctuation">:</span> main clean</pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token symbol">main</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="9"></td><td><pre>	<span class="token operator">@</span>echo <span class="token string">"Building main facility..."</span></pre></td></tr><tr><td data-num="10"></td><td><pre>	build_main <span class="token variable">$</span><span class="token punctuation">(</span>BUILDDIR<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token symbol">clean</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="13"></td><td><pre>	rm -rf <span class="token variable">$</span><span class="token punctuation">(</span>BUILDDIR<span class="token punctuation">)</span>/*</pre></td></tr></table></figure><figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">package</span> main</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">import</span> <span class="token string">"fmt"</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    ch <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">float64</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    ch <span class="token operator">&lt;-</span> <span class="token number">1.0e10</span>    <span class="token comment">// magic number</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    x<span class="token punctuation">,</span> ok <span class="token operator">:=</span> <span class="token operator">&lt;-</span> ch</pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">defer</span> fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>`exitting now\`<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">go</span> <span class="token function">println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token string">"hello world!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token keyword">return</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token shebang important">#!/bin/bash</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token comment">###### CONFIG</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token assign-left variable">ACCEPTED_HOSTS</span><span class="token operator">=</span><span class="token string">"/root/.hag_accepted.conf"</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token assign-left variable">BE_VERBOSE</span><span class="token operator">=</span>false</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token environment constant">$UID</span>"</span> -ne <span class="token number">0</span> <span class="token punctuation">]</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">then</span></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token builtin class-name">echo</span> <span class="token string">"Superuser rights required"</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  <span class="token builtin class-name">exit</span> <span class="token number">2</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token keyword">fi</span></pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token function-name function">genApacheConf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>  <span class="token builtin class-name">echo</span> -e <span class="token string">"# Host <span class="token variable">$&#123;HOME_DIR&#125;</span><span class="token variable">$1</span>/<span class="token variable">$2</span> :"</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><figure class="highlight ini"><figcaption data-lang="ini"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">; boilerplate</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token header"><span class="token punctuation">[</span><span class="token section-name selector">package</span><span class="token punctuation">]</span></span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token key attr-name">name</span> <span class="token punctuation">=</span> <span class="token value attr-value">"<span class="token inner-value">some_name</span>"</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token key attr-name">authors</span> <span class="token punctuation">=</span> <span class="token value attr-value">["Author"]</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token key attr-name">description</span> <span class="token punctuation">=</span> <span class="token value attr-value">"This is \</span></pre></td></tr><tr><td data-num="6"></td><td><pre>a description"</pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token header"><span class="token punctuation">[</span><span class="token section-name selector">[lib</span><span class="token punctuation">]</span></span>]</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token key attr-name">name</span> <span class="token punctuation">=</span> <span class="token value attr-value">$&#123;NAME&#125;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token key attr-name">default</span> <span class="token punctuation">=</span> <span class="token value attr-value">True</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token key attr-name">auto</span> <span class="token punctuation">=</span> <span class="token value attr-value">no</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token key attr-name">counter</span> <span class="token punctuation">=</span> <span class="token value attr-value">1_000</span></pre></td></tr></table></figure>
   </div>
 
    <footer>
@@ -485,7 +242,7 @@ counter = 1_000
     <div class="item left">
       
 
-  <a href="/markdown/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;53968-LoveLive_Nijigasaki-MifuneShioriko-PC-Wallpaper.jpg" title="Markdown Style test">
+  <a href="/markdown/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;40972-imas-cinderella-ShimamuraUzuki-PC.jpg" title="Markdown Style test">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>Markdown Style test</h3>
@@ -495,7 +252,7 @@ counter = 1_000
     <div class="item right">
       
 
-  <a href="/accumulate/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;51227-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg" title="accumulate">
+  <a href="/accumulate/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;53968-LoveLive_Nijigasaki-MifuneShioriko-PC-Wallpaper.jpg" title="accumulate">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>accumulate</h3>
@@ -651,71 +408,61 @@ counter = 1_000
 <div class="breadcrumb">
 </div>
 
+    <span><span class="exturl" data-url="aHR0cDovL3d3dy5nb29nbGUuY29tLw==" title="Link Post">Link Post<i class="ic i-link-alt"></i></span></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/tags/" title="Tags">Tags</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
+</div>
+
+    <span><a href="/computer-science/Reverse/reverse2/" title="学习Reverse2">学习Reverse2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
+</div>
+
+    <span><a href="/computer-science/Misc/%E6%AF%94%E8%B5%9Bmisc/" title="比赛MISC">比赛MISC</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Crypto/" title="In Crypto">Crypto</a>
+</div>
+
+    <span><a href="/computer-science/Crypto/Crypto/" title="Crypto">Crypto</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
     <span><a href="/gallery-post/" title="Gallery Post">Gallery Post</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
-</div>
-
-    <span><a href="/computer-science/Pwn/pwn2/" title="pwn2">pwn2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-</div>
-
-    <span><a href="/MiniLCTF_2021%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2021题解">MiniLCTF_2021题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/images/" title="Images">Images</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/English/" title="In English">English</a>
-</div>
-
-    <span><a href="/English/" title="Learn English">Learn English</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" title="In CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" title="In Reverse">Reverse</a>
-</div>
-
-    <span><a href="/hexo/" title="hexo搭建的一些问题">hexo搭建的一些问题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/code-highlight/" title="Code Highlight Style test">Code Highlight Style test</a></span>
   </li>
 
       
@@ -736,24 +483,28 @@ counter = 1_000
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
 </div>
 
-    <span><a href="/computer-science/Pwn/pwn/" title="pwn1">pwn1</a></span>
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/psychology/" title="In psychology">psychology</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/psychology/ana/" title="In ana">ana</a>
+<a href="/categories/English/" title="In English">English</a>
 </div>
 
-    <span><a href="/psychology/ana/research/" title="chology">chology</a></span>
+    <span><a href="/English/" title="Learn English">Learn English</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/code-highlight/" title="Code Highlight Style test">Code Highlight Style test</a></span>
   </li>
 
   </ul>
@@ -778,13 +529,13 @@ counter = 1_000
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k words</span>
+    <span title="Symbols count total">113k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:43</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>

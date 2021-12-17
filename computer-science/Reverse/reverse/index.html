@@ -78,7 +78,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>901</span>
+    <span>841</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -119,12 +119,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/43488-Imouto_sae_Irebaii-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54168-BanG_Dream-MinatoYukina-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32933-ANNE_HAPPY-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Anihonetwallpaper18382.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/40972-imas-cinderella-ShimamuraUzuki-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic2.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54305-projectSEKAI-AsahinaMafuyu-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54233-BanG_Dream-WakamiyaEve-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50381-IDOLY_PRIDE-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/46256-imoimo-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic6.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic4.jpg"></li>
         </ul>
       </div>
     </header>
@@ -173,29 +173,53 @@ Canary = Canary's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>2021/10/21 更新了REVERSE1-schoolboy.apk</p>
-<h1 id="Antidebug"><a href="#Antidebug" class="headerlink" title="Antidebug"></a>Antidebug</h1><p>使用resource hacker 获得输入框的id：<br><img data-src="/img/reverse/antidebug1.jpg" alt="avatar"></p>
-<p>用ida搜索立即数，可以搜索0x3e8  可以直接搜索1000：<br><img data-src="/img/reverse/antidebug2.jpg" alt="avatar"></p>
-<p>双击找到调用位置:<br>发现有jz 和 jnz跳转到相同位置，初步怀疑这里有花指令影响了ida的正常运行：<br><img data-src="/img/reverse/antidebug3.jpg" alt="avatar"></p>
-<p>key path -&gt; Fill range 全部pathc为nop。注意 00401524是个多字节指令，先使用快捷键d转为数据，将00401524patch为0x90后，再将后边的使用快捷键c转为代码：<br><img data-src="/img/reverse/antidebug4.jpg" alt="avatar"></p>
-<p>在找到函数开始的位置push ebp的地方，右键 create function<br>F5 可以看到是固定判断，只要输入的值是0xABCDDCBA  ，那也就是个数字了。<br>即2882395322 就可以了。<br><img data-src="/img/reverse/antidebug5.jpg" alt="avatar"></p>
-<h1 id="REVERSE1-schoolboy-apk"><a href="#REVERSE1-schoolboy-apk" class="headerlink" title="REVERSE1-schoolboy.apk"></a>REVERSE1-schoolboy.apk</h1><p>REVERSE1-schoolboy.apk<br>Apk文件反編譯<br>用一些jeb jadx apkIDE都可以<br>Jeb和apkIDE搜索方便一點<br>Jadx快一點</p>
-<p>我用的apkIDE和jeb<br>搜索mainactivity<br><img data-src="/img/reverse/reverseschoolboy1.jpg" alt="avatar"></p>
-<p>反編譯<br><img data-src="/img/reverse/reverseschoolboy2.jpg" alt="avatar"></p>
-<p>找到主要内容<br>Id號為0x7F0E005D<br>GetStrings方法<br><img data-src="/img/reverse/reverseschoolboy3.jpg" alt="avatar"></p>
-<p>用smail全局搜索id號得到<br><img data-src="/img/reverse/reverseschoolboy4.jpg" alt="avatar"></p>
-<p>Id號為<br><img data-src="/img/reverse/reverseschoolboy5.jpg" alt="avatar"></p>
-<p>在mysecret裏面<br>搜索strings.xml<br>resources.arsc-res-values-strings.xml<br><img data-src="/img/reverse/reverseschoolboy6.jpg" alt="avatar"></p>
-<p>找到mysecret<br><img data-src="/img/reverse/reverseschoolboy7.jpg" alt="avatar"></p>
-<p>EBRQFBDfWY5MDgzOj9vbiNzdCcicXBxeiwteS0vfHtDQhZAFRwfWggJCgsMDQ4P<br>看上去像加密的<br>寫脚本</p>
-<pre><code class="python">import base64
-a = &quot;REBRQFBDfWY5MDgzOj9vbiNzdCcicXBxeiwteS0vfHtDQhZAFRwfWggJCgsMDQ4P&quot;
-b = base64.b64decode(a).decode(&quot;utf-8&quot;)
-for i in range(len(b)):
-    print(chr(ord(b[i])^i),end=&#39;&#39;)
-    
-</code></pre>
-<p><img data-src="/img/reverse/reverseschoolboy8.jpg" alt="avatar"><br>直接出<br>flag:<br>DASCTF{a192862aa3bf46dffb57b12bdcc4c199}</p>
+    <p>2021/10/21 更新了 REVERSE1-schoolboy.apk</p>
+<h1 id="antidebug"><a class="anchor" href="#antidebug">#</a> Antidebug</h1>
+<p>使用 resource hacker 获得输入框的 id：<br />
+<img data-src="/img/reverse/antidebug1.jpg" alt="avatar" /></p>
+<p>用 ida 搜索立即数，可以搜索 0x3e8  可以直接搜索 1000：<br />
+<img data-src="/img/reverse/antidebug2.jpg" alt="avatar" /></p>
+<p>双击找到调用位置:<br />
+ 发现有 jz 和 jnz 跳转到相同位置，初步怀疑这里有花指令影响了 ida 的正常运行：<br />
+<img data-src="/img/reverse/antidebug3.jpg" alt="avatar" /></p>
+<p>key path -&gt; Fill range 全部 pathc 为 nop。注意 00401524 是个多字节指令，先使用快捷键 d 转为数据，将 00401524patch 为 0x90 后，再将后边的使用快捷键 c 转为代码：<br />
+<img data-src="/img/reverse/antidebug4.jpg" alt="avatar" /></p>
+<p>在找到函数开始的位置 push ebp 的地方，右键 create function<br />
+F5 可以看到是固定判断，只要输入的值是 0xABCDDCBA  ，那也就是个数字了。<br />
+即 2882395322 就可以了。<br />
+<img data-src="/img/reverse/antidebug5.jpg" alt="avatar" /></p>
+<h1 id="reverse1-schoolboyapk"><a class="anchor" href="#reverse1-schoolboyapk">#</a> REVERSE1-schoolboy.apk</h1>
+<p>REVERSE1-schoolboy.apk<br />
+Apk 文件反編譯<br />
+用一些 jeb jadx apkIDE 都可以<br />
+ Jeb 和 apkIDE 搜索方便一點<br />
+ Jadx 快一點</p>
+<p>我用的 apkIDE 和 jeb<br />
+ 搜索 mainactivity<br />
+<img data-src="/img/reverse/reverseschoolboy1.jpg" alt="avatar" /></p>
+<p>反編譯<br />
+<img data-src="/img/reverse/reverseschoolboy2.jpg" alt="avatar" /></p>
+<p>找到主要内容<br />
+ Id 號為 0x7F0E005D<br />
+GetStrings 方法<br />
+<img data-src="/img/reverse/reverseschoolboy3.jpg" alt="avatar" /></p>
+<p>用 smail 全局搜索 id 號得到<br />
+<img data-src="/img/reverse/reverseschoolboy4.jpg" alt="avatar" /></p>
+<p>Id 號為<br />
+<img data-src="/img/reverse/reverseschoolboy5.jpg" alt="avatar" /></p>
+<p>在 mysecret 裏面<br />
+搜索 strings.xml<br />
+resources.arsc-res-values-strings.xml<br />
+<img data-src="/img/reverse/reverseschoolboy6.jpg" alt="avatar" /></p>
+<p>找到 mysecret<br />
+<img data-src="/img/reverse/reverseschoolboy7.jpg" alt="avatar" /></p>
+<p>EBRQFBDfWY5MDgzOj9vbiNzdCcicXBxeiwteS0vfHtDQhZAFRwfWggJCgsMDQ4P<br />
+ 看上去像加密的<br />
+寫脚本</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> base64</pre></td></tr><tr><td data-num="2"></td><td><pre>a <span class="token operator">=</span> <span class="token string">"REBRQFBDfWY5MDgzOj9vbiNzdCcicXBxeiwteS0vfHtDQhZAFRwfWggJCgsMDQ4P"</span></pre></td></tr><tr><td data-num="3"></td><td><pre>b <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">^</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p a192862aa3bf46dffb57b12bdcc4c199=""><img data-src="/img/reverse/reverseschoolboy8.jpg" alt="avatar" /><br />
+ 直接出<br />
+ flag:<br />
+DASCTF</p>
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -274,7 +298,7 @@ for i in range(len(b)):
     <div class="item left">
       
 
-  <a href="/computer-science/Pwn/pwn2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54235-BanG_Dream-HikawaHina-PC-Wallpaper.jpg" title="pwn2">
+  <a href="/computer-science/Pwn/pwn2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;40972-imas-cinderella-ShimamuraUzuki-PC.jpg" title="pwn2">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> Pwn</span>
   <h3>pwn2</h3>
@@ -284,7 +308,7 @@ for i in range(len(b)):
     <div class="item right">
       
 
-  <a href="/computer-science/Web/Web/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;32308-Netoge_no_Yome-PC.jpg" title="web学习">
+  <a href="/computer-science/Web/Web/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;49236-Kanokari-PC-Wallpaper.jpg" title="web学习">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> Web</span>
   <h3>web学习</h3>
@@ -306,7 +330,7 @@ for i in range(len(b)):
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Antidebug"><span class="toc-number">1.</span> <span class="toc-text">Antidebug</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#REVERSE1-schoolboy-apk"><span class="toc-number">2.</span> <span class="toc-text">REVERSE1-schoolboy.apk</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#antidebug"><span class="toc-number">1.</span> <span class="toc-text"> Antidebug</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reverse1-schoolboyapk"><span class="toc-number">2.</span> <span class="toc-text"> REVERSE1-schoolboy.apk</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -442,14 +466,12 @@ for i in range(len(b)):
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="In 计算机科学">计算机科学</a>
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" title="In CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" title="In Reverse">Reverse</a>
+<a href="/categories/computer-science/Web/" title="In Web">Web</a>
 </div>
 
-    <span><a href="/hexo/" title="hexo搭建的一些问题">hexo搭建的一些问题</a></span>
+    <span><a href="/computer-science/Web/Web/" title="web学习">web学习</a></span>
   </li>
 
       
@@ -458,25 +480,7 @@ for i in range(len(b)):
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/code-highlight/" title="Code Highlight Style test">Code Highlight Style test</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/markdown/" title="Markdown Style test">Markdown Style test</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/elements/" title="Elements">Elements</a></span>
+    <span><a href="/tags/" title="Tags">Tags</a></span>
   </li>
 
       
@@ -494,10 +498,10 @@ for i in range(len(b)):
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
+<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
 </div>
 
-    <span><a href="/computer-science/Pwn/pwn/" title="pwn1">pwn1</a></span>
+    <span><a href="/computer-science/Misc/BUGKUmisc/" title="bugku-MISC">bugku-MISC</a></span>
   </li>
 
       
@@ -506,7 +510,46 @@ for i in range(len(b)):
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/videos/" title="Videos">Videos</a></span>
+    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/tag-plugins/" title="Tag Plugins">Tag Plugins</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
+</div>
+
+    <span><a href="/computer-science/Pwn/pwn4/" title="pwn4-stack pivoting">pwn4-stack pivoting</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/elements/" title="Elements">Elements</a></span>
   </li>
 
       
@@ -516,27 +559,6 @@ for i in range(len(b)):
 </div>
 
     <span><a href="/excerpts/" title="Excerpts">Excerpts</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><span class="exturl" data-url="aHR0cDovL3d3dy5nb29nbGUuY29tLw==" title="Link Post">Link Post<i class="ic i-link-alt"></i></span></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
-</div>
-
-    <span><a href="/computer-science/Misc/%E6%AF%94%E8%B5%9Bmisc/" title="比赛MISC">比赛MISC</a></span>
   </li>
 
   </ul>
@@ -561,13 +583,13 @@ for i in range(len(b)):
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k words</span>
+    <span title="Symbols count total">113k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:43</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>

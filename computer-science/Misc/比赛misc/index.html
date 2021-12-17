@@ -78,7 +78,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>1.5k</span>
+    <span>1.3k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -119,12 +119,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32933-ANNE_HAPPY-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/53809-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54305-projectSEKAI-AsahinaMafuyu-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/44762-imas-cinderella-MorikuboNono-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51224-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic4.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54235-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Anihonetwallpaper18382.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54234-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/20833_kin-iro_mosaic.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54168-BanG_Dream-MinatoYukina-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic1.jpg"></li>
         </ul>
       </div>
     </header>
@@ -173,62 +173,58 @@ Canary = Canary's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>2021/10/21 更新了MISC3-眼神要好使,得到的flag中的内容请md5后上交-blasting的附件</p>
-<h1 id="祥云杯2021-MISC-鸣雏恋"><a href="#祥云杯2021-MISC-鸣雏恋" class="headerlink" title="祥云杯2021-MISC-鸣雏恋"></a>祥云杯2021-MISC-鸣雏恋</h1><p>算是学习脚本了吧<br>遍历目录脚本</p>
-<pre><code class="python">files = os.listdir(filePath)
-#遍历文件夹里的图片
-    for file in files:
-        # 把文件路径和文件名结合起来
-        file_d = os.path.join(filePath, file)
-        # 判断该文件是单个文件还是文件夹
-        if os.path.isdir(file_d):  # 如果是文件夹则递归调用 scanDir() 函数
-            scanDir(file_d)
-        else:
-            file_stats = os.stat(file_d)
-            if(file_stats.st_size==262):
-                f.write(&#39;0&#39;)
-            else:
-                f.write(&#39;1&#39;)
-</code></pre>
-<p>遍历不一定是按顺序的，还是以用图片的数字编号为准</p>
-<pre><code class="python">import os
-import base64
-
-if __name__ == &#39;__main__&#39;:
-    f = open(&#39;key.txt&#39;, &#39;w&#39;)
-    for i in range(129488):
-        file_d = r&#39;C:\\Users\\pengzixuan\\Desktop\\out\\&#39; + str(i) + &#39;.png&#39;
-        file_stats = os.stat(file_d)
-        if (file_stats.st_size == 262):
-            f.write(&#39;0&#39;)
-        else:
-            f.write(&#39;1&#39;)
-    f.close()
-    f = open(&#39;key.txt&#39;, &#39;r&#39;)
-    flag=f.read()
-    data=&quot;&quot;
-    for i in range(0,len(flag),8):
-        str1 = flag[i:i + 8]
-        data+=(chr(int(str1, 2)))
-    data1=data[22:]  #去掉前几位
-    print(data1)
-    bs = base64.b64decode(data1)
-    with open(&#39;1.png&#39;, &#39;wb&#39;) as f:
-        f.write(bs)
-</code></pre>
-<h1 id="高新区初赛MISC"><a href="#高新区初赛MISC" class="headerlink" title="高新区初赛MISC"></a>高新区初赛MISC</h1><p>HalfQR<br>使用工具<span class="exturl" data-url="aHR0cHM6Ly9oMzExMHcwcjFkLmNvbS9xcmF6eWJveC8=">点击这里</span><br>Qrazybox<br>在纠错位L，mask为2调试出flag<br><img data-src="/img/MISC/gaoxinqu.jpg" alt="avatar"><br><img data-src="/img/MISC/gaoxinqu2.jpg" alt="avatar"></p>
-<h1 id="MISC3-眼神要好使-得到的flag中的内容请md5后上交-blasting的附件"><a href="#MISC3-眼神要好使-得到的flag中的内容请md5后上交-blasting的附件" class="headerlink" title="MISC3-眼神要好使,得到的flag中的内容请md5后上交-blasting的附件"></a>MISC3-眼神要好使,得到的flag中的内容请md5后上交-blasting的附件</h1><p>Blasting是爆破的意思考虑到要爆破<br><img data-src="/img/MISC/blasting1.jpg" alt="avatar"></p>
-<p>得到3个文件<br>先看音频<br><img data-src="/img/MISC/blasting2.jpg" alt="avatar"></p>
-<p>48000hz会出来一部分flag<br>继续看两个图片<br><img data-src="/img/MISC/blasting3.jpg" alt="avatar"></p>
-<p>第二张图片出现错误怀疑爆破宽度<br>先改一下宽度<br><img data-src="/img/MISC/blasting4.jpg" alt="avatar"></p>
-<p>直接复原了<br>两张一摸一样的图<br><img data-src="/img/MISC/blasting5.jpg" alt="avatar"></p>
-<p>猜测盲水印<br>用盲水印脚本<br><img data-src="/img/MISC/blasting6.jpg" alt="avatar"></p>
-<p>得到提示<br>Deepsound，网上搜一下，是个音频隐藏工具下载<br><img data-src="/img/MISC/blasting7.jpg" alt="avatar"></p>
-<p>然后把音频放入要密码……太烦了<br>这里考虑到了爆破，上kali<br>用<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29wZW53YWxsL2pvaG4vYmxvYi9ibGVlZGluZy1qdW1iby9ydW4vZGVlcHNvdW5kMmpvaG4ucHk=">https://github.com/openwall/john/blob/bleeding-jumbo/run/deepsound2john.py</span><br>deepsound2john.py脚本<br><img data-src="/img/MISC/blasting8.jpg" alt="avatar"></p>
-<p>得到<br>john.wav:$dynamic_1529$7242ef6f559962f7e928afc8be404f611557e267<br>然后直接john一下<br><img data-src="/img/MISC/blasting9.jpg" alt="avatar"></p>
-<p>得到下面的数据!@#$%^&amp;*<br>看起来像密码试一下<br>成功<br><img data-src="/img/MISC/blasting10.jpg" alt="avatar"></p>
-<p>得到flag.txt<br>打开文件<br><img data-src="/img/MISC/blasting11.jpg" alt="avatar"></p>
-<p>最后flag{iheatradio}<br>Iheatradio中间md5加密一下<br>flag{725456a7196c09b559ccd441738b0cae}</p>
+    <p>2021/10/21 更新了 MISC3 - 眼神要好使，得到的 flag 中的内容请 md5 后上交 - blasting 的附件</p>
+<h1 id="祥云杯2021-misc-鸣雏恋"><a class="anchor" href="#祥云杯2021-misc-鸣雏恋">#</a> 祥云杯 2021-MISC - 鸣雏恋</h1>
+<p>算是学习脚本了吧<br />
+遍历目录脚本</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre>files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filePath<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">#遍历文件夹里的图片</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> files<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token comment"># 把文件路径和文件名结合起来</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        file_d <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filePath<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token comment"># 判断该文件是单个文件还是文件夹</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>file_d<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 如果是文件夹则递归调用 scanDir () 函数</span></pre></td></tr><tr><td data-num="8"></td><td><pre>            scanDir<span class="token punctuation">(</span>file_d<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            file_stats <span class="token operator">=</span> os<span class="token punctuation">.</span>stat<span class="token punctuation">(</span>file_d<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>            <span class="token keyword">if</span><span class="token punctuation">(</span>file_stats<span class="token punctuation">.</span>st_size<span class="token operator">==</span><span class="token number">262</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="12"></td><td><pre>                f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="14"></td><td><pre>                f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>遍历不一定是按顺序的，还是以用图片的数字编号为准</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> os</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> base64</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'key.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">129488</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        file_d <span class="token operator">=</span> <span class="token string">r'C:\\Users\\pengzixuan\\Desktop\\out\\'</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.png'</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        file_stats <span class="token operator">=</span> os<span class="token punctuation">.</span>stat<span class="token punctuation">(</span>file_d<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token keyword">if</span> <span class="token punctuation">(</span>file_stats<span class="token punctuation">.</span>st_size <span class="token operator">==</span> <span class="token number">262</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="12"></td><td><pre>            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'key.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    flag<span class="token operator">=</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    data<span class="token operator">=</span><span class="token string">""</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        str1 <span class="token operator">=</span> flag<span class="token punctuation">[</span>i<span class="token punctuation">:</span>i <span class="token operator">+</span> <span class="token number">8</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        data<span class="token operator">+=</span><span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>str1<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    data1<span class="token operator">=</span>data<span class="token punctuation">[</span><span class="token number">22</span><span class="token punctuation">:</span><span class="token punctuation">]</span>  <span class="token comment">#去掉前几位</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token keyword">print</span><span class="token punctuation">(</span>data1<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="22"></td><td><pre>    bs <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>data1<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'1.png'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="24"></td><td><pre>        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>bs<span class="token punctuation">)</span></pre></td></tr></table></figure><h1 id="高新区初赛misc"><a class="anchor" href="#高新区初赛misc">#</a> 高新区初赛 MISC</h1>
+<p>HalfQR<br />
+ 使用工具<span class="exturl" data-url="aHR0cHM6Ly9oMzExMHcwcjFkLmNvbS9xcmF6eWJveC8=">点击这里</span><br />
+ Qrazybox<br />
+ 在纠错位 L，mask 为 2 调试出 flag<br />
+<img data-src="/img/MISC/gaoxinqu.jpg" alt="avatar" /><br />
+<img data-src="/img/MISC/gaoxinqu2.jpg" alt="avatar" /></p>
+<h1 id="misc3-眼神要好使得到的flag中的内容请md5后上交-blasting的附件"><a class="anchor" href="#misc3-眼神要好使得到的flag中的内容请md5后上交-blasting的附件">#</a> MISC3 - 眼神要好使，得到的 flag 中的内容请 md5 后上交 - blasting 的附件</h1>
+<p>Blasting 是爆破的意思考虑到要爆破<br />
+<img data-src="/img/MISC/blasting1.jpg" alt="avatar" /></p>
+<p>得到 3 个文件<br />
+先看音频<br />
+<img data-src="/img/MISC/blasting2.jpg" alt="avatar" /></p>
+<p>48000hz 会出来一部分 flag<br />
+ 继续看两个图片<br />
+<img data-src="/img/MISC/blasting3.jpg" alt="avatar" /></p>
+<p>第二张图片出现错误怀疑爆破宽度<br />
+先改一下宽度<br />
+<img data-src="/img/MISC/blasting4.jpg" alt="avatar" /></p>
+<p>直接复原了<br />
+两张一摸一样的图<br />
+<img data-src="/img/MISC/blasting5.jpg" alt="avatar" /></p>
+<p>猜测盲水印<br />
+用盲水印脚本<br />
+<img data-src="/img/MISC/blasting6.jpg" alt="avatar" /></p>
+<p>得到提示<br />
+ Deepsound，网上搜一下，是个音频隐藏工具下载<br />
+<img data-src="/img/MISC/blasting7.jpg" alt="avatar" /></p>
+<p>然后把音频放入要密码…… 太烦了<br />
+这里考虑到了爆破，上 kali<br />
+ 用<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29wZW53YWxsL2pvaG4vYmxvYi9ibGVlZGluZy1qdW1iby9ydW4vZGVlcHNvdW5kMmpvaG4ucHk="> https://github.com/openwall/john/blob/bleeding-jumbo/run/deepsound2john.py</span><br />
+deepsound2john.py 脚本<br />
+<img data-src="/img/MISC/blasting8.jpg" alt="avatar" /></p>
+<p>得到<br />
+ john.wav:$dynamic_1529$7242ef6f559962f7e928afc8be404f611557e267<br />
+ 然后直接 john 一下<br />
+<img data-src="/img/MISC/blasting9.jpg" alt="avatar" /></p>
+<p>得到下面的数据！@#$%^&amp;*<br />
+ 看起来像密码试一下<br />
+成功<br />
+<img data-src="/img/MISC/blasting10.jpg" alt="avatar" /></p>
+<p>得到 flag.txt<br />
+ 打开文件<br />
+<img data-src="/img/MISC/blasting11.jpg" alt="avatar" /></p>
+<p 725456a7196c09b559ccd441738b0cae="">最后 flag {iheatradio}<br />
+ Iheatradio 中间 md5 加密一下<br />
+ flag</p>
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -307,7 +303,7 @@ if __name__ == &#39;__main__&#39;:
     <div class="item left">
       
 
-  <a href="/English/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;50381-IDOLY_PRIDE-PC-Wallpaper.jpg" title="Learn English">
+  <a href="/English/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;pic7.jpg" title="Learn English">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> English</span>
   <h3>Learn English</h3>
@@ -317,7 +313,7 @@ if __name__ == &#39;__main__&#39;:
     <div class="item right">
       
 
-  <a href="/computer-science/Pwn/pwn/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;51948-higehiro-PC-Wallpaper.jpg" title="pwn1">
+  <a href="/computer-science/Pwn/pwn/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54169-BanG_Dream-MinatoYukina-PC-Wallpaper.jpg" title="pwn1">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> Pwn</span>
   <h3>pwn1</h3>
@@ -339,7 +335,7 @@ if __name__ == &#39;__main__&#39;:
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A5%A5%E4%BA%91%E6%9D%AF2021-MISC-%E9%B8%A3%E9%9B%8F%E6%81%8B"><span class="toc-number">1.</span> <span class="toc-text">祥云杯2021-MISC-鸣雏恋</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AB%98%E6%96%B0%E5%8C%BA%E5%88%9D%E8%B5%9BMISC"><span class="toc-number">2.</span> <span class="toc-text">高新区初赛MISC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MISC3-%E7%9C%BC%E7%A5%9E%E8%A6%81%E5%A5%BD%E4%BD%BF-%E5%BE%97%E5%88%B0%E7%9A%84flag%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9%E8%AF%B7md5%E5%90%8E%E4%B8%8A%E4%BA%A4-blasting%E7%9A%84%E9%99%84%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">MISC3-眼神要好使,得到的flag中的内容请md5后上交-blasting的附件</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A5%A5%E4%BA%91%E6%9D%AF2021-misc-%E9%B8%A3%E9%9B%8F%E6%81%8B"><span class="toc-number">1.</span> <span class="toc-text"> 祥云杯 2021-MISC - 鸣雏恋</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AB%98%E6%96%B0%E5%8C%BA%E5%88%9D%E8%B5%9Bmisc"><span class="toc-number">2.</span> <span class="toc-text"> 高新区初赛 MISC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#misc3-%E7%9C%BC%E7%A5%9E%E8%A6%81%E5%A5%BD%E4%BD%BF%E5%BE%97%E5%88%B0%E7%9A%84flag%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9%E8%AF%B7md5%E5%90%8E%E4%B8%8A%E4%BA%A4-blasting%E7%9A%84%E9%99%84%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text"> MISC3 - 眼神要好使，得到的 flag 中的内容请 md5 后上交 - blasting 的附件</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -475,12 +471,12 @@ if __name__ == &#39;__main__&#39;:
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<a href="/categories/psychology/" title="In psychology">psychology</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
+<a href="/categories/psychology/ana/" title="In ana">ana</a>
 </div>
 
-    <span><a href="/computer-science/Pwn/pwn4/" title="pwn4-stack pivoting">pwn4-stack pivoting</a></span>
+    <span><a href="/psychology/ana/research/" title="chology">chology</a></span>
   </li>
 
       
@@ -489,19 +485,16 @@ if __name__ == &#39;__main__&#39;:
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/gallery-post/" title="Gallery Post">Gallery Post</a></span>
+    <span><a href="/elements/" title="Elements">Elements</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
 </div>
 
-    <span><a href="/computer-science/Reverse/reverse/" title="学习Reverse">学习Reverse</a></span>
+    <span><a href="/videos/" title="Videos">Videos</a></span>
   </li>
 
       
@@ -518,18 +511,11 @@ if __name__ == &#39;__main__&#39;:
     
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
 </div>
 
-    <span><a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" title="MoeCTF_2021题解">MoeCTF_2021题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/elements/" title="Elements">Elements</a></span>
+    <span><a href="/computer-science/Pwn/pwn/" title="pwn1">pwn1</a></span>
   </li>
 
       
@@ -538,10 +524,10 @@ if __name__ == &#39;__main__&#39;:
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
+<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
 </div>
 
-    <span><a href="/computer-science/Reverse/reverse2/" title="学习Reverse2">学习Reverse2</a></span>
+    <span><a href="/computer-science/Pwn/pwn4/" title="pwn4-stack pivoting">pwn4-stack pivoting</a></span>
   </li>
 
       
@@ -550,7 +536,31 @@ if __name__ == &#39;__main__&#39;:
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+</div>
+
+    <span><a href="/MiniLCTF_2021%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2021题解">MiniLCTF_2021题解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" title="In CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" title="In Reverse">Reverse</a>
+</div>
+
+    <span><a href="/hexo/" title="hexo搭建的一些问题">hexo搭建的一些问题</a></span>
   </li>
 
       
@@ -559,16 +569,7 @@ if __name__ == &#39;__main__&#39;:
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/tag-plugins/" title="Tag Plugins">Tag Plugins</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/excerpts/" title="Excerpts">Excerpts</a></span>
+    <span><a href="/long-title/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a></span>
   </li>
 
   </ul>
@@ -593,13 +594,13 @@ if __name__ == &#39;__main__&#39;:
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k words</span>
+    <span title="Symbols count total">113k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:43</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>
