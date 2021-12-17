@@ -2,7 +2,6 @@
  * Live2D Widget
  * https://github.com/stevenjoezhang/live2d-widget
  */
-const live2d_path = "/live2d-widget/";
 function loadWidget(config) {
 	let { waifuPath, apiPath, cdnPath } = config;
 	let useCDN = false, modelList;
