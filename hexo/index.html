@@ -78,7 +78,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>2.9k</span>
+    <span>3.6k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -119,12 +119,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/53967-LoveLive_Nijigasaki-MifuneShioriko-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/20753_kin-iro_mosaic_PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54167-BanG_Dream-MinatoYukina-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51227-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic5.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32933-ANNE_HAPPY-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/43487-Imouto_sae_Irebaii-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50444-JakuChara_Tomozakikun-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54066-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51948-higehiro-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54291-LoveLive_Nijigasaki-KonoeKanata-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/46256-imoimo-PC-Wallpaper.jpg"></li>
         </ul>
       </div>
     </header>
@@ -176,49 +176,58 @@ Canary = Canary's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h3 id="最近在学blog知识遇到无数问题小白的我又不会开发htmlcss在这里遇到的一些问题以及开发者没有提及到的"><a class="anchor" href="#最近在学blog知识遇到无数问题小白的我又不会开发htmlcss在这里遇到的一些问题以及开发者没有提及到的">#</a> 最近在学 blog 知识，遇到无数问题，小白的我又不会开发 HTML+CSS, 在这里遇到的一些问题，以及开发者没有提及到的。</h3>
-<h1 id="关于本地头像hexo-clean容易被清除的问题"><a class="anchor" href="#关于本地头像hexo-clean容易被清除的问题">#</a> 关于本地头像 hexo clean 容易被清除的问题</h1>
-<p>github 上的拷贝的默认是本地的存储路径，每次更新 hexo clean，public 里面的文件都会被清除，导致每次更新 blog 很繁琐，毕竟有很多图片。</p>
-<h3 id="我们可以用cdn加速图片的方式部署"><a class="anchor" href="#我们可以用cdn加速图片的方式部署">#</a> 我们可以用 cdn 加速图片的方式部署</h3>
-<p>你的主题目录下的_config.yml</p>
-<figure class="highlight yml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">#Assets</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token key atrule">statics</span><span class="token punctuation">:</span> /</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token key atrule">css</span><span class="token punctuation">:</span> css</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token key atrule">js</span><span class="token punctuation">:</span> js</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token key atrule">images</span><span class="token punctuation">:</span> images</pre></td></tr></table></figure><p>默认 images 会把下面的 avatar 后面的路径套上 /images/。所以除了输入本地文件，其他的没用 。</p>
-<p>修改文件 <code>themes/shoka/layout/_partials/post/post.njk</code>  下面的大概第五行的位置</p>
+    <h3 id="最近在学blog知识，遇到无数问题，小白的我又不会开发HTML-CSS-在这里遇到的一些问题，以及开发者没有提及到的。"><a href="#最近在学blog知识，遇到无数问题，小白的我又不会开发HTML-CSS-在这里遇到的一些问题，以及开发者没有提及到的。" class="headerlink" title="最近在学blog知识，遇到无数问题，小白的我又不会开发HTML+CSS,在这里遇到的一些问题，以及开发者没有提及到的。"></a>最近在学blog知识，遇到无数问题，小白的我又不会开发HTML+CSS,在这里遇到的一些问题，以及开发者没有提及到的。</h3><h1 id="关于本地头像hexo-clean容易被清除的问题"><a href="#关于本地头像hexo-clean容易被清除的问题" class="headerlink" title="关于本地头像hexo clean容易被清除的问题"></a>关于本地头像hexo clean容易被清除的问题</h1><p>github上的拷贝的默认是本地的存储路径，每次更新hexo clean，public里面的文件都会被清除，导致每次更新blog很繁琐，毕竟有很多图片。</p>
+<h3 id="我们可以用cdn加速图片的方式部署"><a href="#我们可以用cdn加速图片的方式部署" class="headerlink" title="我们可以用cdn加速图片的方式部署"></a>我们可以用cdn加速图片的方式部署</h3><p>你的主题目录下的_config.yml</p>
+<pre><code class="yml">#Assets
+statics: /
+css: css
+js: js
+images: images
+</code></pre>
+<p>默认images会把下面的avatar后面的路径套上/images/。所以除了输入本地文件，其他的没用 。</p>
+<p>修改文件<code>themes/shoka/layout/_partials/post/post.njk</code>下面的大概第五行的位置</p>
 <p><code>&lt;meta itemprop=&quot;image&quot; content=&quot;&#123;&#123; url_for(theme.statics + theme.images + '/' + theme.sidebar.avatar) &#125;&#125;&quot;&gt;</code></p>
 <p>改为</p>
 <p><code>&lt;meta itemprop=&quot;image&quot; content=&quot;&#123;&#123; url_for(theme.sidebar.avatar) &#125;&#125;&quot;&gt;</code></p>
-<p>修改文件 <code>themes/shoka/layout/_partials/sidebar/overview.njk</code>  大概第三行的位置</p>
+<p>修改文件<code>themes/shoka/layout/_partials/sidebar/overview.njk</code>大概第三行的位置</p>
 <p><code>data-src=&quot;&#123;&#123; url_for(theme.statics + theme.images + '/' + theme.sidebar.avatar) &#125;&#125;&quot;&gt;</code></p>
 <p>改为</p>
 <p><code>data-src=&quot;&#123;&#123; url_for(theme.sidebar.avatar) &#125;&#125;&quot;&gt;</code></p>
 <p>去掉路径就可以了，然后</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/avatar.jpg" alt="" /></p>
-<p>加上自己的 cdn 就行，图片就会出来。</p>
-<p>感谢<span class="exturl" data-url="aHR0cHM6Ly93d3cubGF2ZW5kZXJkaC5jbi8="> Lavender</span> 大佬提供帮助！</p>
-<h1 id="关于看板娘live2d-widget的shoka主题的问题"><a class="anchor" href="#关于看板娘live2d-widget的shoka主题的问题">#</a> 关于看板娘 live2d-widget 的 shoka 主题的问题</h1>
-<p>hexo-helper-live2d 模板的方法不在赘述，csdn 上有很多<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpc2h1d2VuNzk4Ni9hcnRpY2xlL2RldGFpbHMvMTA4ODYyNDIz"> hexo-helper-live2d</span></p>
-<p>看板娘 live2d-widget 的源码<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3N0ZXZlbmpvZXpoYW5nL2xpdmUyZC13aWRnZXQ=">点击这里</span></p>
-<p>emmmm 介绍的很简单。</p>
-<h2 id="利用cdn网络资源"><a class="anchor" href="#利用cdn网络资源">#</a> 利用 cdn 网络资源</h2>
-<p>把 live2d-widget 放在主题 source 下面</p>
-<p>autoload.js 不必要改绝对路径</p>
-<p><code> const live2d_path = &quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/&quot;; //const live2d_path = &quot;/live2d-widget/&quot;;</code>  这行注释掉</p>
-<p>然后进入主题下的 /layout/_partials/head/head.njk 里面的最后几行代码修改为</p>
-<figure class="highlight yml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;link rel="alternate" type="application/rss+xml" title="&lt;<span class="token tag">!--swig</span>￼4<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="&lt;<span class="token tag">!--swig</span>￼5<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;link rel="alternate" type="application/atom+xml" title="&lt;<span class="token tag">!--swig</span>￼6<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="&lt;<span class="token tag">!--swig</span>￼7<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="3"></td><td><pre>&lt;link rel="alternate" type="application/json" title="&lt;<span class="token tag">!--swig</span>￼8<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="&lt;<span class="token tag">!--swig</span>￼9<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="4"></td><td><pre>&lt;link rel="alternate" type="application/json" title="&lt;<span class="token tag">!--swig</span>￼10<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/font<span class="token punctuation">-</span>awesome/css/font<span class="token punctuation">-</span>awesome.min.css" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="5"></td><td><pre>&lt;script async src="https<span class="token punctuation">:</span>//cdn.jsdelivr.net/gh/stevenjoezhang/live2d<span class="token punctuation">-</span>widget@latest/autoload.js"<span class="token punctuation">></span>&lt;/script<span class="token punctuation">></span></pre></td></tr></table></figure><p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</p>
-<h2 id="利用本地资源"><a class="anchor" href="#利用本地资源">#</a> 利用本地资源</h2>
-<p>整个文件夹 live2d-widget 放到 /source/js 文件夹里面</p>
-<p>autoload.js 的路径默认就行，也可以改本地，不影响。</p>
-<p>然后进入主题下的 /layout/_partials/head/head.njk 里面的最后几行代码修改为</p>
-<figure class="highlight yml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;link rel="alternate" type="application/rss+xml" title="&lt;<span class="token tag">!--swig</span>￼11<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="&lt;<span class="token tag">!--swig</span>￼12<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;link rel="alternate" type="application/atom+xml" title="&lt;<span class="token tag">!--swig</span>￼13<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="&lt;<span class="token tag">!--swig</span>￼14<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="3"></td><td><pre>&lt;link rel="alternate" type="application/json" title="&lt;<span class="token tag">!--swig</span>￼15<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="&lt;<span class="token tag">!--swig</span>￼16<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="4"></td><td><pre>&lt;link rel="alternate" type="application/json" title="&lt;<span class="token tag">!--swig</span>￼17<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>" href="https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/font<span class="token punctuation">-</span>awesome/css/font<span class="token punctuation">-</span>awesome.min.css" /<span class="token punctuation">></span></pre></td></tr><tr><td data-num="5"></td><td><pre>&lt;<span class="token tag">!--swig</span>￼18<span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span></pre></td></tr></table></figure><p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</p>
-<p>本地搭建是区别网上另一种方法，かねき けん师傅 tql</p>
-<p>我 debug 的时候报的 js 渲染错误，后来发现是 minify (十个亚压缩插件，减少文件大小) 的问题，注释掉，<s>搅屎棍</s>。</p>
-<h3 id="看板娘的模块问题"><a class="anchor" href="#看板娘的模块问题">#</a> 看板娘的模块问题</h3>
-<p>个人认为 shoka 处理的不是很好，依赖项没怎么更新，也没有回复，插件的压缩依赖项没有及时支持 es6 规范，用 shoka 主题个人认为不推荐搞模块，大佬除外。</p>
-<h1 id="关于背景图片的问题"><a class="anchor" href="#关于背景图片的问题">#</a> 关于背景图片的问题</h1>
-<p>背景图片有两处地方一个是主题下的_images.yml 文件，还有一个是根目录下的 /source/__data 下的 images.yml</p>
-<p>修改 source/__data 下的 images.yml 即可覆盖背景图，要 6 个以上，6 个以内好像有 bug。</p>
-<p>推荐使用 cdn，jsdelivr 来加速图片，创建图床，免费使用</p>
-<h1 id="一些基础的细节改shoka主题可以去大佬博客reversesacle添加功能魔改博客很详细-迭代中"><a class="anchor" href="#一些基础的细节改shoka主题可以去大佬博客reversesacle添加功能魔改博客很详细-迭代中">#</a> 一些基础的细节，改 shoka 主题可以去大佬博客<span class="exturl" data-url="aHR0cHM6Ly93d3cucmV2ZXJzZXNhY2xlLmNvbS9IZXhvLVNob2thJUU0JUI4JUJCJUU5JUEyJTk4JUU1JThBJTlGJUU4JTgzJUJEJUU0JUJCJThCJUU3JUJCJThEJUU4JUExJUE1JUU1JTg1JTg1JUU3JTgyJUI5Lw=="> ReverseSacle</span>，添加功能，魔改博客，很详细。迭代中........</h1>
-
+<p><img data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/avatar.jpg"></p>
+<p>加上自己的cdn就行，图片就会出来。</p>
+<p>感谢<span class="exturl" data-url="aHR0cHM6Ly93d3cubGF2ZW5kZXJkaC5jbi8=">Lavender</span>大佬提供帮助！</p>
+<h1 id="关于看板娘live2d-widget的shoka主题的问题"><a href="#关于看板娘live2d-widget的shoka主题的问题" class="headerlink" title="关于看板娘live2d-widget的shoka主题的问题"></a>关于看板娘live2d-widget的shoka主题的问题</h1><p>hexo-helper-live2d模板的方法不在赘述,csdn上有很多<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpc2h1d2VuNzk4Ni9hcnRpY2xlL2RldGFpbHMvMTA4ODYyNDIz">hexo-helper-live2d</span></p>
+<p>看板娘live2d-widget的源码<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3N0ZXZlbmpvZXpoYW5nL2xpdmUyZC13aWRnZXQ=">点击这里</span></p>
+<p>emmmm介绍的很简单。</p>
+<h2 id="利用cdn网络资源"><a href="#利用cdn网络资源" class="headerlink" title="利用cdn网络资源"></a>利用cdn网络资源</h2><p> 把live2d-widget放在主题source下面</p>
+<p>autoload.js不必要改绝对路径</p>
+<p><code> const live2d_path = &quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/&quot;; //const live2d_path = &quot;/live2d-widget/&quot;;</code>这行注释掉</p>
+<p>然后进入主题下的/layout/_partials/head/head.njk里面的最后几行代码修改为</p>
+<pre><code class="yml">&lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;&#123;&#123; full_url_for('/rss.xml') &#125;&#125;&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/atom+xml&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;&#123;&#123; full_url_for('/atom.xml') &#125;&#125;&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/json&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;&#123;&#123; full_url_for('/feed.json') &#125;&#125;&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/json&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot; /&gt;
+&lt;script async src=&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</p>
+<h2 id="利用本地资源"><a href="#利用本地资源" class="headerlink" title="利用本地资源"></a>利用本地资源</h2><p>整个文件夹live2d-widget放到/source/js文件夹里面</p>
+<p>autoload.js的路径默认就行，也可以改本地，不影响。</p>
+<p>然后进入主题下的/layout/_partials/head/head.njk里面的最后几行代码修改为</p>
+<pre><code class="yml">&lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;&#123;&#123; full_url_for('/rss.xml') &#125;&#125;&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/atom+xml&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;&#123;&#123; full_url_for('/atom.xml') &#125;&#125;&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/json&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;&#123;&#123; full_url_for('/feed.json') &#125;&#125;&quot; /&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/json&quot; title=&quot;&#123;&#123;config.title&#125;&#125;&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot; /&gt;
+&#123;&#123; _js('/live2d-widget/autoload.js') &#125;&#125;
+</code></pre>
+<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</p>
+<p>本地搭建是区别网上另一种方法，かねき けん师傅tql</p>
+<p>我debug的时候报的js渲染错误，后来发现是minify(十个亚压缩插件，减少文件大小)的问题，注释掉，<del>搅屎棍</del>。</p>
+<h3 id="看板娘的模块问题"><a href="#看板娘的模块问题" class="headerlink" title="看板娘的模块问题"></a>看板娘的模块问题</h3><p>个人认为shoka处理的不是很好，依赖项没怎么更新，也没有回复，插件的压缩依赖项没有及时支持es6规范，用shoka主题个人认为不推荐搞模块，大佬除外。</p>
+<h1 id="关于背景图片的问题"><a href="#关于背景图片的问题" class="headerlink" title="关于背景图片的问题"></a>关于背景图片的问题</h1><p>背景图片有两处地方一个是主题下的_images.yml文件，还有一个是根目录下的/source/__data下的images.yml</p>
+<p>修改source/__data下的images.yml即可覆盖背景图，要6个以上，6个以内好像有bug。</p>
+<p>推荐使用cdn，jsdelivr来加速图片，创建图床，免费使用</p>
+<h1 id="一些基础的细节-改shoka主题可以去大佬博客ReverseSacle，添加功能，魔改博客，很详细。迭代中……"><a href="#一些基础的细节-改shoka主题可以去大佬博客ReverseSacle，添加功能，魔改博客，很详细。迭代中……" class="headerlink" title="一些基础的细节,改shoka主题可以去大佬博客ReverseSacle，添加功能，魔改博客，很详细。迭代中…….."></a>一些基础的细节,改shoka主题可以去大佬博客<span class="exturl" data-url="aHR0cHM6Ly93d3cucmV2ZXJzZXNhY2xlLmNvbS9IZXhvLVNob2thJUU0JUI4JUJCJUU5JUEyJTk4JUU1JThBJTlGJUU4JTgzJUJEJUU0JUJCJThCJUU3JUJCJThEJUU4JUExJUE1JUU1JTg1JTg1JUU3JTgyJUI5Lw==">ReverseSacle</span>，添加功能，魔改博客，很详细。迭代中……..</h1>
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
       </div>
@@ -295,7 +304,7 @@ Canary = Canary's Blog</title>
     <div class="item left">
       
 
-  <a href="/computer-science/Misc/BUGKUmisc/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54302-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg" title="bugku-MISC">
+  <a href="/computer-science/Misc/BUGKUmisc/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;pic7.jpg" title="bugku-MISC">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> Misc</span>
   <h3>bugku-MISC</h3>
@@ -305,7 +314,7 @@ Canary = Canary's Blog</title>
     <div class="item right">
       
 
-  <a href="/English/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54291-LoveLive_Nijigasaki-KonoeKanata-PC-Wallpaper.jpg" title="Learn English">
+  <a href="/English/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;50447-JakuChara_Tomozakikun-PC-Wallpaper.jpg" title="Learn English">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> English</span>
   <h3>Learn English</h3>
@@ -327,7 +336,7 @@ Canary = Canary's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E5%9C%A8%E5%AD%A6blog%E7%9F%A5%E8%AF%86%E9%81%87%E5%88%B0%E6%97%A0%E6%95%B0%E9%97%AE%E9%A2%98%E5%B0%8F%E7%99%BD%E7%9A%84%E6%88%91%E5%8F%88%E4%B8%8D%E4%BC%9A%E5%BC%80%E5%8F%91htmlcss%E5%9C%A8%E8%BF%99%E9%87%8C%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E8%80%85%E6%B2%A1%E6%9C%89%E6%8F%90%E5%8F%8A%E5%88%B0%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text"> 最近在学 blog 知识，遇到无数问题，小白的我又不会开发 HTML+CSS, 在这里遇到的一些问题，以及开发者没有提及到的。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%9C%B0%E5%A4%B4%E5%83%8Fhexo-clean%E5%AE%B9%E6%98%93%E8%A2%AB%E6%B8%85%E9%99%A4%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text"> 关于本地头像 hexo clean 容易被清除的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E7%94%A8cdn%E5%8A%A0%E9%80%9F%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2"><span class="toc-number">1.</span> <span class="toc-text"> 我们可以用 cdn 加速图片的方式部署</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%9C%8B%E6%9D%BF%E5%A8%98live2d-widget%E7%9A%84shoka%E4%B8%BB%E9%A2%98%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text"> 关于看板娘 live2d-widget 的 shoka 主题的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8cdn%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90"><span class="toc-number"></span> <span class="toc-text"> 利用 cdn 网络资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90"><span class="toc-number"></span> <span class="toc-text"> 利用本地资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%8B%E6%9D%BF%E5%A8%98%E7%9A%84%E6%A8%A1%E5%9D%97%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text"> 看板娘的模块问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text"> 关于背景图片的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9A%84%E7%BB%86%E8%8A%82%E6%94%B9shoka%E4%B8%BB%E9%A2%98%E5%8F%AF%E4%BB%A5%E5%8E%BB%E5%A4%A7%E4%BD%AC%E5%8D%9A%E5%AE%A2reversesacle%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD%E9%AD%94%E6%94%B9%E5%8D%9A%E5%AE%A2%E5%BE%88%E8%AF%A6%E7%BB%86-%E8%BF%AD%E4%BB%A3%E4%B8%AD"><span class="toc-number"></span> <span class="toc-text"> 一些基础的细节，改 shoka 主题可以去大佬博客 ReverseSacle，添加功能，魔改博客，很详细。迭代中........</span></a>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E5%9C%A8%E5%AD%A6blog%E7%9F%A5%E8%AF%86%EF%BC%8C%E9%81%87%E5%88%B0%E6%97%A0%E6%95%B0%E9%97%AE%E9%A2%98%EF%BC%8C%E5%B0%8F%E7%99%BD%E7%9A%84%E6%88%91%E5%8F%88%E4%B8%8D%E4%BC%9A%E5%BC%80%E5%8F%91HTML-CSS-%E5%9C%A8%E8%BF%99%E9%87%8C%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E8%80%85%E6%B2%A1%E6%9C%89%E6%8F%90%E5%8F%8A%E5%88%B0%E7%9A%84%E3%80%82"><span class="toc-number">1.</span> <span class="toc-text">最近在学blog知识，遇到无数问题，小白的我又不会开发HTML+CSS,在这里遇到的一些问题，以及开发者没有提及到的。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%9C%B0%E5%A4%B4%E5%83%8Fhexo-clean%E5%AE%B9%E6%98%93%E8%A2%AB%E6%B8%85%E9%99%A4%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">关于本地头像hexo clean容易被清除的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E7%94%A8cdn%E5%8A%A0%E9%80%9F%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2"><span class="toc-number">1.</span> <span class="toc-text">我们可以用cdn加速图片的方式部署</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%9C%8B%E6%9D%BF%E5%A8%98live2d-widget%E7%9A%84shoka%E4%B8%BB%E9%A2%98%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">关于看板娘live2d-widget的shoka主题的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8cdn%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90"><span class="toc-number"></span> <span class="toc-text">利用cdn网络资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90"><span class="toc-number"></span> <span class="toc-text">利用本地资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%8B%E6%9D%BF%E5%A8%98%E7%9A%84%E6%A8%A1%E5%9D%97%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">看板娘的模块问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">关于背景图片的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9A%84%E7%BB%86%E8%8A%82-%E6%94%B9shoka%E4%B8%BB%E9%A2%98%E5%8F%AF%E4%BB%A5%E5%8E%BB%E5%A4%A7%E4%BD%AC%E5%8D%9A%E5%AE%A2ReverseSacle%EF%BC%8C%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD%EF%BC%8C%E9%AD%94%E6%94%B9%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BE%88%E8%AF%A6%E7%BB%86%E3%80%82%E8%BF%AD%E4%BB%A3%E4%B8%AD%E2%80%A6%E2%80%A6"><span class="toc-number"></span> <span class="toc-text">一些基础的细节,改shoka主题可以去大佬博客ReverseSacle，添加功能，魔改博客，很详细。迭代中……..</span></a>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -464,40 +473,21 @@ Canary = Canary's Blog</title>
     
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
+</div>
+
+    <span><a href="/computer-science/Pwn/pwn4/" title="pwn4-stack pivoting">pwn4-stack pivoting</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 </div>
 
     <span><a href="/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2020题解">MiniLCTF_2020题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-</div>
-
-    <span><a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" title="MoeCTF_2021题解">MoeCTF_2021题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
-</div>
-
-    <span><a href="/computer-science/Misc/BUGKUmisc/" title="bugku-MISC">bugku-MISC</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><span class="exturl" data-url="aHR0cDovL3d3dy5nb29nbGUuY29tLw==" title="Link Post">Link Post<i class="ic i-link-alt"></i></span></span>
   </li>
 
       
@@ -513,18 +503,10 @@ Canary = Canary's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/English/" title="In English">English</a>
 </div>
 
-    <span><a href="/videos/" title="Videos">Videos</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/tags/" title="Tags">Tags</a></span>
+    <span><a href="/English/" title="Learn English">Learn English</a></span>
   </li>
 
       
@@ -536,16 +518,7 @@ Canary = Canary's Blog</title>
 <a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
 </div>
 
-    <span><a href="/computer-science/Reverse/reverse2/" title="学习Reverse2">学习Reverse2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
+    <span><a href="/computer-science/Reverse/reverse/" title="学习Reverse">学习Reverse</a></span>
   </li>
 
       
@@ -554,10 +527,49 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
+<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
 </div>
 
-    <span><a href="/computer-science/Misc/%E6%AF%94%E8%B5%9Bmisc/" title="比赛MISC">比赛MISC</a></span>
+    <span><a href="/computer-science/Pwn/pwn2/" title="pwn2">pwn2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
+</div>
+
+    <span><a href="/computer-science/Pwn/pwn3/" title="pwn3">pwn3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/markdown/" title="Markdown Style test">Markdown Style test</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/excerpts/" title="Excerpts">Excerpts</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/videos/" title="Videos">Videos</a></span>
   </li>
 
   </ul>
@@ -582,13 +594,13 @@ Canary = Canary's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">113k words</span>
+    <span title="Symbols count total">120k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:49</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>

@@ -78,7 +78,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>179</span>
+    <span>208</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -119,12 +119,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic6.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54232-BanG_Dream-WakamiyaEve-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/44762-imas-cinderella-MorikuboNono-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54233-BanG_Dream-WakamiyaEve-PC-Wallpaper.jpg"></li>
           <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54305-projectSEKAI-AsahinaMafuyu-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic4.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic3.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/49236-Kanokari-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54234-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32308-Netoge_no_Yome-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/44761-imas-cinderella-MorikuboNono-PC.jpg"></li>
         </ul>
       </div>
     </header>
@@ -173,14 +173,17 @@ Canary = Canary's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="最近要比赛reverse积累一些逆向代码"><a class="anchor" href="#最近要比赛reverse积累一些逆向代码">#</a> 最近要比赛 reverse，积累一些逆向代码</h1>
-<h2 id="xctf-reversing-x64elf-100"><a class="anchor" href="#xctf-reversing-x64elf-100">#</a> xctf: <span class="exturl" data-url="aHR0cHM6Ly9hZHdvcmxkLnhjdGYub3JnLmNuL3Rhc2svYW5zd2VyP3R5cGU9cmV2ZXJzZSZhbXA7bnVtYmVyPTQmYW1wO2dyYWRlPTEmYW1wO2lkPTQ4MjYmYW1wO3BhZ2U9Mg==">Reversing-x64Elf-100</span></h2>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/1639387679(1).jpg" alt="" /></p>
-<p>进入 sub_4006FD 函数</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/1639387750(1).jpg" alt="" /></p>
+    <h1 id="最近要比赛reverse，积累一些逆向代码"><a href="#最近要比赛reverse，积累一些逆向代码" class="headerlink" title="最近要比赛reverse，积累一些逆向代码"></a>最近要比赛reverse，积累一些逆向代码</h1><h2 id="xctf-Reversing-x64Elf-100"><a href="#xctf-Reversing-x64Elf-100" class="headerlink" title="xctf: Reversing-x64Elf-100"></a>xctf: <span class="exturl" data-url="aHR0cHM6Ly9hZHdvcmxkLnhjdGYub3JnLmNuL3Rhc2svYW5zd2VyP3R5cGU9cmV2ZXJzZSZudW1iZXI9NCZncmFkZT0xJmlkPTQ4MjYmcGFnZT0y">Reversing-x64Elf-100</span></h2><p><img data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/1639387679(1).jpg"></p>
+<p>进入sub_4006FD函数</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/1639387750(1).jpg"></p>
 <p>逆向脚本：</p>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Dufhbmf'</span><span class="token punctuation">,</span><span class="token string">'pG`imos'</span><span class="token punctuation">,</span><span class="token string">'ewUglpt'</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre>flag <span class="token operator">=</span> <span class="token string">''</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    flag <span class="token operator">=</span> flag <span class="token operator">+</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>  <span class="token builtin">ord</span><span class="token punctuation">(</span>   a<span class="token punctuation">[</span>i<span class="token operator">%</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span> <span class="token builtin">int</span><span class="token punctuation">(</span>i<span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>   <span class="token punctuation">)</span>  <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="xctf"><a class="anchor" href="#xctf">#</a> xctf</h2>
-
+<pre><code class="python">a = [&#39;Dufhbmf&#39;,&#39;pG`imos&#39;,&#39;ewUglpt&#39;]
+flag = &#39;&#39;
+for i in range(12):
+    flag = flag + chr(  ord(   a[i%3][2* int(i/3)]   )  -1 )
+print(flag) 
+</code></pre>
+<h2 id="xctf"><a href="#xctf" class="headerlink" title="xctf"></a>xctf</h2>
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
           <a href="/tags/Reverse/" rel="tag"><i class="ic i-tag"></i> Reverse</a>
@@ -258,7 +261,7 @@ Canary = Canary's Blog</title>
     <div class="item left">
       
 
-  <a href="/computer-science/Pwn/pwn4/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;53968-LoveLive_Nijigasaki-MifuneShioriko-PC-Wallpaper.jpg" title="pwn4-stack pivoting">
+  <a href="/computer-science/Pwn/pwn4/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;pic6.jpg" title="pwn4-stack pivoting">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> Pwn</span>
   <h3>pwn4-stack pivoting</h3>
@@ -268,7 +271,7 @@ Canary = Canary's Blog</title>
     <div class="item right">
       
 
-  <a href="/MiniLCTF_2021%E9%A2%98%E8%A7%A3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;40953-imas-cinderella-ShimamuraUzuki-PC.jpg" title="MiniLCTF_2021题解">
+  <a href="/MiniLCTF_2021%E9%A2%98%E8%A7%A3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;pic1.jpg" title="MiniLCTF_2021题解">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> computer-science</span>
   <h3>MiniLCTF_2021题解</h3>
@@ -290,7 +293,7 @@ Canary = Canary's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E8%A6%81%E6%AF%94%E8%B5%9Breverse%E7%A7%AF%E7%B4%AF%E4%B8%80%E4%BA%9B%E9%80%86%E5%90%91%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text"> 最近要比赛 reverse，积累一些逆向代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xctf-reversing-x64elf-100"><span class="toc-number">1.1.</span> <span class="toc-text"> xctf: Reversing-x64Elf-100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xctf"><span class="toc-number">1.2.</span> <span class="toc-text"> xctf</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E8%A6%81%E6%AF%94%E8%B5%9Breverse%EF%BC%8C%E7%A7%AF%E7%B4%AF%E4%B8%80%E4%BA%9B%E9%80%86%E5%90%91%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">最近要比赛reverse，积累一些逆向代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xctf-Reversing-x64Elf-100"><span class="toc-number">1.1.</span> <span class="toc-text">xctf: Reversing-x64Elf-100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xctf"><span class="toc-number">1.2.</span> <span class="toc-text">xctf</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -428,10 +431,10 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
+<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
 </div>
 
-    <span><a href="/computer-science/Pwn/pwn/" title="pwn1">pwn1</a></span>
+    <span><a href="/computer-science/Misc/BUGKUmisc/" title="bugku-MISC">bugku-MISC</a></span>
   </li>
 
       
@@ -440,7 +443,7 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/tag-plugins/" title="Tag Plugins">Tag Plugins</a></span>
+    <span><span class="exturl" data-url="aHR0cDovL3d3dy5nb29nbGUuY29tLw==" title="Link Post">Link Post<i class="ic i-link-alt"></i></span></span>
   </li>
 
       
@@ -448,11 +451,9 @@ Canary = Canary's Blog</title>
     
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
 </div>
 
-    <span><a href="/computer-science/Reverse/reverse2/" title="学习Reverse2">学习Reverse2</a></span>
+    <span><a href="/MiniLCTF_2021%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2021题解">MiniLCTF_2021题解</a></span>
   </li>
 
       
@@ -461,7 +462,25 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/gallery-post/" title="Gallery Post">Gallery Post</a></span>
+    <span><a href="/excerpts/" title="Excerpts">Excerpts</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/code-highlight/" title="Code Highlight Style test">Code Highlight Style test</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
   </li>
 
       
@@ -482,24 +501,12 @@ Canary = Canary's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<a href="/categories/psychology/" title="In psychology">psychology</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Crypto/" title="In Crypto">Crypto</a>
+<a href="/categories/psychology/ana/" title="In ana">ana</a>
 </div>
 
-    <span><a href="/computer-science/Crypto/Crypto/" title="Crypto">Crypto</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Web/" title="In Web">Web</a>
-</div>
-
-    <span><a href="/computer-science/Web/Web/" title="web学习">web学习</a></span>
+    <span><a href="/psychology/ana/research/" title="chology">chology</a></span>
   </li>
 
       
@@ -508,31 +515,16 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/videos/" title="Videos">Videos</a></span>
+    <span><a href="/markdown/" title="Markdown Style test">Markdown Style test</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
 </div>
 
-    <span><a href="/computer-science/Pwn/pwn2/" title="pwn2">pwn2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
-</div>
-
-    <span><a href="/computer-science/Pwn/pwn3/" title="pwn3">pwn3</a></span>
+    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
   </li>
 
   </ul>
@@ -557,13 +549,13 @@ Canary = Canary's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">113k words</span>
+    <span title="Symbols count total">120k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:49</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>

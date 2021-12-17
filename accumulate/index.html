@@ -76,7 +76,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>725</span>
+    <span>833</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -117,12 +117,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51224-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50447-JakuChara_Tomozakikun-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54234-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/44760-imas-cinderella-MorikuboNono-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic5.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51944-higehiro-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54167-BanG_Dream-MinatoYukina-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/43487-Imouto_sae_Irebaii-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32933-ANNE_HAPPY-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32308-Netoge_no_Yome-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/53809-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54305-projectSEKAI-AsahinaMafuyu-PC-Wallpaper.jpg"></li>
         </ul>
       </div>
     </header>
@@ -166,27 +166,55 @@ Canary = Canary's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h3 id="gif文件修改大小"><a class="anchor" href="#gif文件修改大小">#</a> gif 文件修改大小</h3>
-<p><img data-src="/img/accumulate/1.png" alt="avatar" /></p>
-<p>gif 修改大小 FF 为 255</p>
-<p><img data-src="/img/accumulate/2.png" alt="avatar" /></p>
-<p><img data-src="/img/accumulate/3.png" alt="avatar" /></p>
+    <h3 id="gif文件修改大小"><a href="#gif文件修改大小" class="headerlink" title="gif文件修改大小"></a>gif文件修改大小</h3><p><img data-src="/img/accumulate/1.png" alt="avatar"></p>
+<p>gif修改大小FF为255</p>
+<p><img data-src="/img/accumulate/2.png" alt="avatar"></p>
+<p><img data-src="/img/accumulate/3.png" alt="avatar"></p>
 <p>一共修改两处</p>
-<h3 id="bmp修改大小"><a class="anchor" href="#bmp修改大小">#</a> bmp 修改大小</h3>
-<p>可以看见</p>
-<p><img data-src="/img/accumulate/bmp.png" alt="avatar" /></p>
-<p>4 个字节代表宽和高 84030000，F3000000</p>
-<p>贴爆破 bmp 宽度的脚本</p>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> struct</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> zlib</pre></td></tr><tr><td data-num="3"></td><td><pre>f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./.bmp'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>c <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>width <span class="token operator">=</span> c<span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">:</span><span class="token number">22</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="6"></td><td><pre>height <span class="token operator">=</span> c<span class="token punctuation">[</span><span class="token number">22</span><span class="token punctuation">:</span><span class="token number">26</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token comment"># 爆破 bmp 宽度</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">900</span><span class="token punctuation">,</span><span class="token number">1100</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    f1 <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'.bmp'</span><span class="token punctuation">,</span><span class="token string">'wb'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token comment"># print(struct.pack('>i',i)[::-1])</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    img <span class="token operator">=</span> c<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">]</span><span class="token operator">+</span>struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'>i'</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>c<span class="token punctuation">[</span><span class="token number">22</span><span class="token punctuation">:</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    f1<span class="token punctuation">.</span>write<span class="token punctuation">(</span>img<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    f1<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>可以看到 900 到 1100 的宽度的图片，慢慢找适合的宽度。</p>
-<h3 id="png修改大小"><a class="anchor" href="#png修改大小">#</a> png 修改大小</h3>
-<p><img data-src="/img/accumulate/png.png" alt="avatar" /></p>
+<h3 id="bmp修改大小"><a href="#bmp修改大小" class="headerlink" title="bmp修改大小"></a>bmp修改大小</h3><p>可以看见</p>
+<p><img data-src="/img/accumulate/bmp.png" alt="avatar"></p>
+<p>4个字节代表宽和高84030000，F3000000</p>
+<p>贴爆破bmp宽度的脚本</p>
+<pre><code class="python">import struct
+import zlib
+f = open(&#39;./.bmp&#39;,&#39;rb&#39;)
+c = f.read()
+width = c[18:22]
+height = c[22:26]
+# 爆破bmp宽度
+for i in range(900,1100):
+    f1 = open(&#39;./&#39;+str(i)+&#39;.bmp&#39;,&#39;wb&#39;)
+    # print(struct.pack(&#39;&gt;i&#39;,i)[::-1])
+    img = c[:18]+struct.pack(&#39;&gt;i&#39;,i)[::-1]+c[22:]
+    f1.write(img)
+    f1.close()
+</code></pre>
+<p>可以看到900到1100的宽度的图片，慢慢找适合的宽度。</p>
+<h3 id="png修改大小"><a href="#png修改大小" class="headerlink" title="png修改大小"></a>png修改大小</h3><p><img data-src="/img/accumulate/png.png" alt="avatar"></p>
 <p>这边修改大小</p>
-<p>看到 crc</p>
-<p>可以用 crc 爆破</p>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> os</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> binascii</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">import</span> struct</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>crcbp <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"misc26.png"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">#打开图片</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        data <span class="token operator">=</span> crcbp<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">:</span><span class="token number">16</span><span class="token punctuation">]</span> <span class="token operator">+</span> \</pre></td></tr><tr><td data-num="9"></td><td><pre>            struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'>i'</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token operator">+</span>struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'>i'</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token operator">+</span>crcbp<span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">29</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        crc32 <span class="token operator">=</span> binascii<span class="token punctuation">.</span>crc32<span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xffffffff</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token keyword">if</span><span class="token punctuation">(</span>crc32 <span class="token operator">==</span> <span class="token number">0xEC9CCBC6</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment">#图片当前 CRC</span></pre></td></tr><tr><td data-num="12"></td><td><pre>            <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'hex:'</span><span class="token punctuation">,</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre></pre></td></tr><tr><td data-num="15"></td><td><pre>result<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token number">900</span> <span class="token number">606</span></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token builtin">hex</span><span class="token punctuation">:</span> <span class="token number">0x384</span> <span class="token number">0x25e</span></pre></td></tr></table></figure><p>标准大小是 900*606</p>
-<h3 id="jpg修改大小"><a class="anchor" href="#jpg修改大小">#</a> jpg 修改大小</h3>
-<p><img data-src="/img/accumulate/jpg.png" alt="avatar" /></p>
-<p>96 改成 FF 最大就可以了</p>
+<p>看到crc</p>
+<p>可以用crc爆破</p>
+<pre><code class="python">import os
+import binascii
+import struct
+
+crcbp = open(&quot;misc26.png&quot;, &quot;rb&quot;).read()    #打开图片
+for i in range(2000):
+    for j in range(2000):
+        data = crcbp[12:16] + \
+            struct.pack(&#39;&gt;i&#39;, i)+struct.pack(&#39;&gt;i&#39;, j)+crcbp[24:29]
+        crc32 = binascii.crc32(data) &amp; 0xffffffff
+        if(crc32 == 0xEC9CCBC6):    #图片当前CRC
+            print(i, j)
+            print(&#39;hex:&#39;, hex(i), hex(j))
+
+result:
+900 606
+hex: 0x384 0x25e
+</code></pre>
+<p>标准大小是900*606</p>
+<h3 id="jpg修改大小"><a href="#jpg修改大小" class="headerlink" title="jpg修改大小"></a>jpg修改大小</h3><p><img data-src="/img/accumulate/jpg.png" alt="avatar"></p>
+<p>96改成FF最大就可以了</p>
 
   </div>
 
@@ -254,7 +282,7 @@ Canary = Canary's Blog</title>
     <div class="item left">
       
 
-  <a href="/code-highlight/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;51227-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg" title="Code Highlight Style test">
+  <a href="/code-highlight/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;40953-imas-cinderella-ShimamuraUzuki-PC.jpg" title="Code Highlight Style test">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>Code Highlight Style test</h3>
@@ -264,7 +292,7 @@ Canary = Canary's Blog</title>
     <div class="item right">
       
 
-  <a href="/computer-science/Misc/BUGKUmisc/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;46256-imoimo-PC-Wallpaper.jpg" title="bugku-MISC">
+  <a href="/computer-science/Misc/BUGKUmisc/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;pic1.jpg" title="bugku-MISC">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> Misc</span>
   <h3>bugku-MISC</h3>
@@ -286,7 +314,7 @@ Canary = Canary's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#gif%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.</span> <span class="toc-text"> gif 文件修改大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bmp%E4%BF%AE%E6%94%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">2.</span> <span class="toc-text"> bmp 修改大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#png%E4%BF%AE%E6%94%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">3.</span> <span class="toc-text"> png 修改大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jpg%E4%BF%AE%E6%94%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">4.</span> <span class="toc-text"> jpg 修改大小</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#gif%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.</span> <span class="toc-text">gif文件修改大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bmp%E4%BF%AE%E6%94%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">2.</span> <span class="toc-text">bmp修改大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#png%E4%BF%AE%E6%94%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">3.</span> <span class="toc-text">png修改大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jpg%E4%BF%AE%E6%94%B9%E5%A4%A7%E5%B0%8F"><span class="toc-number">4.</span> <span class="toc-text">jpg修改大小</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -419,45 +447,10 @@ Canary = Canary's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
+<a href="/categories/English/" title="In English">English</a>
 </div>
 
-    <span><a href="/computer-science/Misc/BUGKUmisc/" title="bugku-MISC">bugku-MISC</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/markdown/" title="Markdown Style test">Markdown Style test</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-</div>
-
-    <span><a href="/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2020题解">MiniLCTF_2020题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" title="In CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" title="In Reverse">Reverse</a>
-</div>
-
-    <span><a href="/hexo/" title="hexo搭建的一些问题">hexo搭建的一些问题</a></span>
+    <span><a href="/English/" title="Learn English">Learn English</a></span>
   </li>
 
       
@@ -466,10 +459,22 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
+<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
 </div>
 
-    <span><a href="/computer-science/Reverse/reverse/" title="学习Reverse">学习Reverse</a></span>
+    <span><a href="/computer-science/Pwn/pwn2/" title="pwn2">pwn2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
+</div>
+
+    <span><a href="/computer-science/Pwn/pwn4/" title="pwn4-stack pivoting">pwn4-stack pivoting</a></span>
   </li>
 
       
@@ -478,7 +483,7 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
+    <span><a href="/elements/" title="Elements">Elements</a></span>
   </li>
 
       
@@ -487,7 +492,7 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/gallery-post/" title="Gallery Post">Gallery Post</a></span>
   </li>
 
       
@@ -503,21 +508,45 @@ Canary = Canary's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
 </div>
 
-    <span><a href="/computer-science/Misc/%E6%AF%94%E8%B5%9Bmisc/" title="比赛MISC">比赛MISC</a></span>
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Crypto/" title="In Crypto">Crypto</a>
 </div>
 
-    <span><a href="/long-title/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a></span>
+    <span><a href="/computer-science/Crypto/Crypto/" title="Crypto">Crypto</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
+</div>
+
+    <span><a href="/computer-science/Misc/BUGKUmisc/" title="bugku-MISC">bugku-MISC</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
+</div>
+
+    <span><a href="/computer-science/Reverse/reverse/" title="学习Reverse">学习Reverse</a></span>
   </li>
 
   </ul>
@@ -542,13 +571,13 @@ Canary = Canary's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">113k words</span>
+    <span title="Symbols count total">120k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:49</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>
