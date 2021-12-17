@@ -20,6 +20,7 @@
 <link rel="alternate" type="application/json" title="Canary's Blog" href="https://zephyr-cyber.github.io.git/feed.json" />
 <link rel="alternate" type="application/json" title="Canary's Blog" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" />
 <script src="/js/live2d-widget/autoload.js?v=0.2.5"></script>
+<script src="/js/live2d-widget/waifu-tips.js?v=0.2.5"></script>
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
@@ -117,12 +118,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic2.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/32933-ANNE_HAPPY-PC.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic4.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54305-projectSEKAI-AsahinaMafuyu-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/40953-imas-cinderella-ShimamuraUzuki-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54309-projectSEKAI-HatsuneMiku-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic7.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51944-higehiro-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/20833_kin-iro_mosaic.jpg"></li>
           <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54302-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/46258-imoimo-PC-Wallpaper.jpg"></li>
         </ul>
       </div>
     </header>
@@ -171,16 +172,41 @@ Canary = Canary's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="pwn学习1"><a href="#pwn学习1" class="headerlink" title="pwn学习1"></a>pwn学习1</h1><p>一张汇编图片<br><img data-src="/img/PWN/huibian1.jpg" alt="avatar"></p>
+    <h1 id="pwn学习1"><a class="anchor" href="#pwn学习1">#</a> pwn 学习 1</h1>
+<p>一张汇编图片<br />
+<img data-src="/img/PWN/huibian1.jpg" alt="avatar" /></p>
 <p>栈帧结构</p>
-<h1 id="Fig-1-函数调用发生和结束时调用栈的变化"><a href="#Fig-1-函数调用发生和结束时调用栈的变化" class="headerlink" title="Fig 1.函数调用发生和结束时调用栈的变化"></a>Fig 1.函数调用发生和结束时调用栈的变化</h1><p>esp 用来存储函数调用栈的栈顶地址，在压栈和退栈时发生变化。ebp 用来存储当前函数状态的基地址，在函数运行时不变，可以用来索引确定函数参数或局部变量的位置。eip 用来存储即将执行的程序指令的地址，cpu 依照 eip 的存储内容读取指令并执行，eip 随之指向相邻的下一条指令，如此反复，程序就得以连续执行指令。<br>下面让我们来看看发生函数调用时，栈顶函数状态以及上述寄存器的变化。变化的核心任务是将调用函数（caller）的状态保存起来，同时创建被调用函数（callee）的状态<br><img data-src="/img/PWN/fig1.jpg" alt="avatar"></p>
-<h1 id="Fig-2-将被调用函数的参数压入栈内"><a href="#Fig-2-将被调用函数的参数压入栈内" class="headerlink" title="Fig 2.将被调用函数的参数压入栈内"></a>Fig 2.将被调用函数的参数压入栈内</h1><p>将被调用函数的参数压入栈内<br>首先将被调用函数（callee）的参数按照逆序依次压入栈内。如果被调用函数（callee）不需要参数，则没有这一步骤。这些参数仍会保存在调用函数（caller）的函数状态内，之后压入栈内的数据都会作为被调用函数（callee）的函数状态来保存。<br><img data-src="/img/PWN/fig2.jpg" alt="avatar"></p>
-<h1 id="Fig-3-将被调用函数的返回地址压入栈内"><a href="#Fig-3-将被调用函数的返回地址压入栈内" class="headerlink" title="Fig 3.将被调用函数的返回地址压入栈内"></a>Fig 3.将被调用函数的返回地址压入栈内</h1><p>然后将调用函数（caller）进行调用之后的下一条指令地址作为返回地址压入栈内。这样调用函数（caller）的 eip（指令）信息得以保存。<br><img data-src="/img/PWN/fig3.jpg" alt="avatar"></p>
-<h1 id="Fig-4-将调用函数的基地址（ebp）压入栈内，并将当前栈顶地址传到-ebp-寄存器内"><a href="#Fig-4-将调用函数的基地址（ebp）压入栈内，并将当前栈顶地址传到-ebp-寄存器内" class="headerlink" title="Fig 4.将调用函数的基地址（ebp）压入栈内，并将当前栈顶地址传到 ebp 寄存器内"></a>Fig 4.将调用函数的基地址（ebp）压入栈内，并将当前栈顶地址传到 ebp 寄存器内</h1><p>再将当前的ebp 寄存器的值（也就是调用函数的基地址）压入栈内，并将 ebp 寄存器的值更新为当前栈顶的地址。这样调用函数（caller）的 ebp（基地址）信息得以保存。同时，ebp 被更新为被调用函数（callee）的基地址。<br><img data-src="/img/PWN/fig4.jpg" alt="avatar"></p>
-<h1 id="Fig-5-将被调用函数的局部变量压入栈内"><a href="#Fig-5-将被调用函数的局部变量压入栈内" class="headerlink" title="Fig 5.将被调用函数的局部变量压入栈内"></a>Fig 5.将被调用函数的局部变量压入栈内</h1><p>再之后是将被调用函数（callee）的局部变量等数据压入栈内。。<br><img data-src="/img/PWN/fig5.jpg" alt="avatar"></p>
-<h1 id="Fig-6-将被调用函数的局部变量弹出栈外"><a href="#Fig-6-将被调用函数的局部变量弹出栈外" class="headerlink" title="Fig 6.将被调用函数的局部变量弹出栈外"></a>Fig 6.将被调用函数的局部变量弹出栈外</h1><p>在压栈的过程中，esp 寄存器的值不断减小（对应于栈从内存高地址向低地址生长）。压入栈内的数据包括调用参数、返回地址、调用函数的基地址，以及局部变量，其中调用参数以外的数据共同构成了被调用函数（callee）的状态。在发生调用时，程序还会将被调用函数（callee）的指令地址存到 eip 寄存器内，这样程序就可以依次执行被调用函数的指令了。<br>看过了函数调用发生时的情况，就不难理解函数调用结束时的变化。变化的核心任务是丢弃被调用函数（callee）的状态，并将栈顶恢复为调用函数（caller）的状态。<br>首先被调用函数的局部变量会从栈内直接弹出，栈顶会指向被调用函数（callee）的基地址。<br><img data-src="/img/PWN/fig6.jpg" alt="avatar"></p>
-<h1 id="Fig-7"><a href="#Fig-7" class="headerlink" title="Fig 7."></a>Fig 7.</h1><p>将调用函数（caller）的基地址（ebp）弹出栈外，并存到 ebp 寄存器内<br>然后将基地址内存储的调用函数（caller）的基地址从栈内弹出，并存到 ebp 寄存器内。这样调用函数（caller）的 ebp（基地址）信息得以恢复。此时栈顶会指向返回地址。<br><img data-src="/img/PWN/fig7.jpg" alt="avatar"></p>
-<h1 id="Fig-8"><a href="#Fig-8" class="headerlink" title="Fig 8."></a>Fig 8.</h1><p>再将返回地址从栈内弹出，并存到 eip 寄存器内。这样调用函数（caller）的 eip（指令）信息得以恢复。<br>将被调用函数的返回地址弹出栈外，并存到 eip 寄存器内<br>至此调用函数（caller）的函数状态就全部恢复了，之后就是继续执行调用函数的指令了。<br><img data-src="/img/PWN/fig8.jpg" alt="avatar"></p>
+<h1 id="fig-1函数调用发生和结束时调用栈的变化"><a class="anchor" href="#fig-1函数调用发生和结束时调用栈的变化">#</a> Fig 1. 函数调用发生和结束时调用栈的变化</h1>
+<p>esp 用来存储函数调用栈的栈顶地址，在压栈和退栈时发生变化。ebp 用来存储当前函数状态的基地址，在函数运行时不变，可以用来索引确定函数参数或局部变量的位置。eip 用来存储即将执行的程序指令的地址，cpu 依照 eip 的存储内容读取指令并执行，eip 随之指向相邻的下一条指令，如此反复，程序就得以连续执行指令。<br />
+下面让我们来看看发生函数调用时，栈顶函数状态以及上述寄存器的变化。变化的核心任务是将调用函数（caller）的状态保存起来，同时创建被调用函数（callee）的状态<br />
+<img data-src="/img/PWN/fig1.jpg" alt="avatar" /></p>
+<h1 id="fig-2将被调用函数的参数压入栈内"><a class="anchor" href="#fig-2将被调用函数的参数压入栈内">#</a> Fig 2. 将被调用函数的参数压入栈内</h1>
+<p>将被调用函数的参数压入栈内<br />
+首先将被调用函数（callee）的参数按照逆序依次压入栈内。如果被调用函数（callee）不需要参数，则没有这一步骤。这些参数仍会保存在调用函数（caller）的函数状态内，之后压入栈内的数据都会作为被调用函数（callee）的函数状态来保存。<br />
+<img data-src="/img/PWN/fig2.jpg" alt="avatar" /></p>
+<h1 id="fig-3将被调用函数的返回地址压入栈内"><a class="anchor" href="#fig-3将被调用函数的返回地址压入栈内">#</a> Fig 3. 将被调用函数的返回地址压入栈内</h1>
+<p>然后将调用函数（caller）进行调用之后的下一条指令地址作为返回地址压入栈内。这样调用函数（caller）的 eip（指令）信息得以保存。<br />
+<img data-src="/img/PWN/fig3.jpg" alt="avatar" /></p>
+<h1 id="fig-4将调用函数的基地址ebp压入栈内并将当前栈顶地址传到-ebp-寄存器内"><a class="anchor" href="#fig-4将调用函数的基地址ebp压入栈内并将当前栈顶地址传到-ebp-寄存器内">#</a> Fig 4. 将调用函数的基地址（ebp）压入栈内，并将当前栈顶地址传到 ebp 寄存器内</h1>
+<p>再将当前的 ebp 寄存器的值（也就是调用函数的基地址）压入栈内，并将 ebp 寄存器的值更新为当前栈顶的地址。这样调用函数（caller）的 ebp（基地址）信息得以保存。同时，ebp 被更新为被调用函数（callee）的基地址。<br />
+<img data-src="/img/PWN/fig4.jpg" alt="avatar" /></p>
+<h1 id="fig-5将被调用函数的局部变量压入栈内"><a class="anchor" href="#fig-5将被调用函数的局部变量压入栈内">#</a> Fig 5. 将被调用函数的局部变量压入栈内</h1>
+<p>再之后是将被调用函数（callee）的局部变量等数据压入栈内。。<br />
+<img data-src="/img/PWN/fig5.jpg" alt="avatar" /></p>
+<h1 id="fig-6将被调用函数的局部变量弹出栈外"><a class="anchor" href="#fig-6将被调用函数的局部变量弹出栈外">#</a> Fig 6. 将被调用函数的局部变量弹出栈外</h1>
+<p>在压栈的过程中，esp 寄存器的值不断减小（对应于栈从内存高地址向低地址生长）。压入栈内的数据包括调用参数、返回地址、调用函数的基地址，以及局部变量，其中调用参数以外的数据共同构成了被调用函数（callee）的状态。在发生调用时，程序还会将被调用函数（callee）的指令地址存到 eip 寄存器内，这样程序就可以依次执行被调用函数的指令了。<br />
+看过了函数调用发生时的情况，就不难理解函数调用结束时的变化。变化的核心任务是丢弃被调用函数（callee）的状态，并将栈顶恢复为调用函数（caller）的状态。<br />
+首先被调用函数的局部变量会从栈内直接弹出，栈顶会指向被调用函数（callee）的基地址。<br />
+<img data-src="/img/PWN/fig6.jpg" alt="avatar" /></p>
+<h1 id="fig-7"><a class="anchor" href="#fig-7">#</a> Fig 7.</h1>
+<p>将调用函数（caller）的基地址（ebp）弹出栈外，并存到 ebp 寄存器内<br />
+然后将基地址内存储的调用函数（caller）的基地址从栈内弹出，并存到 ebp 寄存器内。这样调用函数（caller）的 ebp（基地址）信息得以恢复。此时栈顶会指向返回地址。<br />
+<img data-src="/img/PWN/fig7.jpg" alt="avatar" /></p>
+<h1 id="fig-8"><a class="anchor" href="#fig-8">#</a> Fig 8.</h1>
+<p>再将返回地址从栈内弹出，并存到 eip 寄存器内。这样调用函数（caller）的 eip（指令）信息得以恢复。<br />
+将被调用函数的返回地址弹出栈外，并存到 eip 寄存器内<br />
+至此调用函数（caller）的函数状态就全部恢复了，之后就是继续执行调用函数的指令了。<br />
+<img data-src="/img/PWN/fig8.jpg" alt="avatar" /></p>
 
   </div>
 
@@ -255,7 +281,7 @@ Canary = Canary's Blog</title>
     <div class="item left">
       
 
-  <a href="/computer-science/Misc/%E6%AF%94%E8%B5%9Bmisc/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;46258-imoimo-PC-Wallpaper.jpg" title="比赛MISC">
+  <a href="/computer-science/Misc/%E6%AF%94%E8%B5%9Bmisc/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54237-BanG_Dream-ShirasagiChisato-PC-Wallpaper.jpg" title="比赛MISC">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> Misc</span>
   <h3>比赛MISC</h3>
@@ -265,7 +291,7 @@ Canary = Canary's Blog</title>
     <div class="item right">
       
 
-  <a href="/computer-science/Pwn/pwn2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;44760-imas-cinderella-MorikuboNono-PC.jpg" title="pwn2">
+  <a href="/computer-science/Pwn/pwn2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;50444-JakuChara_Tomozakikun-PC-Wallpaper.jpg" title="pwn2">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> Pwn</span>
   <h3>pwn2</h3>
@@ -287,7 +313,7 @@ Canary = Canary's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pwn%E5%AD%A6%E4%B9%A01"><span class="toc-number">1.</span> <span class="toc-text">pwn学习1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fig-1-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%8F%91%E7%94%9F%E5%92%8C%E7%BB%93%E6%9D%9F%E6%97%B6%E8%B0%83%E7%94%A8%E6%A0%88%E7%9A%84%E5%8F%98%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">Fig 1.函数调用发生和结束时调用栈的变化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fig-2-%E5%B0%86%E8%A2%AB%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E5%8E%8B%E5%85%A5%E6%A0%88%E5%86%85"><span class="toc-number">3.</span> <span class="toc-text">Fig 2.将被调用函数的参数压入栈内</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fig-3-%E5%B0%86%E8%A2%AB%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80%E5%8E%8B%E5%85%A5%E6%A0%88%E5%86%85"><span class="toc-number">4.</span> <span class="toc-text">Fig 3.将被调用函数的返回地址压入栈内</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fig-4-%E5%B0%86%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E5%9C%B0%E5%9D%80%EF%BC%88ebp%EF%BC%89%E5%8E%8B%E5%85%A5%E6%A0%88%E5%86%85%EF%BC%8C%E5%B9%B6%E5%B0%86%E5%BD%93%E5%89%8D%E6%A0%88%E9%A1%B6%E5%9C%B0%E5%9D%80%E4%BC%A0%E5%88%B0-ebp-%E5%AF%84%E5%AD%98%E5%99%A8%E5%86%85"><span class="toc-number">5.</span> <span class="toc-text">Fig 4.将调用函数的基地址（ebp）压入栈内，并将当前栈顶地址传到 ebp 寄存器内</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fig-5-%E5%B0%86%E8%A2%AB%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%8E%8B%E5%85%A5%E6%A0%88%E5%86%85"><span class="toc-number">6.</span> <span class="toc-text">Fig 5.将被调用函数的局部变量压入栈内</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fig-6-%E5%B0%86%E8%A2%AB%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%BC%B9%E5%87%BA%E6%A0%88%E5%A4%96"><span class="toc-number">7.</span> <span class="toc-text">Fig 6.将被调用函数的局部变量弹出栈外</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fig-7"><span class="toc-number">8.</span> <span class="toc-text">Fig 7.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fig-8"><span class="toc-number">9.</span> <span class="toc-text">Fig 8.</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pwn%E5%AD%A6%E4%B9%A01"><span class="toc-number">1.</span> <span class="toc-text"> pwn 学习 1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fig-1%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%8F%91%E7%94%9F%E5%92%8C%E7%BB%93%E6%9D%9F%E6%97%B6%E8%B0%83%E7%94%A8%E6%A0%88%E7%9A%84%E5%8F%98%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text"> Fig 1. 函数调用发生和结束时调用栈的变化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fig-2%E5%B0%86%E8%A2%AB%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E5%8E%8B%E5%85%A5%E6%A0%88%E5%86%85"><span class="toc-number">3.</span> <span class="toc-text"> Fig 2. 将被调用函数的参数压入栈内</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fig-3%E5%B0%86%E8%A2%AB%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80%E5%8E%8B%E5%85%A5%E6%A0%88%E5%86%85"><span class="toc-number">4.</span> <span class="toc-text"> Fig 3. 将被调用函数的返回地址压入栈内</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fig-4%E5%B0%86%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E5%9C%B0%E5%9D%80ebp%E5%8E%8B%E5%85%A5%E6%A0%88%E5%86%85%E5%B9%B6%E5%B0%86%E5%BD%93%E5%89%8D%E6%A0%88%E9%A1%B6%E5%9C%B0%E5%9D%80%E4%BC%A0%E5%88%B0-ebp-%E5%AF%84%E5%AD%98%E5%99%A8%E5%86%85"><span class="toc-number">5.</span> <span class="toc-text"> Fig 4. 将调用函数的基地址（ebp）压入栈内，并将当前栈顶地址传到 ebp 寄存器内</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fig-5%E5%B0%86%E8%A2%AB%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%8E%8B%E5%85%A5%E6%A0%88%E5%86%85"><span class="toc-number">6.</span> <span class="toc-text"> Fig 5. 将被调用函数的局部变量压入栈内</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fig-6%E5%B0%86%E8%A2%AB%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%BC%B9%E5%87%BA%E6%A0%88%E5%A4%96"><span class="toc-number">7.</span> <span class="toc-text"> Fig 6. 将被调用函数的局部变量弹出栈外</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fig-7"><span class="toc-number">8.</span> <span class="toc-text"> Fig 7.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fig-8"><span class="toc-number">9.</span> <span class="toc-text"> Fig 8.</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -425,6 +451,37 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
+</div>
+
+    <span><a href="/computer-science/Reverse/reverse2/" title="学习Reverse2">学习Reverse2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+</div>
+
+    <span><a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" title="MoeCTF_2021题解">MoeCTF_2021题解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
     <span><a href="/tags/" title="Tags">Tags</a></span>
   </li>
 
@@ -434,10 +491,10 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
+<a href="/categories/computer-science/Crypto/" title="In Crypto">Crypto</a>
 </div>
 
-    <span><a href="/computer-science/Pwn/pwn/" title="pwn1">pwn1</a></span>
+    <span><a href="/computer-science/Crypto/Crypto/" title="Crypto">Crypto</a></span>
   </li>
 
       
@@ -446,59 +503,7 @@ Canary = Canary's Blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/excerpts/" title="Excerpts">Excerpts</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-</div>
-
-    <span><a href="/MiniLCTF_2021%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2021题解">MiniLCTF_2021题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/elements/" title="Elements">Elements</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
-</div>
-
-    <span><a href="/computer-science/Pwn/pwn3/" title="pwn3">pwn3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/tag-plugins/" title="Tag Plugins">Tag Plugins</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/psychology/" title="In psychology">psychology</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/psychology/ana/" title="In ana">ana</a>
-</div>
-
-    <span><a href="/psychology/ana/research/" title="chology">chology</a></span>
+    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
   </li>
 
       
@@ -515,9 +520,32 @@ Canary = Canary's Blog</title>
     
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Reverse/" title="In Reverse">Reverse</a>
 </div>
 
-    <span><a href="/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2020题解">MiniLCTF_2020题解</a></span>
+    <span><a href="/computer-science/Reverse/reverse/" title="学习Reverse">学习Reverse</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><span class="exturl" data-url="aHR0cDovL3d3dy5nb29nbGUuY29tLw==" title="Link Post">Link Post<i class="ic i-link-alt"></i></span></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
+</div>
+
+    <span><a href="/computer-science/Misc/BUGKUmisc/" title="bugku-MISC">bugku-MISC</a></span>
   </li>
 
   </ul>
@@ -542,13 +570,13 @@ Canary = Canary's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">114k words</span>
+    <span title="Symbols count total">113k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:44</span>
+    <span title="Reading time total">1:43</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>
