@@ -1,0 +1,66 @@
+html,body {
+    cursor: url('/img/cur/normal.cur'), default;
+}
+
+div,nav,main,header,footer,section {
+     cursor: url('./img/cur/normal.cur'), auto !important;
+}
+
+/*a标签*/
+
+a:hover {
+    cursor: url('/img/cur/No_Disponible.cur'), auto !important;
+}
+
+
+/*按钮*/
+
+button:hover {
+    cursor: url('/img/cur/work.cur'), auto !important;
+}
+
+
+/*i标签*/
+
+i,i:hover {
+    cursor: url('./img/cur/normal.cur'), auto !important;
+}
+
+
+/*up酱*/
+
+#go-up:hover {
+    cursor: url('/img/cur/work.cur'), auto !important;
+}
+
+
+/*页脚a标签*/
+
+#footer-wrap a:hover {
+    text-decoration: none;
+    cursor: url('/img/cur/No_Disponible.cur'), auto !important;
+}
+
+pre code {
+    cursor: url('/img/cur/Escritura a Mano.cur'), auto !important;
+}
+
+span,time,img,svg {
+    cursor: url('/img/cur/Escritura a Mano.cur'), auto !important;
+}
+
+
+
+
+/*分页器*/
+
+#pagination .page-number:hover {
+    cursor: url('/img/cur/texto.cur'), auto;
+}
+
+
+/*头部的导航栏*/
+
+#nav .site-page:hover {
+    cursor: url('/img/cur/texto.cur'), auto;
+}

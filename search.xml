@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/bufferfly/bufferfly/blog/1243066710.html"/>
+      <url>/bufferfly/bufferfly/blog/1243066710.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java实现坦克大战练手小游戏</title>
+      <link href="/bufferfly/bufferfly/blog/871f3241.html"/>
+      <url>/bufferfly/bufferfly/blog/871f3241.html</url>
+      
+        <content type="html"><![CDATA[<p>自己在摸鱼时间在github上发现某大佬的坦克大战项目，于是就fork下来仔细品读一下，但是发现除了一点多线程，和swt，并没有太多有意思的地方，但是我还是把它敲完，做了一下简单的测试，稍微改动了一下，比如左上角的英文汉化，增加分数显示。em… 就这些。感兴趣的朋友可以简单看看源码。</p><blockquote><p><a href="https://github.com/glassy-sky-lisong/TankGame">坦克大战传送门</a></p></blockquote><p>有有个.idea文件夹，上传时不小心上传上去了，大家clone下来删掉即可，这是idea的个人配置文件夹。不过，idea敲java是真香，[手动狗头.jpg]</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java那点事 </category>
+          
+          <category> 练手项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java那点事 </tag>
+            
+            <tag> 练手项目 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Maven一直reading读取pom.xml文件问题</title>
+      <link href="/bufferfly/bufferfly/blog/f62be7ba.html"/>
+      <url>/bufferfly/bufferfly/blog/f62be7ba.html</url>
+      
+        <content type="html"><![CDATA[<p>关于Maven一直reading读取pom.xml文件问题很是蛋疼，我是用的IDEA，想创建一个SpringBoot去做新项目的后端，但是创建完成后，右下角就一直在读取pom文件，依赖包下不来就什么也干不了，而且退出也没有用，会一直堵塞在哪里，只能用资源管理器kill掉IDEA的桌面任务，然后想通过卸载IDEA来重新建项目，但是没有效果，无奈只能面向百度了，看了一些帖子，据说是网络配置问题，其解决的方案大致这有几种：</p><ol><li>修改HOST文件的 127.0.0.1为localhost，在终端输入 *** netsh winsock reset*** 我的HOST的确是在安装navicat时候改过，然后就修改重启后也没有效果</li><li>添加本地maven到环境变量，这个有效，不过是在降低springboot版本之后添加的</li><li>降低springboot版本，默认是2.3.3，降低到2.2.*</li><li>在IDEA的Help菜单下的showlogExpore，查看运行日志，检查问题，我看了一遍，并没有明显的错误</li></ol><p>折腾了挺长时间，现在分享给大家，帮助大家在遇到此类问题的小伙伴能尽快解决，以免耽误工作。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java那点事 </category>
+          
+          <category> Maven </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Maven </tag>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java泛型之上、下边界通配符的理解(适合初学)</title>
+      <link href="/bufferfly/bufferfly/blog/4ad3c53.html"/>
+      <url>/bufferfly/bufferfly/blog/4ad3c53.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="泛型的由来"><a href="#泛型的由来" class="headerlink" title="泛型的由来"></a>泛型的由来</h2><h3 id="为什么需要泛型"><a href="#为什么需要泛型" class="headerlink" title="为什么需要泛型"></a>为什么需要泛型</h3><p>&emsp;&emsp;Java的数据类型一般都是在定义时就需要确定，这种强制的好处就是类型安全，不会出现像弄一个ClassCastException的数据给jvm，数据安全那么执行的class就会很稳定。但是假如说我不知道这个参数要传什么类型的，因为公司需求在变，如果写死的那就只能便以此需求就改一次，很麻烦。sun公司也注意到这个问题，这样会让代码的灵活性降低，他们就研究出了泛型。</p><h3 id="泛型初识"><a href="#泛型初识" class="headerlink" title="泛型初识"></a>泛型初识</h3><p>&emsp;&emsp;什么是泛型，可以字面理解就是一个泛泛的类型，他是不确定的，在Java代码编译的时候用泛型是不会出错的，而在运行期时就会报错，说你这种第一是不合理的。这是为什么呢。因为为了提高灵活性，就在编译时期将条件放宽，但是泛型一定要在运行的时候告诉jvm你给我的数据到底是什么类型的，否则jvm会是懵逼的。所以泛型的好处就是将类型的灵活性提高，也只是在Java语法的基础上提高，不过泛型还是比较实用的。</p><h3 id="何时使用泛型"><a href="#何时使用泛型" class="headerlink" title="何时使用泛型"></a>何时使用泛型</h3><p>&emsp;&emsp;泛型的应用场景就是应用在模型（可以理解为存储数据的盒子），我为了这个盒子适用更多的地方我就用将需要存入的数据用一个泛型表示，当然可以传入多值。如果是相同类型的对象就用一个泛型的数组比较好，学过集合的小伙伴应该都知道，没学过的那你应该补补课了。</p><p><em><strong>泛型的语法</strong></em></p><pre><code>public class A&lt;T extends B&gt;&#123;   T t;&#125;</code></pre><h2 id="泛型的缺点或者为什么需要上、下边界"><a href="#泛型的缺点或者为什么需要上、下边界" class="headerlink" title="泛型的缺点或者为什么需要上、下边界"></a>泛型的缺点或者为什么需要上、下边界</h2><p>&emsp;&emsp;泛型的虽然强大，但是世界上任何东西东部是完美的。它也有缺陷。比如说我有一个盒子我想装苹果，但是我还可能想装香蕉那怎么办。那还不好说，在给一个参数不就行了，那十个呢，二十个呢。em….的确是。如果说我们想装的东西都属于一个类并且只要是这个类的子类就可以装。这个想法sun为我们想好了。那就是用上边界通配符。语法是<T entends M> T是泛型，M是T的父类。我们就定义一个水果类（Fruit），盛装就容器就是盘子（Dish），现在我们就可以装任何水果了，不错吧！</p><p><em><strong>上边界Java代码</strong></em></p><pre><code>public class Dish&lt;T extends Fruit&gt;&#123;  private T fruitChild;  public Dish(T fruitChild)&#123;    this.fruitChild = fruitChild;  &#125;  public T getFruitChild()&#123;    return fruitChild;  &#125;    public void setFruitChild(T f)&#123;    this.fruitChild = f;  &#125;  public static void main(String[] args)&#123;    Dish dish = new Dish&lt;apple&gt;();    Apple apple = new apple(); //apple must be Fruit child;    dish.setFruitChild(apple);    system.out.printf(dish.getFruitChild);  &#125;&#125;</code></pre><p><em><strong>下边界Java代码</strong></em></p><pre><code>public class Dish&lt;T super Apple&gt;&#123;  private T appleFather;  public Dish(T appleFather)&#123;    this.appleFather = appleFather;  &#125;  public T getAppleFather()&#123;    return appleFather;  &#125;  public void setAppleFather(T f)&#123;    this.appleFather = f;  &#125;  public static void main(String[] args)&#123;    Dish dish = new Dish&lt;Fruit&gt;();    Fruit fruit = new Fruit(); //fruit must be apple son;    dish.setAppleFather(fruit);    system.out.printf(dish.getAppleFather);  &#125;&#125;</code></pre><h2 id="什么是上边界通配符"><a href="#什么是上边界通配符" class="headerlink" title="什么是上边界通配符"></a>什么是上边界通配符</h2><p>&emsp;&emsp;当泛型T给定形如<T extends A> 的A类型到A类型任何子类的限制域，可以匹配任何在此限制域中的类型，此种表示叫上边界通配符。<br>###上边界通配符理解<br><img src="https://images2015.cnblogs.com/blog/820480/201611/820480-20161125004120143-1731938777.png" alt="png"></p><h2 id="什么是下边界通配符"><a href="#什么是下边界通配符" class="headerlink" title="什么是下边界通配符"></a>什么是下边界通配符</h2><p>&emsp;&emsp;当泛型T给定形如<T super A> 的A类型到A类型任何父类的限制域，可以匹配任何在此限制域中的类型，此种表示叫下边界通配符。</p><h3 id="下边界通配符理解"><a href="#下边界通配符理解" class="headerlink" title="下边界通配符理解"></a>下边界通配符理解</h3><p><img src="https://images2015.cnblogs.com/blog/820480/201611/820480-20161125004216471-1377946016.png" alt="png"></p><h2 id="上下边界通配符的缺点"><a href="#上下边界通配符的缺点" class="headerlink" title="上下边界通配符的缺点"></a>上下边界通配符的缺点</h2><p>&emsp;&emsp;上界&lt;? extends T&gt;不能往里存，只能往外取。<br>###解释<br>&emsp;&emsp;因为编译器只知道传入的是T的子类，但具体是哪一个编译器不知道，他只标注了一个占位符，当？传过来时，他不知道这能不能和占位符匹配，所以set不了。<br>&emsp;&emsp;下界&lt;? super T&gt;不影响往里存，但往外取只能放在Object对象里。</p><h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>&emsp;&emsp;因为下边界已经限制了？的粒度，他只可能是T本身或者是T的父类。我们想想，我想要一个T，你却返回给我一个比T小的Object，这样我们就因为精度损失而拿不到想要的数据了。</p><blockquote><p>感谢各位童鞋的阅读，希望大家动一动发财的小手点一下推荐QAQ。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客园博文 </category>
+          
+          <category> 博客美化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客园 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>超实用的SQL语句之嵌套查询</title>
+      <link href="/bufferfly/bufferfly/blog/f3908263.html"/>
+      <url>/bufferfly/bufferfly/blog/f3908263.html</url>
+      
+        <content type="html"><![CDATA[<h2>嵌套查询</h2><h3>什么是嵌套查询</h3>. 　　嵌套查询的意思是，一个查询语句(select-from-where)查询语句块可以嵌套在另外一个查询块的where子句中，称为嵌套查询。其中外层查询也称为父查询，主查询。内层查询也称子查询，从查询。<h3>嵌套查询的工作方式</h3> 　　先处理内查询，由内向外处理，外层查询利用内层查询的结果嵌套查询不仅仅可以用于父查询select语句使用。还可以用于insert、update、delete语句或其他子查询中。<h2>子查询的组成</h2> 1、包含标准选择列表组件的标准select查询。<p> 2、包含一个或多个表或者视图名称的标准from子句。</p><p> 3、可选的where子句。</p><p> 4、可选的group by子句。</p><p> 5、可选的having子句。</p><h2>子查询的语法规则</h2> 1、子查询的select查询总是使用圆括号括起来。<p> 2、不能包括compute或for.browse子句。</p><p> 3、如果同时指定top子句，则可能只包括order by子句。</p><p> 4、子查询最多可以嵌套到32层。个别查询可能会不支持32层嵌套。</p><p> 5、任何可以使用表达式的地方都可以使用子查询，只要它返回的是单个值。</p><p> 6、如果某个表只出现在子查询中二不出现在外部查询中，那么该表的列就无法包含在输出中。</p><h2>简单子查询</h2><strong>示例：</strong>    <pre><code>select name,age from person where age &gt;     (        select age from person         where name = &#39;孙权&#39;    )</code></pre><p><strong>输出结果为：</strong><br><img src="https://cdn.jsdelivr.net/gh/glassy-sky-lisong/StaticFile1@master/post/4.jpg" alt="1"></p><h2>in嵌套查询</h2> 　　in关键字用于where子句中用来判断查询的表达式是否在多个值的列表中。返回满足in列表中的满足条件的记录。<p><strong>示例：</strong></p><pre><code>select name from person where countryid in (select countryid from countrywhere countryname = &#39;魏国&#39;)</code></pre><p><strong>输出结果为：</strong></p><img src="https://cdn.jsdelivr.net/gh/glassy-sky-lisong/StaticFile1@master/post/3.jpg" alt="2"><h2>some嵌套查询</h2><h3>语法</h3> 　　some在sql中的逻辑运算符号，如果在一系列比较中，有些值为True，那么结果就为True。some的语法是：<pre><code>&lt;表达式&gt;&#123; =|&lt;&gt;|!=|&gt;|&gt;=|!&gt;|&lt;|&lt;=|!&lt;&#125;some(子查询)</code></pre><p><strong>示例：</strong></p><pre><code>select name from person where countryid = some 　　　　　　--用等号和以下查询到的值比较，如果与其中一个相等，就返回(select countryid from countrywhere countryname = &#39;魏国&#39;)</code></pre><p><strong>输出结果为：</strong><br><img src="https://cdn.jsdelivr.net/gh/glassy-sky-lisong/StaticFile1@master/post/2.jpg" alt="3"></p><h2>all嵌套查询</h2> 　　all是sql中的逻辑运算符好，如果一系列的比较都为true，那么结果才能为true。<h3>语法</h3><pre><code>&lt;表达式&gt;&#123; =|&lt;&gt;|!=|&gt;|&gt;=|!&gt;|&lt;|&lt;=|!&lt;&#125;all(子查询)</code></pre><p><strong>示例：</strong></p><pre><code>select name from person where countryid &gt; all　　 --当countryid大于以下返回的所有id，此结果才为True，此结果才返回(select countryid from countrywhere countryname = &#39;魏国&#39;)</code></pre><p><strong>输出结果为：</strong><br><img src="https://cdn.jsdelivr.net/gh/glassy-sky-lisong/StaticFile1@master/post/1.jpg" alt="4"></p><h2>exists嵌套查询</h2><h3>语法</h3> 　　exists是sql中的逻辑运算符号。如果子查询有结果集返回，那么就为True。exists代表“存在”的意义，它只查找满足条件的那些记录。<span style="color:red">一旦找到第一个匹配的记录后，就马上停止查找。</span><pre><code>exists　子查询</code></pre><p> 　　其中子查询是一个首先的select语句，不允许有compute子句和into关键字。<br>exists 的意思是，子查询是否有结果集返回。<br><strong>例如：</strong></p><pre><code>SELECT * FROM PersonWHERE exists(SELECT 1      --SELECT 0  SELECT NULL 返回结果都一样，因为这三个子查询都有结果集返回，因此总是True  SELECT * FROM Person照常执行)</code></pre><p> 　　但是如果子查询中因为加了条件而没有结果集返回，则主语句就不执行了：</p><pre><code>SELECT * FROM PersonWHERE exists(SELECT * FROM Person WHERE Person_Id = 100    --如果不存在Person_Id的记录，则子查询没有结果集返回，主语句不执行)</code></pre><p>最后感谢<a href="https://www.cnblogs.com/kissdodog/archive/2013/06/03/3116284.html">不玩博客了！</a>同学的分享，么么哒！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客园博文 </category>
+          
+          <category> mybatis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> MyBatis </tag>
+            
+            <tag> SQL技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>博客美化——Silence主题皮肤</title>
+      <link href="/bufferfly/bufferfly/blog/3ba53770.html"/>
+      <url>/bufferfly/bufferfly/blog/3ba53770.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>&emsp;&emsp;一款专注阅读的博客园主题，主要面向于经常混迹 博客园 的朋友。其追求大道至简的终极真理，界面追求简洁、运行追求高效、部署追求简单。</p><ul><li><a href="https://github.com/glassy-sky-lisong/SilenceSkin">博客皮肤源码地址</a></li><li><a href="https://www.cnblogs.com/esofar">预览地址</a></li><li><a href="https://github.com/esofar/cnblogs-theme-silence/blob/master/docs/deploy.md">如何部署、使用皮肤</a></li><li><a href="https://www.cnblogs.com/esofar/p/cnblogs-theme-silence.html">Silence作者的友链</a></li></ul><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul><li>简洁优雅、精致漂亮的 UI 设计</li><li>提供多种风格主题以便适应各类用户的偏好</li><li>响应式设计，兼容手机端浏览器</li><li>提供事无巨细的部署文档</li><li>源码结构清晰并且注释完整，方便扩展</li></ul><h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>&emsp;&emsp;请先确保您正在使用的机器已经安装 Node.js 和 Git 客户端。</p><pre><code> git clone https://github.com/esofar/cnblogs-theme-silence.git   # 克隆源码 cd cnblogs-theme-silence                                        # 进入项目 npm install                                                     # 安装依赖 npm run build</code></pre><p>&emsp;&emsp;如果没有安装node。js或者不会使用的童鞋可以在我的GitHub，也就是博客皮肤源码地址中。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>&emsp;&emsp;重点部署之前使用博客园的cutorm皮肤，具体部署细节请详见’如何部署、使用皮肤’，如果又不会的话可以看一看我的配置作为参考（仅作为参考，找不回来别哭鼻子）<br><em><strong>CSS</strong></em></p><pre><code>&lt;!-- 溢出隐藏设置（放置在管理--&gt; 设置--&gt; css模块中） --&gt;#topics, #mainContent &#123;    overflow: visible;&#125;.cnblogs-markdown .hljs&#123;    display:block;    color:#333;    overflow-x:auto;    background:#F2F4F5!important;    border:none!important;    font-family:Consolas,Monaco,&#39;Andale Mono&#39;,&#39;Ubuntu Mono&#39;,monospace!important;    padding:1em!important;    font-size:14px!important    &#125;</code></pre><p><em><strong>侧边栏公告</strong></em></p><pre><code>&lt;!-- 在管理--&gt; 设置-&gt; 侧边栏公告(支持js代码、支持html代码) --&gt;&lt;script src=&quot;https://blog-static.cnblogs.com/files/glassysky/silence.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;    $.silence(&#123;        profile: &#123;            enable: true,            avatar: &#39;https://gitee.com/glassyskyforgame/glassysky/blob/master/4c67d1a20cf431ade2873e284836acaf2fdd989e.jpg&#39;,            favicon: &#39;https://gitee.com/glassyskyforgame/glassysky/raw/master/4c67d1a20cf431ade2873e284836acaf2fdd989e.jpg&#39;,        &#125;,        catalog: &#123;            enable: true,            move: true,            index: true,            level1: &#39;h2&#39;,            level2: &#39;h3&#39;,            level3: &#39;h4&#39;,        &#125;,        signature: &#123;            enable: true,            home: &#39;https://www.cnblogs.com/glassysky/&#39;,            license: &#39;署名 4.0 国际&#39;,            link: &#39;https://creativecommons.org/licenses/by/4.0&#39;        &#125;,        reward: &#123;            enable: true,            title: &#39;感谢小可爱投食&#39;,            wechat: &#39;https://images.cnblogs.com/cnblogs_com/esofar/972540/o_wechat.png&#39;,            alipay: &#39;https://images.cnblogs.com/cnblogs_com/esofar/972540/o_alipay.png&#39;        &#125;,        github: &#123;            enable: true,            color: &#39;#fff&#39;,            fill: null,            link: &#39;https://github.com/glassy-sky-lisong&#39;        &#125;    &#125;);&lt;/script&gt;&lt;!--外置主题css补丁--&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://blog-static.cnblogs.com/files/glassysky/sli.css&quot;/&gt;</code></pre><p><em><strong>会动的title</strong></em></p><pre><code>&lt;!-- 动态titlejs --&gt;&lt;script&gt; var OriginTitle = document.title; var titleTime; document.addEventListener(&#39;visibilitychange&#39;, function () &#123; if                 (document.hidden) &#123; document.title = &#39;╭(°A°`)╮ 页面崩溃啦 ~&#39;; clearTimeout(titleTime); &#125; else &#123; document.title = &#39;(ฅ&gt;ω&lt;*ฅ) 噫又    好了~&#39; + OriginTitle; titleTime = setTimeout(function () &#123; document.title = OriginTitle; &#125;, 2000); &#125; &#125;); &lt;/script&gt;</code></pre><p><em><strong>图片放大功能</strong></em></p><pre><code>&lt;!--图片放大的zoomcss和js--&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://blog-static.cnblogs.com/files/glassysky/zoom.css&quot;/&gt;&lt;script src=&quot;https://blog-static.cnblogs.com/files/glassysky/zoom.js&quot;&gt;&lt;/script&gt;&lt;!-- Bootstrap 的 transition.js cdn（过渡动画插件）--&gt;&lt;script type=&quot;text/javascript&quot;&gt;$(&#39;#cnblogs_post_body img&#39;).attr(&#39;data-action&#39;, &#39;zoom&#39;);&lt;/script&gt;</code></pre><h2 id="博客的皮肤风格"><a href="#博客的皮肤风格" class="headerlink" title="博客的皮肤风格"></a>博客的皮肤风格</h2><ul><li>简约·蓝<br><img src="https://github.com/esofar/cnblogs-theme-silence/raw/master/docs/theme_default.png" alt="img1"> </li><li>暗黑·绿<br><img src="https://github.com/esofar/cnblogs-theme-silence/raw/master/docs/theme_dark.png" alt="img2"></li><li>女神·粉<br><img src="https://github.com/esofar/cnblogs-theme-silence/raw/master/docs/theme_goddess.png" alt="img3">  </li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客园博文 </category>
+          
+          <category> 博客美化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客园 </tag>
+            
+            <tag> 博客美化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试分类</title>
+      <link href="/bufferfly/bufferfly/blog/a1da6445.html"/>
+      <url>/bufferfly/bufferfly/blog/a1da6445.html</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个测试</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>你好</title>
+      <link href="/bufferfly/bufferfly/blog/50a2b841.html"/>
+      <url>/bufferfly/bufferfly/blog/50a2b841.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="文本文字"><a href="#文本文字" class="headerlink" title="文本文字"></a>文本文字</h2><span class='p red'>红色</span><span class='p yellow'>黄色</span><span class='p blue'>蓝色</span><p class='p center logo large'>Volantis</p><p class='p center small'>A Wonderful Theme for Hexo</p><h2 id="外挂标签"><a href="#外挂标签" class="headerlink" title="外挂标签"></a>外挂标签</h2><div class="note red"><p>为简单的一句话提供的简便写法。</p></div><div class="note quote"><p>为简单的一句话提供的简便写法。</p></div><div class="note info"><p>为简单的一句话提供的简便写法。</p></div><div class="note warning"><p>为简单的一句话提供的简便写法。</p></div><div class="note done"><p>为简单的一句话提供的简便写法。</p></div><div class="note success"><p>为简单的一句话提供的简便写法</p></div> <div class="note danger"><p>为简单的一句话提供的简便写法</p></div><div class="note error"><p>为简单的一句话提供的简便写法。</p></div><h2 id="灰色标签"><a href="#灰色标签" class="headerlink" title="灰色标签"></a>灰色标签</h2><div class="note radiation"><p>为简单的一句话提供的简便写法</p></div><div class="note bug"><p>为简单的一句话提供的简便写法</p></div> <div class="note idea"><p>为简单的一句话提供的简便写法。</p></div><div class="note link"><p>为简单的一句话提供的简便写法</p></div><div class="note paperclip"><p>为简单的一句话提供的简便写法。</p></div><div class="note todo"><p>为简单的一句话提供的简便写法。</p></div> <div class="note msg"><p>为简单的一句话提供的简便写法。</p></div> <div class="note guide"><p>为简单的一句话提供的简便写法。</p></div><div class="note download"><p>为简单的一句话提供的简便写法。</p></div><div class="note up"><p>为简单的一句话提供的简便写法。</p></div><div class="note undo"><p>为简单的一句话提供的简便写法。</p></div> <h2 id="块标签"><a href="#块标签" class="headerlink" title="块标签"></a>块标签</h2><div class="note quote">            <p>Windows 10不是為所有人設計,而是為每個人設計</p><p class='p subtitle'>嵌套测试</p><div class="note ">          <p>请坐和放宽，我正在帮你搞定一切…  </p>        </div><p class='p subtitle'>Folding 测试</p><details ><summary> <p>点击查看更多</p> </summary>            <div class='content'>            <div class="note warning"><p>不要说我们没有警告过你</p></div><div class="note bug red">        <p>我们都有不顺利的时候    </p>      </div>              </div>          </details>          </div><h2 id="上标式标签"><a href="#上标式标签" class="headerlink" title="上标式标签"></a>上标式标签</h2><div class='checkbox'><input type="checkbox" />            <p>纯文本测试</p>            </div><div class='checkbox checked'><input type="checkbox" checked="checked"/>            <p>支持简单的 markdown 语法</p>            </div><div class='checkbox red'><input type="checkbox" />            <p>支持自定义颜色</p>            </div><div class='checkbox green checked'><input type="checkbox" checked="checked"/>            <p>绿色 + 默认选中</p>            </div><div class='checkbox yellow checked'><input type="checkbox" checked="checked"/>            <p>黄色 + 默认选中</p>            </div><div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>            <p>青色 + 默认选中</p>            </div><div class='checkbox blue checked'><input type="checkbox" checked="checked"/>            <p>蓝色 + 默认选中</p>            </div><div class='checkbox plus green checked'><input type="checkbox" checked="checked"/>            <p>增加</p>            </div><div class='checkbox minus yellow checked'><input type="checkbox" checked="checked"/>            <p>减少</p>            </div><div class='checkbox times red checked'><input type="checkbox" checked="checked"/>            <p>叉</p>            </div><h1 id="ff"><a href="#ff" class="headerlink" title="ff"></a>ff</h1><div class='checkbox'><input type="radio" />            <p>纯文本测试</p>            </div><div class='checkbox checked'><input type="radio" checked="checked"/>            <p>支持简单的 markdown 语法</p>            </div><div class='checkbox red'><input type="radio" />            <p>支持自定义颜色</p>            </div><div class='checkbox green'><input type="radio" />            <p>绿色</p>            </div><div class='checkbox yellow'><input type="radio" />            <p>黄色</p>            </div><div class='checkbox cyan'><input type="radio" />            <p>青色</p>            </div><div class='checkbox blue'><input type="radio" />            <p>蓝色</p>            </div><p>This is my website, click the button <a class="btn-beautify button--animated " href="http://www.jerryc.me"   title="JerryC"><span>JerryC</span></a><br>This is my website, click the button <a class="btn-beautify button--animated " href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><br>This is my website, click the button <a class="btn-beautify button--animated outline" href="http://www.jerryc.me"   title="JerryC"><span>JerryC</span></a><br>This is my website, click the button <a class="btn-beautify button--animated outline" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><br>This is my website, click the button <a class="btn-beautify button--animated larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a></p><a class="btn-beautify button--animated block" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated block center larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated block right outline larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated blue larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated pink larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated red larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated purple larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated orange larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated green larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><div class="btn-center"><a class="btn-beautify button--animated outline larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated outline blue larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated outline pink larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated outline red larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated outline purple larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated outline orange larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a><a class="btn-beautify button--animated outline green larger" href="http://www.jerryc.me"   title="JerryC"><i class="far fa-hand-point-right"></i><span>JerryC</span></a></div><span class="hide-inline"><button type="button" class="hide-button button--animated" style="background-color: bg;color: color">display  </button><span class="hide-content">content</span></span><div class="hide-block"><button type="button" class="hide-button button--animated" style="background-color: bg;color: color">display    </button><div class="hide-content"><p>content</p></div></div><div class="tabs" id="tab-id"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#tab-id-1">标签名</button></li><li class="tab"><button type="button" data-href="#tab-id-2">标签名</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="tab-id-1"><p><img src="https://i.loli.net/2020/03/18/f5PQlWisvm9zbgK.jpg"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tab-id-2"><p>这里面写内容，支持的语法格式有限，请尽量<u>不要</u>写太过复杂的东西。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><details ><summary> <p>查看图片测试</p> </summary>              <div class='content'>              <p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"></p>              </div>            </details><details cyan open><summary> <p>查看默认打开的折叠框</p> </summary>              <div class='content'>              <p>这是一个默认打开的折叠框。</p>              </div>            </details><details green><summary> <p>查看代码测试</p> </summary>              <div class='content'>                            </div>            </details><details yellow><summary> <p>查看列表测试</p> </summary>              <div class='content'>              <ul><li>haha</li><li>hehe</li></ul>              </div>            </details><details red><summary> <p>查看嵌套测试</p> </summary>              <div class='content'>              <details blue><summary> <p>查看嵌套测试2</p> </summary>              <div class='content'>              <details ><summary> <p>查看嵌套测试3</p> </summary>              <div class='content'>              <p>hahaha <span><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/tieba/%E6%BB%91%E7%A8%BD.png' style='height:24px'></span></p>              </div>            </details>              </div>            </details>              </div>            </details><div class="audio"><audio controls preload><source src='https://github.com/xaoxuu/volantis-docs/releases/download/assets/Lumia1020.mp3' type='audio/mp3'>Your browser does not support the audio tag.</audio></div><div class="videos" col='4'><div class="video"><video controls preload><source src='https://github.com/xaoxuu/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div><div class="video"><video controls preload><source src='https://github.com/xaoxuu/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div><div class="video"><video controls preload><source src='https://github.com/xaoxuu/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div><div class="video"><video controls preload><source src='https://github.com/xaoxuu/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div><div class="video"><video controls preload><source src='https://github.com/xaoxuu/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div><div class="video"><video controls preload><source src='https://github.com/xaoxuu/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div><div class="video"><video controls preload><source src='https://github.com/xaoxuu/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div><div class="video"><video controls preload><source src='https://github.com/xaoxuu/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div></div><p>$$E(A)=\sum_{j=1}^v \frac {s_{1j}+s_{2j}+….s_{mj}} sI(s_{1j}+s_{2j}+….s_{mj})$$<br>$$I(s_{1j}+s_{2j}+….s_{mj})=-\sum_{i=1}^mp_{ij}log(p_{ij})\p_{ij}=\frac {s_{ij}} {|s_j|}$$</p><h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h2><div class="tip success"><p>helloworld</p>          </div><hr><div class="tip wtgo"><p>为简单的一句话提供的简便写法。</p></div><div class="tip ban"><p>为简单的一句话提供的简便写法。</p></div><div class="tip home"><p>为简单的一句话提供的简便写法。</p></div><div class="tip important"><p>为简单的一句话提供的简便写法。</p></div><div class="tip ref"><p>为简单的一句话提供的简便写法。</p><p></p></div><div class="tip ffa"><p>为简单的一句话提供的简便写法。</p><p></p></div><div class="tip key"><p>为简单的一句话提供的简便写法。</p><p></p></div><div class="tip socd"><p>为简单的一句话提供的简便写法。</p><p></p></div>***<div class="tip success faa-wrench animated"><p>摇摆</p>          </div><div class="tip success faa-horizontal animated"><p>垂直抖动</p>          </div><div class="tip success faa-flash animated"><p>若隐若现</p>          </div><div class="tip success faa-pulse animated"><p>变色</p>          </div><div class="tip success faa-shake animated"><p>摇摆</p>          </div><h2 id="beautiful-btns"><a href="#beautiful-btns" class="headerlink" title="beautiful btns"></a>beautiful btns</h2><div class="btns circle grid5">            <a href='https://xaoxuu.com' title='xaoxuu'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png'>xaoxuu</a><a href='https://xaoxuu.com' title='xaoxuu'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png'>xaoxuu</a><a href='https://xaoxuu.com' title='xaoxuu'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png'>xaoxuu</a><a href='https://xaoxuu.com' title='xaoxuu'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png'>xaoxuu</a><a href='https://xaoxuu.com' title='xaoxuu'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png'>xaoxuu</a>          </div><div class="btns rounded grid5">            <a href='/' title='下载源码'><i class='fa fa-download'></i>下载源码</a><a href='/' title='查看文档'><i class='fa fa-download'></i>查看文档</a>          </div><div class="btns circle center grid5">            <a href='https://apps.apple.com/cn/app/heart-mate-pro-hrm-utility/id1463348922?ls=1'>  <i class="fas fa-apple"></i>  <b>心率管家</b>  <p class='p red'>专业版</p>  <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_pro.png'></a><a href='https://apps.apple.com/cn/app/heart-mate-lite-hrm-utility/id1475747930?ls=1'>  <i class="fas fa-apple"></i>  <b>心率管家</b>  <p class='p green'>免费版</p>  <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_lite.png'></a>          </div><h2 id="metingjs"><a href="#metingjs" class="headerlink" title="metingjs"></a>metingjs</h2>    <div id="aplayer-uGBdTPOY" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="621465725" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86" data-listfolded="true" data-fixed="true" data-mini="true"    ></div><p>如左下角所示</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
