@@ -3429,11 +3429,11 @@ blockquote footer cite:before {
 #footer-wrap {
   position: relative;
   padding: 2rem 1rem;
-  color: var(--light-grey);
+  color: #b33636;
   text-align: center;
 }
 #footer-wrap a {
-  color: var(--light-grey);
+  color: #45db71;
 }
 #footer-wrap a:hover {
   text-decoration: underline;
@@ -3602,7 +3602,7 @@ blockquote footer cite:before {
   position: fixed;
   top: -60px;
   z-index: 91;
-  background: rgba(255,255,255,0.8);
+  background: rgba(181,126,126,0.8);
   -webkit-box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
   box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
   -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
@@ -3785,7 +3785,7 @@ _:future,
   color: var(--white);
 }
 #nav a {
-  color: var(--light-grey);
+  color: #2f3909;
 }
 #nav a:hover {
   color: var(--white);
