@@ -223,7 +223,7 @@
     <link href="http://zephyr-cyber.github.io/bufferfly/blog/871f3241.html"/>
     <id>http://zephyr-cyber.github.io/bufferfly/blog/871f3241.html</id>
     <published>2020-09-18T13:45:28.000Z</published>
-    <updated>2022-12-12T08:57:30.888Z</updated>
+    <updated>2022-12-13T11:09:13.287Z</updated>
     
     <content type="html"><![CDATA[<p>自己在摸鱼时间在github上发现某大佬的坦克大战项目，于是就fork下来仔细品读一下，但是发现除了一点多线程，和swt，并没有太多有意思的地方，但是我还是把它敲完，做了一下简单的测试，稍微改动了一下，比如左上角的英文汉化，增加分数显示。em… 就这些。感兴趣的朋友可以简单看看源码。</p><blockquote><p><a href="https://github.com/glassy-sky-lisong/TankGame">坦克大战传送门</a></p></blockquote><p>有有个.idea文件夹，上传时不小心上传上去了，大家clone下来删掉即可，这是idea的个人配置文件夹。不过，idea敲java是真香，[手动狗头.jpg]</p>]]></content>
     
