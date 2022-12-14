@@ -1,10 +1,4 @@
-/*
- * @Date: 2020-08-22 13:34:55
- * @Author: glassysky
- * @LastEditors: glassysky
- * @LastEditTime: 2020-08-22 13:34:59
- * @Description: 
- */
+
 (function (d) {
   var c = d.createElement('link')
   c.rel = 'stylesheet'

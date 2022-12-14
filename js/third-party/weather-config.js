@@ -1,10 +1,4 @@
-/*
- * @Date: 2020-08-22 13:35:18
- * @Author: glassysky
- * @LastEditors: glassysky
- * @LastEditTime: 2020-08-24 20:24:26
- * @Description: 
- */
+
 WIDGET = {
   CONFIG: {
     "layout": 2,
